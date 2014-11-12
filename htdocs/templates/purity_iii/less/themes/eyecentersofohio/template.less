@@ -1,0 +1,187 @@
+/** 
+ *------------------------------------------------------------------------------
+ * @package       T3 Framework for Joomla!
+ *------------------------------------------------------------------------------
+ * @copyright     Copyright (C) 2004-2013 JoomlArt.com. All Rights Reserved.
+ * @license       GNU General Public License version 2 or later; see LICENSE.txt
+ * @authors       JoomlArt, JoomlaBamboo, (contribute to this project at github 
+ *                & Google group to become co-author)
+ * @Google group: https://groups.google.com/forum/#!forum/t3fw
+ * @Link:         http://t3-framework.org 
+ *------------------------------------------------------------------------------
+ */
+body {
+  padding-top: 0;
+}
+
+.t3-mainnav .t3-navbar {
+	float: none;
+}
+
+.navbar-nav {
+	float: none;
+	width: 905px;
+	margin: 0 auto;
+}
+
+.navbar-default.navbar-fixed-top .navbar-nav > li {
+	.logo_link {
+		position: static;
+	}
+}
+
+.navbar-default .navbar-nav > .active > a {
+	box-shadow: none;
+
+	&:hover {
+		box-shadow: none;
+	}
+}
+
+.navbar-default .navbar-nav > li {
+	width: 10em;
+	margin-left: 28px;
+
+	&:nth-child(3) {
+		width: 13em;
+	}
+
+	a {
+		text-align: center;
+
+		&:hover {
+			box-shadow: none;
+		}
+	}
+
+	.logo_link {
+		padding-top: 0.1em;
+		font-weight: bold;
+		font-size: 1.1em;
+		color: @gray;
+		position: relative;
+		// top: -1.5em;
+	    height: 1em;
+		line-height: 1em;
+
+		img {
+			display: block;
+			margin: 0 auto;
+			height: 50px;
+			-webkit-transition: -webkit-transform 1s ease;
+			-moz-transition: -moz-transform 1s ease;
+			-o-transition: -o-transform 1s ease;
+			transition: transform 1s ease, visibility 0s linear 0.5s,opacity 0.5s linear;
+		}
+
+		&:hover {
+			color: @gray-dark;
+		}
+	}
+}
+
+#t3-mainbody > .row{
+	margin-top: 2em;
+}
+
+.eye_chart_loop(@start_font_size, @end_font_size, @max_iterations, @counter: 0) when (@counter < @max_iterations){
+	@increment: (@start_font_size - @end_font_size) / @max_iterations;
+	@nth-child: @counter + 1;
+	&:nth-child(@{nth-child}) {
+		font-size: @start_font_size - (@increment * @counter);
+	}
+	.eye_chart_loop(@start_font_size, @end_font_size, @max_iterations, (@counter + 1));
+}
+
+/*spash*/
+#splash_home {
+	-webkit-transform: scale(1.8);
+    -ms-transform: scale(1.8);
+    transform: scale(1.8);
+	-webkit-filter: blur(8px);
+	-moz-filter: blur(8px);
+	-ms-filter: blur(8px);
+	-o-filter: blur(8px);
+	filter: blur(8px);
+	transition: all 2s ease-in-out;
+	background-color: @white;
+	border: 1px solid @gray-darker;
+	padding: 1em;
+	width: 20em;
+	margin: 0 auto;
+
+	&.loaded {
+		-webkit-filter: blur(0);
+		-moz-filter: blur(0);
+		-ms-filter: blur(0);
+		-o-filter: blur(0);
+		filter: blur(0);
+		-webkit-transform: scale(1);
+	    -ms-transform: scale(1);
+	    transform: scale(1);
+	}
+
+	.eye_chart_line {
+		font-family: "Courier New", Courier, monospace;
+		letter-spacing: 0.6em;
+		padding-top: 20px;
+		padding-left: 0.6em;
+		text-align: center;
+		position: relative;
+
+		.acuity {
+			visibility: hidden;
+			letter-spacing: normal;
+			font-size: 8pt;
+			margin-top: -8px;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			
+			.top_acuity {
+				border-bottom: 1px solid @gray-darker;
+			}
+		}
+
+		img {
+			display: inline-block;
+			width: auto !important;
+			margin-left: -0.5em;
+		}
+		
+		&.divider {
+			border-top: 2px solid @gray-darker;
+		}
+
+		.eye_chart_loop(2em, 1em, 7);
+	}
+}
+
+@media (min-width: 768px) {
+	#splash_home {
+		width: 40em;
+		.eye_chart_line {
+			.acuity {
+				visibility: visible;
+			}
+			.eye_chart_loop(4em, 1em, 7);
+		}
+	}
+}
+
+/* doctors page */
+.doctors {
+	text-align: center;
+	.doctor_card {
+		padding: 1em;
+		width: 20em;
+		display: inline-block;
+
+		.doctor_title {
+			text-align: center;
+			font-weight: bold;
+			padding: 1em;
+		}
+	}
+}
+
