@@ -10,23 +10,76 @@
  * @Link:         http://t3-framework.org 
  *------------------------------------------------------------------------------
  */
-body {
-  padding-top: 0;
+
+/* core overrides for full-page width */
+#t3-mainbody {
+ 	width: 100%;
+ 	margin: 0;
+ 	padding: 0;
+ }
+
+#t3-content {
+	padding: 0;
 }
 
+.row {
+	margin: 0;
+}
+
+.corporate .blog-featured .items-leading {
+	margin-bottom: 0;
+}
+
+.item-page {
+	margin-bottom: 0;
+}
+
+.items-leading .leading {
+	margin-bottom: 0;
+	padding: 1.5em;
+}
+
+article {
+	margin: 0 auto;
+}
+
+article {
+	padding: 0 1.5em;
+}
+
+@media (min-width: 768px) {
+	article {
+		width: 760px;
+	}
+}
+@media (min-width: 992px) {
+	article {
+		width: 980px;
+	}
+}
+@media (min-width: 1200px) {
+	article {
+		width: 1180px;
+	}
+}
+
+/* end core overrides for full-page width */
+
+/* navigation overrides */
 .t3-mainnav .t3-navbar {
 	float: none;
 }
 
 .navbar-nav {
 	float: none;
-	width: 905px;
+	//width: 905px;
+	width: 64.5em;
 	margin: 0 auto;
 }
 
 .navbar-default.navbar-fixed-top .navbar-nav > li {
 	.logo_link {
-		position: static;
+		//position: static;
 	}
 }
 
@@ -60,7 +113,6 @@ body {
 		font-size: 1.1em;
 		color: @gray;
 		position: relative;
-		// top: -1.5em;
 	    height: 1em;
 		line-height: 1em;
 
@@ -80,9 +132,42 @@ body {
 	}
 }
 
-#t3-mainbody > .row{
-	margin-top: 2em;
+/* end navigation overrides */
+
+/* extra-class styles */
+.lightest_blue {
+	background-color: @lightest-brand;
+	color: @gray-dark;
 }
+
+.lighter_blue {
+	background-color: @lighter-brand;
+	color: @gray-dark;
+}
+
+.light_blue {
+	background-color: @light-brand;
+	color: @gray-lighter;
+}
+
+.lightest_purple {
+	background-color: @lightest-brand-secondary;
+	color: @gray-dark;
+}
+
+.lighter_purple {
+	background-color: @lighter-brand-secondary;
+	color: @gray-dark;
+}
+
+.light_purple {
+	background-color: @light-brand-secondary;
+	color: @gray-lighter;
+}
+
+/* end extra-class styles */
+
+/* spash page */
 
 .eye_chart_loop(@start_font_size, @end_font_size, @max_iterations, @counter: 0) when (@counter < @max_iterations){
 	@increment: (@start_font_size - @end_font_size) / @max_iterations;
@@ -93,16 +178,9 @@ body {
 	.eye_chart_loop(@start_font_size, @end_font_size, @max_iterations, (@counter + 1));
 }
 
-/*spash*/
 #splash_home {
-	-webkit-transform: scale(1.8);
-    -ms-transform: scale(1.8);
-    transform: scale(1.8);
-	-webkit-filter: blur(8px);
-	-moz-filter: blur(8px);
-	-ms-filter: blur(8px);
-	-o-filter: blur(8px);
-	filter: blur(8px);
+	text-shadow: 0 0 20px @gray-dark;
+	color: transparent;
 	transition: all 2s ease-in-out;
 	background-color: @white;
 	border: 1px solid @gray-darker;
@@ -111,14 +189,8 @@ body {
 	margin: 0 auto;
 
 	&.loaded {
-		-webkit-filter: blur(0);
-		-moz-filter: blur(0);
-		-ms-filter: blur(0);
-		-o-filter: blur(0);
-		filter: blur(0);
-		-webkit-transform: scale(1);
-	    -ms-transform: scale(1);
-	    transform: scale(1);
+		text-shadow: none;
+		color: @gray-dark;
 	}
 
 	.eye_chart_line {
@@ -168,6 +240,8 @@ body {
 		}
 	}
 }
+
+/* end splash page */
 
 /* doctors page */
 .doctors {

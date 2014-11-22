@@ -1,16 +1,53 @@
-body {
-  padding-top: 0;
+#t3-mainbody {
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
+#t3-content {
+  padding: 0;
+}
+.row {
+  margin: 0;
+}
+.corporate .blog-featured .items-leading {
+  margin-bottom: 0;
+}
+.item-page {
+  margin-bottom: 0;
+}
+.items-leading .leading {
+  margin-bottom: 0;
+  padding: 1.5em;
+}
+article {
+  margin: 0 auto;
+}
+article {
+  padding: 0 1.5em;
+}
+@media (min-width: 768px) {
+  article {
+    width: 760px;
+  }
+}
+@media (min-width: 992px) {
+  article {
+    width: 980px;
+  }
+}
+@media (min-width: 1200px) {
+  article {
+    width: 1180px;
+  }
+}
+
 .t3-mainnav .t3-navbar {
   float: none;
 }
 .navbar-nav {
   float: none;
-  width: 905px;
+  width: 64.5em;
   margin: 0 auto;
-}
-.navbar-default.navbar-fixed-top .navbar-nav > li .logo_link {
-  position: static;
 }
 .navbar-default .navbar-nav > .active > a {
   box-shadow: none;
@@ -52,19 +89,35 @@ body {
 .navbar-default .navbar-nav > li .logo_link:hover {
   color: #444444;
 }
-#t3-mainbody > .row {
-  margin-top: 2em;
+
+.lightest_blue {
+  background-color: #e2f0f1;
+  color: #444444;
+}
+.lighter_blue {
+  background-color: #bfdee1;
+  color: #444444;
+}
+.light_blue {
+  background-color: #9dccd0;
+  color: #eeeeee;
+}
+.lightest_purple {
+  background-color: #e5def7;
+  color: #444444;
+}
+.lighter_purple {
+  background-color: #c4b6ec;
+  color: #444444;
+}
+.light_purple {
+  background-color: #a48de2;
+  color: #eeeeee;
 }
 
 #splash_home {
-  -webkit-transform: scale(1.8);
-  -ms-transform: scale(1.8);
-  transform: scale(1.8);
-  -webkit-filter: blur(8px);
-  -moz-filter: blur(8px);
-  -ms-filter: blur(8px);
-  -o-filter: blur(8px);
-  filter: blur(8px);
+  text-shadow: 0 0 20px #444444;
+  color: transparent;
   transition: all 2s ease-in-out;
   background-color: #ffffff;
   border: 1px solid #222222;
@@ -73,14 +126,8 @@ body {
   margin: 0 auto;
 }
 #splash_home.loaded {
-  -webkit-filter: blur(0);
-  -moz-filter: blur(0);
-  -ms-filter: blur(0);
-  -o-filter: blur(0);
-  filter: blur(0);
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
+  text-shadow: none;
+  color: #444444;
 }
 #splash_home .eye_chart_line {
   font-family: "Courier New", Courier, monospace;

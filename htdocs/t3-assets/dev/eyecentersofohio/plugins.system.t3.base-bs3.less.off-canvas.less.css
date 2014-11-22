@@ -11,7 +11,7 @@ body {
   width: 100%;
 }
 .t3-wrapper {
-  background: #e2f0f1;
+  background: #ffffff;
   position: relative;
   left: 0;
   z-index: 99;
@@ -87,7 +87,7 @@ html[dir="ltr"] .off-canvas-right.t3-off-canvas {
   overflow-y: auto;
 }
 .t3-off-canvas {
-  background: #e2f0f1;
+  background: #ffffff;
   color: #444444;
 }
 .t3-off-canvas .t3-off-canvas-header {
