@@ -30,37 +30,34 @@
 	margin-bottom: 0;
 }
 
-.item-page {
-	margin-bottom: 0;
-}
-
-.items-leading .leading {
+.items-leading .leading, .item-page {
 	margin-bottom: 0;
 	padding: 1.5em;
 }
 
-article {
+article, .contact {
 	margin: 0 auto;
-}
-
-article {
 	padding: 0 1.5em;
 }
 
 @media (min-width: 768px) {
-	article {
+	article, .contact {
 		width: 760px;
 	}
 }
 @media (min-width: 992px) {
-	article {
+	article, .contact {
 		width: 980px;
 	}
 }
 @media (min-width: 1200px) {
-	article {
+	article, .contact {
 		width: 1180px;
 	}
+}
+
+.article-title {
+	text-align: center;
 }
 
 /* end core overrides for full-page width */
@@ -242,6 +239,53 @@ article {
 }
 
 /* end splash page */
+
+/* Welcome */
+#welcome {
+	p {
+		font-size: 1.2em;
+		color: @gray;
+	}
+}
+/* end Welcome */
+
+/* Services */
+#services {
+
+	.service-list {
+		font-family: 'FontAwesome';
+		text-align: center;
+	}
+
+	.service-item {
+		width: 15em;
+		border: 5px solid @brand-secondary;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+		display: inline-block;
+		padding: 1em;
+		margin: 1em;
+		height: 20em;
+
+		p {
+			color: @gray;
+			&:before {
+				display:block;
+				font-size: 10em;
+				line-height: 1em;
+				color: @brand-secondary;
+			}
+		}
+		
+	}
+
+	a {
+		color: @brand-secondary;
+	}
+}
+
+/* end Services */
 
 /* doctors page */
 .doctors {

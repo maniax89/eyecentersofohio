@@ -383,7 +383,7 @@ abstract class ru_RULocalise
 		$search_ignore[] = 'ответила';
 		$search_ignore[] = 'ответили';
 		$search_ignore[] = 'ответило';
-		$search_ignore[] = 'окуда';
+		$search_ignore[] = 'откуда';
 		$search_ignore[] = 'отнюдь';
 		$search_ignore[] = 'перед';
 		$search_ignore[] = 'писал';
@@ -449,7 +449,7 @@ abstract class ru_RULocalise
 		$search_ignore[] = 'самой';
 		$search_ignore[] = 'самом';
 		$search_ignore[] = 'самому';
-		$search_ignore[] = 'самоя';
+		$search_ignore[] = 'самая';
 		$search_ignore[] = 'саму';
 		$search_ignore[] = 'самую';
 		$search_ignore[] = 'самые';

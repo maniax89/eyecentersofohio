@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="3.1" client="administrator" type="language" method="upgrade">
+<extension version="3.3" client="administrator" type="language" method="upgrade">
 	<name>Russian</name>
 	<tag>ru-RU</tag>
-	<version>3.1.5.1</version>
-	<creationDate>2013-08-01</creationDate>
+	<version>3.3.3.1</version>
+	<creationDate>2014-07-28</creationDate>
 	<author>Russian Translation Team</author>
 	<authorEmail>smart@joomlaportal.ru</authorEmail>
 	<authorUrl>www.joomlaportal.ru</authorUrl>
-	<copyright>Copyright (C) 2005 - 2013 Open Source Matters. All rights reserved</copyright>
+	<copyright>Copyright (C) 2005 - 2014 Open Source Matters. All rights reserved</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<description>Russian language pack (administrator) for Joomla! 3.1</description>
+	<description>Russian language pack (administrator) for Joomla! 3.3</description>
 	<files>
 		<filename>index.html</filename>
 		<filename>ru-RU.css</filename>
 		<filename>ru-RU.com_admin.ini</filename>
 		<filename>ru-RU.com_admin.sys.ini</filename>
+		<filename>ru-RU.com_ajax.ini</filename>
+		<filename>ru-RU.com_ajax.sys.ini</filename>
 		<filename>ru-RU.com_banners.ini</filename>
 		<filename>ru-RU.com_banners.sys.ini</filename>
 		<filename>ru-RU.com_cache.ini</filename>
@@ -29,6 +31,8 @@
 		<filename>ru-RU.com_contact.sys.ini</filename>
 		<filename>ru-RU.com_content.ini</filename>
 		<filename>ru-RU.com_content.sys.ini</filename>
+		<filename>ru-RU.com_contenthistory.ini</filename>
+		<filename>ru-RU.com_contenthistory.sys.ini</filename>
 		<filename>ru-RU.com_cpanel.ini</filename>
 		<filename>ru-RU.com_cpanel.sys.ini</filename>
 		<filename>ru-RU.com_finder.ini</filename>
@@ -54,6 +58,8 @@
 		<filename>ru-RU.com_newsfeeds.sys.ini</filename>
 		<filename>ru-RU.com_plugins.ini</filename>
 		<filename>ru-RU.com_plugins.sys.ini</filename>
+		<filename>ru-RU.com_postinstall.ini</filename>
+		<filename>ru-RU.com_postinstall.sys.ini</filename>
 		<filename>ru-RU.com_redirect.ini</filename>
 		<filename>ru-RU.com_redirect.sys.ini</filename>
 		<filename>ru-RU.com_search.ini</filename>
@@ -101,12 +107,16 @@
 		<filename>ru-RU.mod_toolbar.sys.ini</filename>
 		<filename>ru-RU.mod_version.ini</filename>
 		<filename>ru-RU.mod_version.sys.ini</filename>
+		<filename>ru-RU.plg_authentication_cookie.ini</filename>
+		<filename>ru-RU.plg_authentication_cookie.sys.ini</filename>
 		<filename>ru-RU.plg_authentication_gmail.ini</filename>
 		<filename>ru-RU.plg_authentication_gmail.sys.ini</filename>
 		<filename>ru-RU.plg_authentication_joomla.ini</filename>
 		<filename>ru-RU.plg_authentication_joomla.sys.ini</filename>
 		<filename>ru-RU.plg_authentication_ldap.ini</filename>
 		<filename>ru-RU.plg_authentication_ldap.sys.ini</filename>
+		<filename>ru-RU.plg_content_contact.ini</filename>
+		<filename>ru-RU.plg_content_contact.sys.ini</filename>
 		<filename>ru-RU.plg_captcha_recaptcha.ini</filename>
 		<filename>ru-RU.plg_captcha_recaptcha.sys.ini</filename>
 		<filename>ru-RU.plg_content_emailcloak.ini</filename>
@@ -153,6 +163,8 @@
 		<filename>ru-RU.plg_finder_tags.sys.ini</filename>
 		<filename>ru-RU.plg_finder_weblinks.ini</filename>
 		<filename>ru-RU.plg_finder_weblinks.sys.ini</filename>
+		<filename>ru-RU.plg_installer_webinstaller.ini</filename>
+		<filename>ru-RU.plg_installer_webinstaller.sys.ini</filename>
 		<filename>ru-RU.plg_quickicon_extensionupdate.ini</filename>
 		<filename>ru-RU.plg_quickicon_extensionupdate.sys.ini</filename>
 		<filename>ru-RU.plg_quickicon_joomlaupdate.ini</filename>
@@ -165,6 +177,8 @@
 		<filename>ru-RU.plg_search_content.sys.ini</filename>
 		<filename>ru-RU.plg_search_newsfeeds.ini</filename>
 		<filename>ru-RU.plg_search_newsfeeds.sys.ini</filename>
+		<filename>ru-RU.plg_search_tags.ini</filename>
+		<filename>ru-RU.plg_search_tags.sys.ini</filename>
 		<filename>ru-RU.plg_search_weblinks.ini</filename>
 		<filename>ru-RU.plg_search_weblinks.sys.ini</filename>
 		<filename>ru-RU.plg_system_cache.ini</filename>
@@ -189,6 +203,10 @@
 		<filename>ru-RU.plg_system_remember.sys.ini</filename>
 		<filename>ru-RU.plg_system_sef.ini</filename>
 		<filename>ru-RU.plg_system_sef.sys.ini</filename>
+		<filename>ru-RU.plg_twofactorauth_totp.ini</filename>
+		<filename>ru-RU.plg_twofactorauth_totp.sys.ini</filename>
+		<filename>ru-RU.plg_twofactorauth_yubikey.ini</filename>
+		<filename>ru-RU.plg_twofactorauth_yubikey.sys.ini</filename>
 		<filename>ru-RU.plg_user_contactcreator.ini</filename>
 		<filename>ru-RU.plg_user_contactcreator.sys.ini</filename>
 		<filename>ru-RU.plg_user_joomla.ini</filename>

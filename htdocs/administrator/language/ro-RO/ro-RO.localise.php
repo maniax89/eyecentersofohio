@@ -1,75 +1,77 @@
 <?php
 /**
  * @package    Joomla.Language
- *
- * @copyright  Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
- * @license    GNU General Public License version 2 or later; see LICENSE.txt
+ * @version	$Id: language.php joomla.it ì$
+ * @copyright	Copyright (C) 2005 - 2013 Open Source Matters. All rights reserved.
+ * @copyright	Copyright (C) Translation 2008- 2013 joomla.it
+ * @license	GNU General Public License version 2 or later; see LICENSE.txt
  */
-
+ 
 defined('_JEXEC') or die;
 
 /**
  * en-GB localise class
  *
- * @package  Joomla.Language
- * @since    1.6
+ * @package		Joomla.Language
+ * @since		1.6
  */
-abstract class ro_ROLocalise
+abstract class it_ITLocalise 
 {
 	/**
 	 * Returns the potential suffixes for a specific number of items
 	 *
-	 * @param   int $count  The number of items.
+	 * @param   integer  $count  The number of items.
+	 *
 	 * @return  array  An array of potential suffixes.
+	 *
 	 * @since   1.6
 	 */
 	public static function getPluralSuffixes($count)
 	{
 		if ($count == 0)
 		{
-			$return = array('0');
+			return array('0');
 		}
 		elseif ($count == 1)
 		{
-			$return = array('1');
+			return array('1');
 		}
 		else
 		{
-			$return = array('MORE');
+			return array('MORE');
 		}
-		return $return;
 	}
+	
 	/**
 	 * Returns the ignored search words
 	 *
 	 * @return  array  An array of ignored search words.
+	 *
 	 * @since   1.6
 	 */
-	public static function getIgnoredSearchWords()
+	public static function getIgnoredSearchWords() 
 	{
-		$search_ignore = array();
-		$search_ignore[] = "și";
-		$search_ignore[] = "în";
-		$search_ignore[] = "pe";
-		return $search_ignore;
+		return array('și', 'în', 'pe', 'sau', 'ori', 'la', 'de', 'va', 'vă', 'îți', 'sa', 'îl', 'o', 'a', 'e', 'i', 'ți', 'se');
 	}
 	/**
 	 * Returns the lower length limit of search words
 	 *
 	 * @return  integer  The lower length limit of search words.
+	 *
 	 * @since   1.6
 	 */
-	public static function getLowerLimitSearchWord()
+	public static function getLowerLimitSearchWord() 
 	{
 		return 3;
 	}
 	/**
 	 * Returns the upper length limit of search words
 	 *
-	 * @return  integer  The upper length limit of search words.
-	 * @since   1.6
+	 * @return	integer  The upper length limit of search words.
+	 *
+	 * @since	1.6
 	 */
-	public static function getUpperLimitSearchWord()
+	public static function getUpperLimitSearchWord() 
 	{
 		return 20;
 	}
@@ -77,9 +79,10 @@ abstract class ro_ROLocalise
 	 * Returns the number of chars to display when searching
 	 *
 	 * @return  integer  The number of chars to display when searching.
+	 *
 	 * @since   1.6
 	 */
-	public static function getSearchDisplayedCharactersNumber()
+	public static function getSearchDisplayedCharactersNumber() 
 	{
 		return 200;
 	}

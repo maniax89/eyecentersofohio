@@ -1,15 +1,19 @@
-<extension version="3.1" client="site" type="language" method="upgrade">
-	<name>Romanian (ro-RO)</name>
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.3" client="site" type="language" method="upgrade">
+	<name>Româna (România)</name>
 	<tag>ro-RO</tag>
-	<version>3.1.1.2</version>
-	<creationDate>26/04/2013</creationDate>
-	<author>Romanian Joomla translation team</author>
-	<authorUrl>http://forum.joomla.org/viewforum.php?f=30</authorUrl>
-	<copyright>Copyright (C) 2005 - 2013 Romanian Joomla translation team și Open Source Matters. Toate drepturile rezervate</copyright>
+	<version>3.3.3.1</version>
+	<creationDate>28-07-2014</creationDate>
+	<author>Horia Negura - Quanta</author>
+	<authorEmail>fakemoth@gmail.com</authorEmail>
+	<authorUrl>www.liquidcore.ro</authorUrl>
+	<copyright>Copyright (C) 2005 - 2014 Open Source Matters. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<description>ro-RO site language</description>
+	<description>Joomla! 3.3 Romanian (ro-RO) Language Package - Version 3.3.3.1</description>
 	<files>
-		<filename>index.html</filename>
+		<filename>ro-RO.lib_phpass.sys.ini</filename>
+		<filename>ro-RO.com_ajax.ini</filename>
+		<filename>ro-RO.com_config.ini</filename>
 		<filename>ro-RO.com_contact.ini</filename>
 		<filename>ro-RO.com_content.ini</filename>
 		<filename>ro-RO.com_finder.ini</filename>
@@ -25,6 +29,8 @@
 		<filename>ro-RO.files_joomla.sys.ini</filename>
 		<filename>ro-RO.finder_cli.ini</filename>
 		<filename>ro-RO.ini</filename>
+		<filename>ro-RO.lib_fof.sys.ini</filename>
+		<filename>ro-RO.lib_idna_convert.sys.ini</filename>
 		<filename>ro-RO.lib_joomla.ini</filename>
 		<filename>ro-RO.lib_joomla.sys.ini</filename>
 		<filename>ro-RO.lib_phpmailer.sys.ini</filename>
@@ -87,8 +93,9 @@
 		<filename>ro-RO.tpl_beez3.sys.ini</filename>
 		<filename>ro-RO.tpl_protostar.ini</filename>
 		<filename>ro-RO.tpl_protostar.sys.ini</filename>
-		<filename file="meta">install.xml</filename>
+		<filename>index.html</filename>	
 		<filename file="meta">ro-RO.xml</filename>
+		<filename file="meta">install.xml</filename>
 	</files>
 	<params />
 </extension>

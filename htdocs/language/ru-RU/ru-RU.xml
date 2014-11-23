@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<metafile version="3.1" client="site">
+<metafile version="3.3" client="site">
 	<name>Russian</name>
-	<version>3.1.5.1</version>
-	<creationDate>2013-08-01</creationDate>
+	<version>3.3.3.1</version>
+	<creationDate>2014-07-28</creationDate>
 	<author>Russian Translation Team</author>
 	<authorEmail>smart@joomlaportal.ru</authorEmail>
 	<authorUrl>www.joomlaportal.ru</authorUrl>
-	<copyright>Copyright (C) 2005 - 2013 Open Source Matters. All rights reserved</copyright>
+	<copyright>Copyright (C) 2005 - 2014 Open Source Matters. All rights reserved</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<description>Russian language pack (site) for Joomla! 3.1</description>
+	<description>Russian language pack (site) for Joomla! 3.3</description>
 	<files>
+		<filename>ru-RU.com_ajax.ini</filename>
+		<filename>ru-RU.com_config.ini</filename>
 		<filename>ru-RU.com_contact.ini</filename>
 		<filename>ru-RU.com_content.ini</filename>
 		<filename>ru-RU.com_finder.ini</filename>
@@ -25,6 +27,7 @@
 		<filename>ru-RU.files_joomla.sys.ini</filename>
 		<filename>ru-RU.finder_cli.ini</filename>
 		<filename>ru-RU.ini</filename>
+		<filename>ru-RU.lib_fof.sys.ini</filename>
 		<filename>ru-RU.lib_idna_convert.sys.ini</filename>
 		<filename>ru-RU.lib_joomla.ini</filename>
 		<filename>ru-RU.lib_joomla.sys.ini</filename>
@@ -96,6 +99,7 @@
 		<rtl>0</rtl>
 		<locale>ru-RU.utf8, ru-RU.UTF-8, ru_RU.utf8, ru-RU.UTF-8, ru-RU, ru_RU, ru, russian, russian-ru</locale>
 		<firstDay>1</firstDay>
+		<weekEnd>0,6</weekEnd>
 	</metadata>
 	<params />
 </metafile>

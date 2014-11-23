@@ -12,33 +12,36 @@
 .corporate .blog-featured .items-leading {
   margin-bottom: 0;
 }
+.items-leading .leading,
 .item-page {
-  margin-bottom: 0;
-}
-.items-leading .leading {
   margin-bottom: 0;
   padding: 1.5em;
 }
-article {
+article,
+.contact {
   margin: 0 auto;
-}
-article {
   padding: 0 1.5em;
 }
 @media (min-width: 768px) {
-  article {
+  article,
+  .contact {
     width: 760px;
   }
 }
 @media (min-width: 992px) {
-  article {
+  article,
+  .contact {
     width: 980px;
   }
 }
 @media (min-width: 1200px) {
-  article {
+  article,
+  .contact {
     width: 1180px;
   }
+}
+.article-title {
+  text-align: center;
 }
 
 .t3-mainnav .t3-navbar {
@@ -206,6 +209,42 @@ article {
   #splash_home .eye_chart_line:nth-child(7) {
     font-size: 1.42857143em;
   }
+}
+
+#welcome p {
+  font-size: 1.2em;
+  color: #666666;
+}
+#welcome .item-image {
+  width: 10em;
+}
+
+#services .service-list {
+  font-family: 'FontAwesome';
+  text-align: center;
+}
+#services .service-item {
+  width: 15em;
+  border: 5px solid #3b2182;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 1em;
+  margin: 1em;
+  height: 20em;
+}
+#services .service-item p {
+  color: #666666;
+}
+#services .service-item p:before {
+  display: block;
+  font-size: 10em;
+  line-height: 1em;
+  color: #3b2182;
+}
+#services a {
+  color: #3b2182;
 }
 
 .doctors {

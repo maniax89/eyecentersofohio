@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<metafile version="3.2" client="site">
+<metafile version="3.3" client="site">
     <tag>zh-CN</tag>
 	<name>中文（简体）</name>
-	<version>3.2.0.1</version>
-	<creationDate>2013-11-03</creationDate>
+	<version>3.3.1.1</version>
+	<creationDate>2014-06-14</creationDate>
 	<author>Joomla简体中文翻译组：joomla.cn</author>
 	<authorEmail>zhous1998@sohu.com</authorEmail>
 	<authorUrl>www.joomla.cn</authorUrl>
-	<copyright>Copyright (C) 2005 - 2013 Open Source Matters &amp; 囧啦中国（joomla.cn），版权所有。</copyright>
+	<copyright>Copyright (C) 2005 - 2014 Open Source Matters &amp; 囧啦中国（joomla.cn），版权所有。</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<description>Joomla 3.1 网站前台语言，Joomla简体中文翻译组（joomla.cn）翻译。交流基地：囧啦!中国（joomla.cn）或新浪微博“囧啦中国”（weibo.com/JoomlaChina）</description>
+	<description>Joomla 3.3 网站前台语言，Joomla简体中文翻译组（joomla.cn）翻译。交流基地：囧啦!中国（joomla.cn）或新浪微博“囧啦中国”（weibo.com/JoomlaChina）</description>
 	<metadata>
 		<name>中文（简体）</name>
 		<tag>zh-CN</tag>

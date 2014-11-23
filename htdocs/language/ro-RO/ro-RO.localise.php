@@ -55,6 +55,21 @@ abstract class ro_ROLocalise
 		$search_ignore[] = "și";
 		$search_ignore[] = "în";
 		$search_ignore[] = "pe";
+		$search_ignore[] = "sau";
+		$search_ignore[] = "ori";
+		$search_ignore[] = "la";
+		$search_ignore[] = "de";
+		$search_ignore[] = "va";
+		$search_ignore[] = "vă";
+		$search_ignore[] = "îți";
+		$search_ignore[] = "sa";
+		$search_ignore[] = "îl";
+		$search_ignore[] = "o";
+		$search_ignore[] = "a";
+		$search_ignore[] = "e";
+		$search_ignore[] = "i";
+		$search_ignore[] = "ți";
+		$search_ignore[] = "se";
 		return $search_ignore;
 	}
 
