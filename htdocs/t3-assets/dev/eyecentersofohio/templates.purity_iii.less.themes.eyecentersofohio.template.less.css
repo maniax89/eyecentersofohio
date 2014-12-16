@@ -242,6 +242,9 @@ article,
   margin: 1em;
   height: 20em;
 }
+#services .service-item a {
+  color: #3b2182;
+}
 #services .service-item p {
   color: #666666;
 }
@@ -251,8 +254,14 @@ article,
   line-height: 1em;
   color: #3b2182;
 }
-#services a {
-  color: #3b2182;
+#services .service-item:hover {
+  background-color: #3b2182;
+}
+#services .service-item:hover h3,
+#services .service-item:hover p,
+#services .service-item:hover p:before,
+#services .service-item:hover a {
+  color: #ffffff;
 }
 
 .contacts-grid {

@@ -279,6 +279,10 @@ article, .contact, .contact-category {
 		margin: 1em;
 		height: 20em;
 
+		a {
+			color: @brand-secondary;
+		}
+
 		p {
 			color: @gray;
 			&:before {
@@ -288,11 +292,14 @@ article, .contact, .contact-category {
 				color: @brand-secondary;
 			}
 		}
-		
-	}
 
-	a {
-		color: @brand-secondary;
+		&:hover {
+			background-color: @brand-secondary;
+			h3, p, p:before, a {
+				color: @white;
+			}
+		}
+		
 	}
 }
 
