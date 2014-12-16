@@ -2,20 +2,16 @@
 
  	$(document).ready(function() {
  		$("#splash_home").addClass("loaded");
-// 		$(window).on('scroll', updateMainNavPosition);
+
+ 		// $(".contact-link a").click(function(e) {
+ 		// 	var $extra_info = $(this).closest(".contact-card").find(".contact-extra-info");
+ 		// 	e.preventDefault();
+ 		// 	if($extra_info.attr("aria-hidden") === "true") {
+ 		// 		$extra_info.attr("aria-hidden", false);
+ 		// 	} else {
+ 		// 		$extra_info.attr("aria-hidden", true);
+ 		// 	}
+ 		// });
 	});
-
-// 	function updateMainNavPosition(){
-// 		var $nav       = $("#t3-mainnav"),
-// 			window_top = $(window).scrollTop(),
-// 			nav_offset = $nav.offset().top - $(window).scrollTop();
-
-// 		if (window_top < 55) {
-// 			$nav.removeClass("navbar-fixed-top").addClass("navbar-absolute-top");
-// 		}
-// 		else if (nav_offset <= 0) {
-// 			$nav.removeClass("navbar-absolute-top").addClass("navbar-fixed-top");
-// 		}
-// 	}
 
 })(jQuery);

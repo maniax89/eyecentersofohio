@@ -35,23 +35,23 @@
 	padding: 1.5em;
 }
 
-article, .contact {
+article, .contact, .contact-category {
 	margin: 0 auto;
 	padding: 0 1.5em;
 }
 
 @media (min-width: 768px) {
-	article, .contact {
+	article, .contact, .contact-category {
 		width: 760px;
 	}
 }
 @media (min-width: 992px) {
-	article, .contact {
+	article, .contact, .contact-category {
 		width: 980px;
 	}
 }
 @media (min-width: 1200px) {
-	article, .contact {
+	article, .contact, .contact-category {
 		width: 1180px;
 	}
 }
@@ -130,6 +130,17 @@ article, .contact {
 }
 
 /* end navigation overrides */
+
+/* bootstrap overrides */
+
+#cboxTitle {
+	display: none !important;
+}
+
+#cboxLoadedContent {
+	margin-top: 0;
+}
+/* end bootstrap overrides */
 
 /* extra-class styles */
 .lightest_blue {
@@ -288,18 +299,41 @@ article, .contact {
 /* end Services */
 
 /* doctors page */
-.doctors {
+.contacts-grid {
 	text-align: center;
-	.doctor_card {
-		padding: 1em;
-		width: 20em;
-		display: inline-block;
+}
 
-		.doctor_title {
-			text-align: center;
-			font-weight: bold;
-			padding: 1em;
-		}
+.contact-card {
+	padding: 1em;
+	display: inline-block;
+}
+
+.contact-image {
+	height: 20em;
+	width: 20em;
+	overflow: hidden;
+	border-radius: 10em;
+	display:inline-block;
+
+	img{
+		max-width: 100%;
 	}
+
+	& + .contact-name {
+		padding: 1em 0;
+	}
+}
+
+.contact-link-container {
+	text-align: center;
+	font-weight: bold;
+	padding: 1em;
+}
+
+.contact-extra-info {
+	vertical-align: top;
+	display:inline-block;
+	padding: 1em;
+	min-width: 20em;
 }
 

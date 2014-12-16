@@ -18,25 +18,29 @@
   padding: 1.5em;
 }
 article,
-.contact {
+.contact,
+.contact-category {
   margin: 0 auto;
   padding: 0 1.5em;
 }
 @media (min-width: 768px) {
   article,
-  .contact {
+  .contact,
+  .contact-category {
     width: 760px;
   }
 }
 @media (min-width: 992px) {
   article,
-  .contact {
+  .contact,
+  .contact-category {
     width: 980px;
   }
 }
 @media (min-width: 1200px) {
   article,
-  .contact {
+  .contact,
+  .contact-category {
     width: 1180px;
   }
 }
@@ -91,6 +95,13 @@ article,
 }
 .navbar-default .navbar-nav > li .logo_link:hover {
   color: #444444;
+}
+
+#cboxTitle {
+  display: none !important;
+}
+#cboxLoadedContent {
+  margin-top: 0;
 }
 
 .lightest_blue {
@@ -215,9 +226,6 @@ article,
   font-size: 1.2em;
   color: #666666;
 }
-#welcome .item-image {
-  width: 10em;
-}
 
 #services .service-list {
   font-family: 'FontAwesome';
@@ -247,16 +255,34 @@ article,
   color: #3b2182;
 }
 
-.doctors {
+.contacts-grid {
   text-align: center;
 }
-.doctors .doctor_card {
+.contact-card {
   padding: 1em;
-  width: 20em;
   display: inline-block;
 }
-.doctors .doctor_card .doctor_title {
+.contact-image {
+  height: 20em;
+  width: 20em;
+  overflow: hidden;
+  border-radius: 10em;
+  display: inline-block;
+}
+.contact-image img {
+  max-width: 100%;
+}
+.contact-image + .contact-name {
+  padding: 1em 0;
+}
+.contact-link-container {
   text-align: center;
   font-weight: bold;
   padding: 1em;
+}
+.contact-extra-info {
+  vertical-align: top;
+  display: inline-block;
+  padding: 1em;
+  min-width: 20em;
 }

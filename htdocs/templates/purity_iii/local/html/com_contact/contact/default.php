@@ -25,7 +25,13 @@ jimport('joomla.html.html.bootstrap');
 				<?php if ($this->item->published == 0) : ?>
 					<span class="label label-warning"><?php echo JText::_('JUNPUBLISHED'); ?></span>
 				<?php endif; ?>
-				<span class="contact-name" itemprop="name"><?php echo $this->contact->name; ?></span>
+				<span class="contact-name" itemprop="name">
+				<?php $contact_name = $this->contact->name; ?>
+				<?php if ($this->contact->con_position && $this->params->get('show_position')) : ?>
+					<?php $contact_name .= ", " . $this->contact->con_position; ?>
+				<?php endif; ?>
+				<?php echo $contact_name; ?>
+				</span>
 			</h2>
 		</div>
 	<?php endif;  ?>
@@ -69,17 +75,51 @@ jimport('joomla.html.html.bootstrap');
 	<?php endif; ?>
 
 	<?php if ($this->contact->image && $this->params->get('show_image')) : ?>
-		<div class="thumbnail pull-right">
+		<div class="contact-image">
 			<?php echo JHtml::_('image', $this->contact->image, JText::_('COM_CONTACT_IMAGE_DETAILS'), array('align' => 'middle', 'itemprop' => 'image')); ?>
 		</div>
 	<?php endif; ?>
 
-	<?php if ($this->contact->con_position && $this->params->get('show_position')) : ?>
-		<dl class="contact-position dl-horizontal">
-			<dd itemprop="jobTitle">
-				<?php echo $this->contact->con_position; ?>
-			</dd>
-		</dl>
+	<?php if ($this->contact->misc && $this->params->get('show_misc')) : ?>
+
+		<?php if ($this->params->get('presentation_style') == 'plain') : ?>
+			<div class="contact-extra-info">
+				<?php echo $this->contact->misc; ?>
+			</div>
+		<?php else : ?>
+
+			<?php if ($this->params->get('presentation_style') == 'sliders') : ?>
+				<?php echo JHtml::_('bootstrap.addSlide', 'slide-contact', JText::_('COM_CONTACT_OTHER_INFORMATION'), 'display-misc'); ?>
+			<?php endif; ?>
+			<?php if ($this->params->get('presentation_style') == 'tabs') : ?>
+				<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'display-misc', JText::_('COM_CONTACT_OTHER_INFORMATION', true)); ?>
+			<?php endif; ?>
+			
+
+			<div class="contact-miscinfo">
+				<dl class="dl-horizontal">
+					<dt>
+						<span class="<?php echo $this->params->get('marker_class'); ?>">
+						<?php echo $this->params->get('marker_misc'); ?>
+						</span>
+					</dt>
+					<dd>
+						<span class="contact-misc">
+							<?php echo $this->contact->misc; ?>
+						</span>
+					</dd>
+				</dl>
+			</div>
+
+		<?php endif; ?>
+
+		<?php if ($this->params->get('presentation_style') == 'sliders') : ?>
+			<?php echo JHtml::_('bootstrap.endSlide'); ?>
+		<?php endif; ?>
+		<?php if ($this->params->get('presentation_style') == 'tabs') : ?>
+			<?php echo JHtml::_('bootstrap.endTab'); ?>
+		<?php endif; ?>
+
 	<?php endif; ?>
 
 	<?php echo $this->loadTemplate('address'); ?>
@@ -157,42 +197,6 @@ jimport('joomla.html.html.bootstrap');
 		<?php endif; ?>
 
 		<?php echo $this->loadTemplate('profile'); ?>
-
-		<?php if ($this->params->get('presentation_style') == 'sliders') : ?>
-			<?php echo JHtml::_('bootstrap.endSlide'); ?>
-		<?php endif; ?>
-		<?php if ($this->params->get('presentation_style') == 'tabs') : ?>
-			<?php echo JHtml::_('bootstrap.endTab'); ?>
-		<?php endif; ?>
-
-	<?php endif; ?>
-
-	<?php if ($this->contact->misc && $this->params->get('show_misc')) : ?>
-
-		<?php if ($this->params->get('presentation_style') == 'sliders') : ?>
-			<?php echo JHtml::_('bootstrap.addSlide', 'slide-contact', JText::_('COM_CONTACT_OTHER_INFORMATION'), 'display-misc'); ?>
-		<?php endif; ?>
-		<?php if ($this->params->get('presentation_style') == 'tabs') : ?>
-			<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'display-misc', JText::_('COM_CONTACT_OTHER_INFORMATION', true)); ?>
-		<?php endif; ?>
-		<?php if ($this->params->get('presentation_style') == 'plain'):?>
-			<?php echo '<h3>'. JText::_('COM_CONTACT_OTHER_INFORMATION').'</h3>';  ?>
-		<?php endif; ?>
-
-		<div class="contact-miscinfo">
-			<dl class="dl-horizontal">
-				<dt>
-					<span class="<?php echo $this->params->get('marker_class'); ?>">
-					<?php echo $this->params->get('marker_misc'); ?>
-					</span>
-				</dt>
-				<dd>
-					<span class="contact-misc">
-						<?php echo $this->contact->misc; ?>
-					</span>
-				</dd>
-			</dl>
-		</div>
 
 		<?php if ($this->params->get('presentation_style') == 'sliders') : ?>
 			<?php echo JHtml::_('bootstrap.endSlide'); ?>
