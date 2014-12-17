@@ -15,9 +15,9 @@ jimport('joomla.html.html.bootstrap');
 ?>
 <div class="contact<?php echo $this->pageclass_sfx?>" itemscope itemtype="http://schema.org/Person">
 	<?php if ($this->params->get('show_page_heading')) : ?>
-		<h1>
+		<h2>
 			<?php echo $this->escape($this->params->get('page_heading')); ?>
-		</h1>
+		</h2>
 	<?php endif; ?>
 	<?php if ($this->contact->name && $this->params->get('show_name')) : ?>
 		<div class="page-header">
