@@ -9,3 +9,12 @@
 	-moz-box-shadow:	@x @y @blur @spread rgba(0, 0, 0, @alpha);
 	box-shadow:		@x @y @blur @spread rgba(0, 0, 0, @alpha);
 }
+
+.vertical-gradient-middle (@outsideColor: #eee, @middleColor: white) {
+ 	background-color: @outsideColor;
+	background-image: -webkit-gradient(linear, right top, right bottom, color-stop(@outsideColor, 0%), color-stop(@middleColor, 50%), color-stop(@outsideColor, 100%));
+	background-image: -webkit-linear-gradient(top, @outsideColor 0%, @middleColor 50%, @outsideColor 100%);
+	background-image: -moz-linear-gradient(top, @outsideColor 0%, @middleColor 50%, @outsideColor 100%);
+	background-image: -ms-linear-gradient(top, @outsideColor 0%, @middleColor 50%, @outsideColor 100%);
+	background-image: -o-linear-gradient(top, @outsideColor 0%, @middleColor 50%, @outsideColor 100%);
+}

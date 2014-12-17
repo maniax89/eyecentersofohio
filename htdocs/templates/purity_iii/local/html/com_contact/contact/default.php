@@ -14,10 +14,10 @@ $cparams = JComponentHelper::getParams('com_media');
 jimport('joomla.html.html.bootstrap');
 ?>
 <div class="contact<?php echo $this->pageclass_sfx?>" itemscope itemtype="http://schema.org/Person">
-	<?php if ($this->params->get('show_page_heading')) : ?>
-		<h2>
+	<?php if ($this->params->get('show_page_heading') && $this->params->get('show_email_form') && ($this->contact->email_to || $this->contact->user_id)) : ?>
+		<h1>
 			<?php echo $this->escape($this->params->get('page_heading')); ?>
-		</h2>
+		</h1>
 	<?php endif; ?>
 	<?php if ($this->contact->name && $this->params->get('show_name')) : ?>
 		<div class="page-header">

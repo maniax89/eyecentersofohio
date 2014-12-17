@@ -56,13 +56,15 @@ article, .contact, .contact-category {
 	}
 }
 
-.article-title {
-	text-align: center;
-}
-
 /* end core overrides for full-page width */
 
+
 /* navigation overrides */
+#t3-mainnav, .head-search .search {
+	.vertical-gradient-middle (@brand-primary, @lighter-brand);
+	border: none;
+}
+
 .t3-mainnav .t3-navbar {
 	float: none;
 }
@@ -127,6 +129,10 @@ article, .contact, .contact-category {
 			color: @gray-dark;
 		}
 	}
+
+	&.open .logo_link{
+		box-shadow: none;
+	}
 }
 
 /* end navigation overrides */
@@ -139,6 +145,9 @@ article, .contact, .contact-category {
 
 #cboxLoadedContent {
 	margin-top: 0;
+	.contact {
+		padding: 0;
+	}
 }
 /* end bootstrap overrides */
 
