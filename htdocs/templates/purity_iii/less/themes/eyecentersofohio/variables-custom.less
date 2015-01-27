@@ -18,3 +18,9 @@
 	background-image: -ms-linear-gradient(top, @outsideColor 0%, @middleColor 50%, @outsideColor 100%);
 	background-image: -o-linear-gradient(top, @outsideColor 0%, @middleColor 50%, @outsideColor 100%);
 }
+
+.scale (@x-axis: 1, @y-axis: 1) {
+	-ms-transform: scale(@x-axis, @y-axis);
+    -webkit-transform: scale(@x-axis, @y-axis);
+    transform: scale(@x-axis, @y-axis);
+}

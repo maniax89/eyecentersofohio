@@ -2,6 +2,7 @@
   width: 100%;
   margin: 0;
   padding: 0;
+  font-size: 1.2em;
 }
 #t3-content {
   padding: 0;
@@ -312,4 +313,80 @@ article,
   display: inline-block;
   padding: 1em;
   min-width: 20em;
+}
+
+#locations_container .location {
+  padding: 2em;
+  float: none;
+  width: 100%%;
+  border: 2px solid #57a8b0;
+  margin: 1%;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  border-radius: 1em;
+}
+#locations_container .location h4 {
+  margin-top: 2em;
+  color: #3b2182;
+  font-weight: bold;
+  text-decoration: underline;
+}
+#locations_container .location .img_container {
+  height: 240px;
+  line-height: 238px;
+  text-align: center;
+}
+#locations_container .location img {
+  display: inline;
+  margin-top: 0;
+  vertical-align: middle;
+  width: 300px !important;
+  transition: 0.5s ease-in-out;
+  -webkit-border-radius: 10em;
+  -moz-border-radius: 10em;
+  border-radius: 10em;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+#locations_container .location img:hover {
+  -ms-transform: scale(1.2, 1.2);
+  -webkit-transform: scale(1.2, 1.2);
+  transform: scale(1.2, 1.2);
+}
+@media (min-width: 992px) {
+  #locations_container .location {
+    width: 48%%;
+    float: left;
+  }
+}
+
+#about_us {
+  border: 4px solid #3b2182;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  border-radius: 1em;
+}
+#about_us h4 {
+  padding: 1%;
+  font-weight: bold;
+}
+.left,
+.right {
+  float: left;
+  width: 48%;
+  padding: 1%;
+}
+.huge_banner {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 2.5em;
+  color: #57a8b0;
+  display: block;
+  text-align: center;
+}
+.signature {
+  color: #666666;
+  font-style: italic;
+  float: right;
 }
