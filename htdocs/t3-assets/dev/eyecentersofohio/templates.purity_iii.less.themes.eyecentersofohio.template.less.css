@@ -51,7 +51,8 @@ article,
 }
 
 #t3-mainnav,
-.head-search .search {
+.head-search .search,
+#t3-off-canvas .t3-off-canvas-header {
   background-color: #7abac0;
   background-image: -webkit-gradient(linear, right top, right bottom, color-stop(#7abac0, 0%), color-stop(#bfdee1, 50%), color-stop(#7abac0, 100%));
   background-image: -webkit-linear-gradient(top, #7abac0 0%, #bfdee1 50%, #7abac0 100%);
@@ -110,6 +111,26 @@ article,
 }
 .navbar-default .navbar-nav > li.open .logo_link {
   box-shadow: none;
+}
+
+#t3-off-canvas {
+  top: -55px !important;
+  background-color: #444444;
+}
+#t3-off-canvas a {
+  border-bottom: 1px solid #7abac0;
+}
+#t3-off-canvas li {
+  border-top: none;
+}
+#t3-off-canvas li.active {
+  display: none;
+}
+#t3-off-canvas li.parent {
+  background-color: #444444;
+}
+#t3-off-canvas .t3-off-canvas-body {
+  padding: 0;
 }
 
 #cboxTitle {
