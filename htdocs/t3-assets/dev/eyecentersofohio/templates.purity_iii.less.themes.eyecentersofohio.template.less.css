@@ -412,3 +412,16 @@ article,
 #lasik_faq div.accordionfaqitem a:hover {
   color: #a48de2 !important;
 }
+
+.quote_container {
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  border-radius: 1em;
+  background-color: #eeeeee;
+  border: 2px solid #999999;
+  padding: 1em;
+  margin: 1em;
+}
+#success_stories a {
+  color: #3b2182;
+}
