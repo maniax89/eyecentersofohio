@@ -390,3 +390,21 @@ article,
   font-style: italic;
   float: right;
 }
+
+#lasik_faq {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+#lasik_faq h3.accordionfaqheader {
+  padding: 1em !important;
+}
+#lasik_faq div.accordionfaqitem {
+  padding: 1em;
+}
+#lasik_faq div.accordionfaqitem a {
+  color: #3b2182 !important;
+  font-weight: bold;
+  text-decoration: underline;
+}
+#lasik_faq div.accordionfaqitem a:hover {
+  color: #a48de2 !important;
+}
