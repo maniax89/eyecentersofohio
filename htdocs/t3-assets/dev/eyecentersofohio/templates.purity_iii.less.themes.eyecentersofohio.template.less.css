@@ -20,28 +20,32 @@
 }
 article,
 .contact,
-.contact-category {
+.contact-category,
+#t3-content .search {
   margin: 0 auto;
   padding: 2em 1.5em;
 }
 @media (min-width: 768px) {
   article,
   .contact,
-  .contact-category {
+  .contact-category,
+  #t3-content .search {
     width: 760px;
   }
 }
 @media (min-width: 992px) {
   article,
   .contact,
-  .contact-category {
+  .contact-category,
+  #t3-content .search {
     width: 980px;
   }
 }
 @media (min-width: 1200px) {
   article,
   .contact,
-  .contact-category {
+  .contact-category,
+  #t3-content .search {
     width: 1180px;
   }
 }
