@@ -23,6 +23,9 @@ article,
 .contact-category,
 #t3-content .search {
   margin: 0 auto;
+}
+.contact-category,
+.contact {
   padding: 2em 1.5em;
 }
 @media (min-width: 768px) {
@@ -30,6 +33,7 @@ article,
   .contact,
   .contact-category,
   #t3-content .search {
+    padding: 2em 1.5em;
     width: 760px;
   }
 }
@@ -51,8 +55,7 @@ article,
 }
 
 #t3-mainnav,
-.head-search .search,
-#t3-off-canvas .t3-off-canvas-header {
+.head-search .search {
   background-color: #7abac0;
   background-image: -webkit-gradient(linear, right top, right bottom, color-stop(#7abac0, 0%), color-stop(#bfdee1, 50%), color-stop(#7abac0, 100%));
   background-image: -webkit-linear-gradient(top, #7abac0 0%, #bfdee1 50%, #7abac0 100%);
@@ -117,7 +120,8 @@ article,
   top: -55px !important;
   background-color: #444444;
 }
-#t3-off-canvas a {
+#t3-off-canvas a,
+#t3-off-canvas .t3-off-canvas-header {
   border-bottom: 1px solid #7abac0;
 }
 #t3-off-canvas li {
@@ -129,8 +133,16 @@ article,
 #t3-off-canvas li.parent {
   background-color: #444444;
 }
+#t3-off-canvas .t3-off-canvas-header {
+  background-color: #222222;
+}
 #t3-off-canvas .t3-off-canvas-body {
   padding: 0;
+}
+#t3-off-canvas .close {
+  color: #7abac0;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
 }
 
 #cboxTitle {
@@ -175,7 +187,6 @@ article,
   background-color: #ffffff;
   border: 1px solid #222222;
   padding: 1em;
-  width: 20em;
   margin: 0 auto;
 }
 #splash_home.loaded {
@@ -211,25 +222,25 @@ article,
   border-top: 2px solid #222222;
 }
 #splash_home .eye_chart_line:nth-child(1) {
-  font-size: 2em;
+  font-size: 1.7em;
 }
 #splash_home .eye_chart_line:nth-child(2) {
-  font-size: 1.85714286em;
+  font-size: 1.54285714em;
 }
 #splash_home .eye_chart_line:nth-child(3) {
-  font-size: 1.71428571em;
+  font-size: 1.38571429em;
 }
 #splash_home .eye_chart_line:nth-child(4) {
-  font-size: 1.57142857em;
+  font-size: 1.22857143em;
 }
 #splash_home .eye_chart_line:nth-child(5) {
-  font-size: 1.42857143em;
+  font-size: 1.07142857em;
 }
 #splash_home .eye_chart_line:nth-child(6) {
-  font-size: 1.28571429em;
+  font-size: 0.91428571em;
 }
 #splash_home .eye_chart_line:nth-child(7) {
-  font-size: 1.14285714em;
+  font-size: 0.75714286em;
 }
 @media (min-width: 768px) {
   #splash_home {
@@ -307,12 +318,11 @@ article,
   text-align: center;
 }
 .contact-card {
-  padding: 1em;
   display: inline-block;
 }
 .contact-image {
-  height: 20em;
-  width: 20em;
+  height: 15em;
+  width: 15em;
   overflow: hidden;
   -webkit-border-radius: 10em;
   -moz-border-radius: 10em;
@@ -393,14 +403,15 @@ article,
   border-radius: 1em;
 }
 #about_us h4 {
-  padding: 1%;
+  margin: 0;
+  padding: 1em 1em 0;
   font-weight: bold;
 }
 .left,
 .right {
-  float: left;
-  width: 48%;
-  padding: 1%;
+  float: none;
+  width: 100%;
+  padding: 1em;
 }
 .huge_banner {
   font-style: italic;
@@ -414,6 +425,14 @@ article,
   color: #666666;
   font-style: italic;
   float: right;
+}
+@media (min-width: 768px) {
+  .left,
+  .right {
+    float: left !important;
+    width: 48% !important;
+    padding: 1%;
+  }
 }
 
 #lasik_faq {
@@ -441,8 +460,20 @@ article,
   background-color: #eeeeee;
   border: 2px solid #999999;
   padding: 1em;
-  margin: 1em;
+  margin: 1em 0;
 }
 #success_stories a {
   color: #3b2182;
+}
+
+.form-horizontal .control-group .controls {
+  margin-left: 0;
+}
+#jform_contact_message {
+  height: 8em;
+}
+@media (min-width: 786px) {
+  .form-horizontal .control-group .controls {
+    margin-left: 11em;
+  }
 }

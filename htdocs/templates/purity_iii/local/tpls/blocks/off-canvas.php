@@ -19,7 +19,7 @@ defined('_JEXEC') or die;
 <div id="t3-off-canvas" class="t3-off-canvas <?php $this->_c('off-canvas') ?>">
 
   <div class="t3-off-canvas-header">
-    <h2 class="t3-off-canvas-header-title">Eye Centers of Ohio</h2>
+    <h2 class="t3-off-canvas-header-title"><a href="<?php echo JURI::base(true); ?>">Eye Centers of Ohio</a></h2>
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
   </div>
 

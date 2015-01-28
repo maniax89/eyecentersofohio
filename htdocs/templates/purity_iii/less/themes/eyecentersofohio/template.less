@@ -38,11 +38,15 @@
 
 article, .contact, .contact-category, #t3-content .search {
 	margin: 0 auto;
+}
+
+.contact-category, .contact {
 	padding: 2em 1.5em;
 }
 
 @media (min-width: 768px) {
 	article, .contact, .contact-category, #t3-content .search {
+		padding: 2em 1.5em;
 		width: 760px;
 	}
 }
@@ -61,7 +65,7 @@ article, .contact, .contact-category, #t3-content .search {
 
 
 /* navigation overrides */
-#t3-mainnav, .head-search .search, #t3-off-canvas .t3-off-canvas-header{
+#t3-mainnav, .head-search .search {
 	.vertical-gradient-middle (@brand-primary, @lighter-brand);
 	border: none;
 }
@@ -134,7 +138,7 @@ article, .contact, .contact-category, #t3-content .search {
 	top: -55px !important;
 	background-color: @gray-dark;
 
-	a {
+	a, .t3-off-canvas-header {
 		border-bottom: 1px solid @brand-primary;
 	}
 
@@ -150,8 +154,18 @@ article, .contact, .contact-category, #t3-content .search {
 		background-color: @gray-dark;
 	}
 
+	.t3-off-canvas-header {
+		background-color: @gray-darker;
+	}
+
 	.t3-off-canvas-body {
 		padding: 0;
+	}
+
+	.close {
+		color: @brand-primary;
+		opacity: 0.6;
+		filter: alpha(opacity=60);
 	}
 }
 /* end sidebar overrides */
@@ -223,7 +237,6 @@ article, .contact, .contact-category, #t3-content .search {
 	background-color: @white;
 	border: 1px solid @gray-darker;
 	padding: 1em;
-	width: 20em;
 	margin: 0 auto;
 
 	&.loaded {
@@ -263,7 +276,7 @@ article, .contact, .contact-category, #t3-content .search {
 			border-top: 2px solid @gray-darker;
 		}
 
-		.eye_chart_loop(2em, 1em, 7);
+		.eye_chart_loop(1.7em, 0.6em, 7);
 	}
 }
 
@@ -341,13 +354,12 @@ article, .contact, .contact-category, #t3-content .search {
 }
 
 .contact-card {
-	padding: 1em;
 	display: inline-block;
 }
 
 .contact-image {
-	height: 20em;
-	width: 20em;
+	height: 15em;
+	width: 15em;
 	overflow: hidden;
 	.border-radius(10em);
 	.drop-shadow(10px, 10px, 5px, 0px, 0.75);
@@ -426,15 +438,16 @@ article, .contact, .contact-category, #t3-content .search {
 	border: 4px solid @brand-secondary;
 	.border-radius(1em);
 	h4 {
-		padding: 1%;
+		margin: 0;
+		padding: 1em 1em 0;
 		font-weight: bold;
 	}
 }
 
 .left, .right {
-	float: left;
-	width: 48%;
-	padding: 1%;
+	float: none;
+	width: 100%;
+	padding: 1em;
 }
 
 .huge_banner {
@@ -451,6 +464,16 @@ article, .contact, .contact-category, #t3-content .search {
 	font-style: italic;
 	float: right;
 }
+
+@media (min-width: 768px) {
+	.left, .right {
+		float: left !important;
+		width: 48% !important;
+		padding: 1%;
+	}
+}
+
+
 /* end about us */
 
 /*LASIK */
@@ -481,7 +504,7 @@ article, .contact, .contact-category, #t3-content .search {
 	background-color: @gray-lighter;
 	border: 2px solid @gray-light;
 	padding: 1em;
-	margin: 1em;
+	margin: 1em 0;
 }
 #success_stories {
 	a {
@@ -490,3 +513,19 @@ article, .contact, .contact-category, #t3-content .search {
 }
 /* end LASIK success stories */
 /* end LASIK */
+
+/* contact us */
+.form-horizontal .control-group .controls {
+	margin-left: 0;
+}
+
+#jform_contact_message {
+	height: 8em;
+}
+
+@media (min-width: 786px) {
+	.form-horizontal .control-group .controls {
+		margin-left: 11em;
+	}
+}
+/* end contact us */
