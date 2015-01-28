@@ -390,38 +390,40 @@ article, .contact, .contact-category, #t3-content .search {
 /* end doctors page */
 
 /* locations */
-#locations_container {
-	.location {
-		padding: 2em;
-		float: none;
-		width: 100%%;
-		border: 2px solid @dark-brand;
-		margin: 1%;
-		.border-radius(1em);
+#locations_container .location {
+	padding: 1em;
+	float: none;
+	width: 100%%;
+	border: 2px solid @dark-brand;
+	margin: 1%;
+	.border-radius(1em);
 
-		h4 {
-			margin-top: 2em;
-			color: @brand-secondary;
-			font-weight: bold;
-			text-decoration: underline;
+	h4 {
+		margin-top: 2em;
+		color: @brand-secondary;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	.img_container {
+		height: 240px;
+		line-height: 238px;
+		text-align: center;
+	}
+	img {
+		display: inline;
+		margin-top: 0;
+		vertical-align: middle;
+		width: 300px !important;
+		transition: 0.5s ease-in-out;
+		.border-radius(10em);
+		.drop-shadow(10px, 10px, 5px, 0px, 0.75);
+		&:hover {
+			.scale(1.2, 1.2);
 		}
-		.img_container {
-			height: 240px;
-			line-height: 238px;
-			text-align: center;
-		}
-		img {
-			display: inline;
-			margin-top: 0;
-			vertical-align: middle;
-			width: 300px !important;
-			transition: 0.5s ease-in-out;
-			.border-radius(10em);
-			.drop-shadow(10px, 10px, 5px, 0px, 0.75);
-			&:hover {
-				.scale(1.2, 1.2);
-			}
-		}
+	}
+
+	iframe {
+		height: 200px !important;
 	}
 }
 
@@ -429,6 +431,9 @@ article, .contact, .contact-category, #t3-content .search {
 	#locations_container .location {
 		width: 48%%;
 		float: left;
+		iframe {
+			height: 400px !important;
+		}
 	}
 }
 /* end locations */
