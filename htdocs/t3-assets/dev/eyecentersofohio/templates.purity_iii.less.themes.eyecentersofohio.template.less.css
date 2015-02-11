@@ -438,7 +438,7 @@ article,
 }
 @media (min-width: 992px) {
   #locations_container .location {
-    width: 48%%;
+    width: 48%;
     float: left;
   }
   #locations_container .location iframe {
@@ -490,9 +490,11 @@ article,
 }
 #lasik_faq h3.accordionfaqheader {
   padding: 1em !important;
+  line-height: 1.5em;
 }
 #lasik_faq div.accordionfaqitem {
   padding: 1em;
+  line-height: 1.5em;
 }
 #lasik_faq div.accordionfaqitem a {
   color: #3b2182 !important;
