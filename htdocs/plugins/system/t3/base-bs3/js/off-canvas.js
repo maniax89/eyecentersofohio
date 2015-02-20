@@ -85,6 +85,7 @@ jQuery (document).ready(function($){
         // disable scroll on page
         var scrollTop = ($('html').scrollTop()) ? $('html').scrollTop() : $('body').scrollTop(); // Works for Chrome, Firefox, IE...
         $('html').addClass('noscroll').css('top',-scrollTop).data('top', scrollTop);
+        scrollTop -= $("#t3-mainnav").height();
         $('.t3-off-canvas').css('top',scrollTop);
 
         // make the fixed element become absolute
@@ -152,7 +153,7 @@ jQuery (document).ready(function($){
               }
               $(window).data('scroll-events', null);
             }
-        }, 550);
+        }, 600);
 
         // fix for old ie
         if ($('html').hasClass ('old-ie')) {
