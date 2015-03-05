@@ -393,6 +393,9 @@ article,
 .contact-image + .contact-name {
   padding: 1em 0;
 }
+.contact-link:focus {
+  outline: none;
+}
 .contact-link-container {
   text-align: center;
   font-weight: bold;
