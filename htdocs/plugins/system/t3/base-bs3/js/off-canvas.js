@@ -43,19 +43,22 @@ jQuery (document).ready(function($){
         $toggles = $('.off-canvas-toggle'),
         $offcanvas = $('.t3-off-canvas'),
         $close = $('.t3-off-canvas .close'),
+        $fixed_navbar = $("#t3-mainnav"),
         $btn=null,
         $nav=null,
         direction = 'left',
-        $fixed = null;
+        $fixed = null,
+        transitionName = transitionEndEventName();
     // no wrapper, just exit
     if (!$wrapper.length) return ;
 
-    $offcanvas.on(transitionEndEventName(), function() {
-        var $fixed_navbar = $inner.find('*').filter (function() {return $(this).css("position") === 'fixed';})
-        if($wrapper.hasClass('off-canvas-open')) {
-            $fixed_navbar.css("top", -55);
-        } else {
-            $fixed_navbar.css("top", 0);
+    $("#t3-off-canvas").on(transitionName, function(event) {
+        if(event.originalEvent.propertyName === "transform") {
+            if($wrapper.hasClass('off-canvas-open')) {
+                $fixed_navbar.css("top", $(this).css("top"));
+            } else {
+                $fixed_navbar.css("top", 0);
+            }
         }
     });
     // add effect class for nav
@@ -114,15 +117,14 @@ jQuery (document).ready(function($){
         $('html').addClass('noscroll').css('top',-scrollTop).data('top', scrollTop);
         scrollTop -= $("#t3-mainnav").height();
         $('.t3-off-canvas').css('top',scrollTop);
-
-        $fixed.css("top", -55);
+        $fixed_navbar.css("top", scrollTop);
 
         $wrapper.scrollTop (scrollTop);
         // update effect class
         $wrapper[0].className = $wrapper[0].className.replace (/\s*off\-canvas\-effect\-\d+\s*/g, ' ').trim() +
             ' ' + $btn.data('effect') + ' ' + 'off-canvas-' + direction;
 
-        oc_show();
+        setTimeout(oc_show, 50);
 
         return false;
     });
