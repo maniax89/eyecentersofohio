@@ -55,25 +55,23 @@
 
 .leading-0 {
 	min-height: 500px;
-	background-image: url(../../../images/eyecare-tool.jpg);
+	background-image: none;
 	article {
 		top: 25px;
 	}
-	&:before {
-	    content: '';
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		background-image: linear-gradient(to bottom,@gray-darker,@gray-dark);
-		opacity: .6; 
-	}
+}
+
+.leading-1 {
+	-webkit-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+	border-top: 3px solid @darkest-brand;
+	border-bottom: 3px solid @darkest-brand;
 }
 
 .leading-2 {
 	min-height: 1200px;
-	background-image: url(../../../images/reading-glasses.jpg);
+	background-image: none;
 }
 
 article, .contact, .contact-category, #t3-content .search {
@@ -91,9 +89,21 @@ article, .contact, .contact-category, #t3-content .search {
 	}
 	.leading-0 {
 		min-height: 850px;
+		background-image: url(../../../images/eyecare-tool.jpg);
+		&:before {
+		    content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background-image: linear-gradient(to bottom,@gray-darker,@gray-dark);
+			opacity: .6; 
+		}
 	}
 	.leading-2 {
 		min-height: 900px;
+		background-image: url(../../../images/reading-glasses.jpg);
 	}
 	.leading-0, .leading-2 {
 		article {

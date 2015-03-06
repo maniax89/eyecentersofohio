@@ -37,24 +37,21 @@
 }
 .leading-0 {
   min-height: 500px;
-  background-image: url(/eyecentersofohio/images/eyecare-tool.jpg);
+  background-image: none;
 }
 .leading-0 article {
   top: 25px;
 }
-.leading-0:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-image: linear-gradient(to bottom, #222222, #444444);
-  opacity: .6;
+.leading-1 {
+  -webkit-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.75);
+  border-top: 3px solid #34686d;
+  border-bottom: 3px solid #34686d;
 }
 .leading-2 {
   min-height: 1200px;
-  background-image: url(/eyecentersofohio/images/reading-glasses.jpg);
+  background-image: none;
 }
 article,
 .contact,
@@ -78,9 +75,21 @@ article,
   }
   .leading-0 {
     min-height: 850px;
+    background-image: url(/eyecentersofohio/images/eyecare-tool.jpg);
+  }
+  .leading-0:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom, #222222, #444444);
+    opacity: .6;
   }
   .leading-2 {
     min-height: 900px;
+    background-image: url(/eyecentersofohio/images/reading-glasses.jpg);
   }
   .leading-0 article,
   .leading-2 article {
