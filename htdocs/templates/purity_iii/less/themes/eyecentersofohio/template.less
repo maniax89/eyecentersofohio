@@ -143,14 +143,22 @@ article, .contact, .contact-category, #t3-content .search {
 
 /* navigation overrides */
 #t3-mainnav, .head-search .search {
-	.vertical-gradient-middle (@brand-primary, @lighter-brand);
+	.vertical-gradient-middle (@brand-secondary, @lighter-brand-secondary);
 	border: none;
 }
+
+
 
 #t3-mainnav {
 	-webkit-box-shadow: 0px 10px 48px 6px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 10px 48px 6px rgba(0,0,0,0.75);
 	box-shadow: 0px 10px 48px 6px rgba(0,0,0,0.75);
+
+	.off-canvas-toggle:hover, 
+	.off-canvas-toggle:focus, 
+	.off-canvas-toggle:active {
+		background-color: @brand-secondary;
+	}
 }
 
 .t3-mainnav .t3-navbar {
