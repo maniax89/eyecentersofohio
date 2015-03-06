@@ -42,6 +42,16 @@
 .leading-0 article {
   top: 25px;
 }
+.leading-0:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom, #222222, #444444);
+  opacity: .6;
+}
 .leading-2 {
   min-height: 1200px;
   background-image: url(/eyecentersofohio/images/reading-glasses.jpg);
@@ -117,6 +127,11 @@ article,
   background-image: -ms-linear-gradient(top, #7abac0 0%, #bfdee1 50%, #7abac0 100%);
   background-image: -o-linear-gradient(top, #7abac0 0%, #bfdee1 50%, #7abac0 100%);
   border: none;
+}
+#t3-mainnav {
+  -webkit-box-shadow: 0px 10px 48px 6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 10px 48px 6px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 10px 48px 6px rgba(0, 0, 0, 0.75);
 }
 .t3-mainnav .t3-navbar {
   float: none;

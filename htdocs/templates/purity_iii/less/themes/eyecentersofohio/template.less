@@ -50,6 +50,7 @@
 		left: 50%;
 		margin-left: -175px;
 	}
+	
 }
 
 .leading-0 {
@@ -57,6 +58,16 @@
 	background-image: url(../../../images/eyecare-tool.jpg);
 	article {
 		top: 25px;
+	}
+	&:before {
+	    content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-image: linear-gradient(to bottom,@gray-darker,@gray-dark);
+		opacity: .6; 
 	}
 }
 
@@ -124,6 +135,12 @@ article, .contact, .contact-category, #t3-content .search {
 #t3-mainnav, .head-search .search {
 	.vertical-gradient-middle (@brand-primary, @lighter-brand);
 	border: none;
+}
+
+#t3-mainnav {
+	-webkit-box-shadow: 0px 10px 48px 6px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 10px 48px 6px rgba(0,0,0,0.75);
+	box-shadow: 0px 10px 48px 6px rgba(0,0,0,0.75);
 }
 
 .t3-mainnav .t3-navbar {

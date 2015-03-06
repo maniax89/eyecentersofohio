@@ -19,6 +19,25 @@ jQuery (document).ready(function($){
         $('html').addClass('safari');
     }
 
+    var transitionEndEventName = function() {
+        var i,
+            undefined,
+            el = document.createElement('div'),
+            transitions = {
+                'transition':'transitionend',
+                'OTransition':'otransitionend',  // oTransitionEnd in very old Opera
+                'MozTransition':'transitionend',
+                'WebkitTransition':'webkitTransitionEnd'
+            };
+
+        for (i in transitions) {
+            if (transitions.hasOwnProperty(i) && el.style[i] !== undefined) {
+                return transitions[i];
+            }
+        }
+        //TODO: throw 'TransitionEnd event is not supported in this browser'; 
+    };
+
     var $wrapper = $('body'),
         $inner = $('.t3-wrapper'),
         $toggles = $('.off-canvas-toggle'),
@@ -31,6 +50,14 @@ jQuery (document).ready(function($){
     // no wrapper, just exit
     if (!$wrapper.length) return ;
 
+    $offcanvas.on(transitionEndEventName(), function() {
+        var $fixed_navbar = $inner.find('*').filter (function() {return $(this).css("position") === 'fixed';})
+        if($wrapper.hasClass('off-canvas-open')) {
+            $fixed_navbar.css("top", -55);
+        } else {
+            $fixed_navbar.css("top", 0);
+        }
+    });
     // add effect class for nav
     $toggles.each (function () {
         var $this = $(this),
@@ -88,23 +115,14 @@ jQuery (document).ready(function($){
         scrollTop -= $("#t3-mainnav").height();
         $('.t3-off-canvas').css('top',scrollTop);
 
-        // make the fixed element become absolute
-        $fixed.each (function () {
-            var $this = $(this),
-                $parent = $this.parent(),
-                mtop = 0;
-            // find none static parent
-            while (!$parent.is($inner) && $parent.css("position") === 'static') $parent = $parent.parent();
-            mtop = -$parent.offset().top;
-            $this.css ({'position': 'absolute', 'margin-top': mtop});
-        });
+        $fixed.css("top", -55);
 
         $wrapper.scrollTop (scrollTop);
         // update effect class
         $wrapper[0].className = $wrapper[0].className.replace (/\s*off\-canvas\-effect\-\d+\s*/g, ' ').trim() +
             ' ' + $btn.data('effect') + ' ' + 'off-canvas-' + direction;
 
-        setTimeout(oc_show, 50);
+        oc_show();
 
         return false;
     });
@@ -131,29 +149,23 @@ jQuery (document).ready(function($){
         $close.off ('click', oc_hide);
         $offcanvas.off ('click', stopBubble);
 
-        //delay for click action
-        setTimeout(function(){
-            $wrapper.removeClass ('off-canvas-open');
-        }, 100);
+        $wrapper.removeClass ('off-canvas-open');
 
-        setTimeout (function (){
-            $wrapper.removeClass ($btn.data('effect')).removeClass ('off-canvas-'+direction);
-            $wrapper.scrollTop (0);
-            // enable scroll
-            $('html').removeClass ('noscroll').css('top', '');
-            $('html,body').scrollTop ($('html').data('top'));
-            $nav.removeClass ('off-canvas-current');
-            // restore fixed elements
-            $fixed.css ({'position': '', 'margin-top': ''});
-            // re-enable scroll
-            if ($(window).data('scroll-events')) {
-              var handlers = $(window).data('scroll-events');
-              for (var i=0; i<handlers.length; i++) {
-                $(window).on ('scroll', handlers[i]);
-              }
-              $(window).data('scroll-events', null);
-            }
-        }, 600);
+        $wrapper.removeClass ($btn.data('effect')).removeClass ('off-canvas-'+direction);
+        $wrapper.scrollTop (0);
+        // enable scroll
+        $('html').removeClass ('noscroll').css('top', '');
+        $('html,body').scrollTop ($('html').data('top'));
+        $nav.removeClass ('off-canvas-current');
+        
+        // re-enable scroll
+        if ($(window).data('scroll-events')) {
+          var handlers = $(window).data('scroll-events');
+          for (var i=0; i<handlers.length; i++) {
+            $(window).on ('scroll', handlers[i]);
+          }
+          $(window).data('scroll-events', null);
+        }
 
         // fix for old ie
         if ($('html').hasClass ('old-ie')) {
