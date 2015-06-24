@@ -12,6 +12,10 @@
  */
 
 /* core overrides for full-page width */
+body {
+	padding-top: 0;
+}
+
 #t3-mainbody {
  	width: 100%;
  	margin: 0;
@@ -150,6 +154,7 @@ article, .contact, .contact-category, #t3-content .search {
 
 
 #t3-mainnav {
+	position: static;
 	-webkit-box-shadow: 0px 10px 48px 6px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 10px 48px 6px rgba(0,0,0,0.75);
 	box-shadow: 0px 10px 48px 6px rgba(0,0,0,0.75);
@@ -308,6 +313,21 @@ article, .contact, .contact-category, #t3-content .search {
 }
 
 /* end extra-class styles */
+
+/* spotlight styles */
+.t3-sl {
+	padding: 0.5em 0;
+}
+
+#eco_logo img {
+	margin: 0 auto;
+	display: block;
+}
+
+.t3-sl .t3-module + .t3-module {
+	margin-top: 0;
+}
+/* end spotlight styles */
 
 /* spash page */
 

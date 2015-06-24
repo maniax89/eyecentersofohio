@@ -1,3 +1,6 @@
+body {
+  padding-top: 0;
+}
 #t3-mainbody {
   width: 100%;
   margin: 0;
@@ -138,6 +141,7 @@ article,
   border: none;
 }
 #t3-mainnav {
+  position: static;
   -webkit-box-shadow: 0px 10px 48px 6px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 10px 48px 6px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 10px 48px 6px rgba(0, 0, 0, 0.75);
@@ -260,6 +264,17 @@ article,
 .light_purple {
   background-color: #a48de2;
   color: #eeeeee;
+}
+
+.t3-sl {
+  padding: 0.5em 0;
+}
+#eco_logo img {
+  margin: 0 auto;
+  display: block;
+}
+.t3-sl .t3-module + .t3-module {
+  margin-top: 0;
 }
 
 #splash_home {
