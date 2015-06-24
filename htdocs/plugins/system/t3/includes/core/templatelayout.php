@@ -126,8 +126,12 @@ class T3TemplateLayout extends T3Template
 	function loadLayout($layout)
 	{
 		$path = T3_TEMPLATE_PATH . '/tpls/' . $layout . '.php';
+
 		if (!is_file($path)) {
-			$path = T3_TEMPLATE_PATH . '/tpls/default.php';
+			$path = T3_LOCAL_PATH . '/tpls/' . $layout . '.php';
+			if(!is_file($path)) {
+				$path = T3_TEMPLATE_PATH . '/tpls/default.php';
+			}
 		}
 
 		if (is_file($path)) {
