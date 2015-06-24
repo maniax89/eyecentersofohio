@@ -587,7 +587,7 @@ class DOMDocumentWrapper {
 			// dom nodes
 			self::debug('Importing nodes to document');
 			foreach($source as $node)
-				$return[] = $this->document->importNode($node, true);
+				$return[] = @$this->document->importNode($node, true);
 		} else {
 			// string markup
 			$fake = $this->documentFragmentCreate($source, $sourceCharset);

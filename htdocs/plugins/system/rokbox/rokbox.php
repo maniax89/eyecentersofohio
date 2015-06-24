@@ -1,8 +1,8 @@
 <?php
 /**
- * @version   $Id: rokbox.php 14085 2013-10-03 01:07:39Z djamil $
+ * @version   $Id: rokbox.php 28566 2015-06-18 17:27:40Z djamil $
  * @author    RocketTheme http://www.rockettheme.com
- * @copyright Copyright (C) 2007 - 2014 RocketTheme, LLC
+ * @copyright Copyright (C) 2007 - 2015 RocketTheme, LLC
  * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
  */
 
@@ -16,7 +16,7 @@ class plgSystemRokBox extends JPlugin
 	/**
 	 * @var string
 	 */
-	protected $_version = '2.0.8';
+	protected $_version = '2.0.11';
 	/**
 	 * @var string
 	 */
@@ -158,7 +158,7 @@ class plgSystemRokBox extends JPlugin
 
 			$files = array(
 				$app . 'moofx',
-				$app . 'mootools-mobile',
+				//$app . 'mootools-mobile',
 				$app . 'RokBox.Media',
 				$app . 'RokBox'
 			);
