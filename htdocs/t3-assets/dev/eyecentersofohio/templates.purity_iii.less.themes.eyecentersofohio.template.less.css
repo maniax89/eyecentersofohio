@@ -269,6 +269,9 @@ article,
 .t3-sl {
   padding: 0.5em 0;
 }
+#eco_logo {
+  font-family: 'Exo 2', sans-serif;
+}
 #eco_logo img {
   margin: 0 auto;
   display: block;
