@@ -178,30 +178,6 @@ article,
 .navbar-default .navbar-nav > li a:hover {
   box-shadow: none;
 }
-.navbar-default .navbar-nav > li .logo_link {
-  padding-top: 0.1em;
-  font-weight: bold;
-  font-size: 1.1em;
-  color: #666666;
-  position: relative;
-  height: 1em;
-  line-height: 1em;
-}
-.navbar-default .navbar-nav > li .logo_link img {
-  display: block;
-  margin: 0 auto;
-  height: 50px;
-  -webkit-transition: -webkit-transform 1s ease;
-  -moz-transition: -moz-transform 1s ease;
-  -o-transition: -o-transform 1s ease;
-  transition: transform 1s ease, visibility 0s linear 0.5s,opacity 0.5s linear;
-}
-.navbar-default .navbar-nav > li .logo_link:hover {
-  color: #444444;
-}
-.navbar-default .navbar-nav > li.open .logo_link {
-  box-shadow: none;
-}
 
 #t3-off-canvas {
   background-color: #444444;
