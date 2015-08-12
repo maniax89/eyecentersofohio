@@ -255,6 +255,22 @@ article,
   margin-top: 0;
 }
 
+.slideshowck {
+  width: 100% !important;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.cameraSlide,
+.corporate div.slideshow {
+  background-color: #eeeeee;
+}
+.camera_caption_title {
+  padding: 1em 0;
+}
+.camera_caption_desc {
+  padding-bottom: 1em;
+}
+
 #splash_home {
   text-shadow: 0 0 20px #444444;
   color: transparent;
