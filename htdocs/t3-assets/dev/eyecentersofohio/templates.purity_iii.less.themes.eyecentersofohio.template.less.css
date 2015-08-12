@@ -238,6 +238,8 @@ article,
 
 .t3-sl {
   padding: 0.5em 0;
+}
+.t3-sl-1 {
   -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
@@ -260,9 +262,11 @@ article,
   max-width: 1200px;
   margin: 0 auto;
 }
-.cameraSlide,
+.cameraSlide {
+  background-color: #ffffff;
+}
 .corporate div.slideshow {
-  background-color: #eeeeee;
+  background: none;
 }
 .camera_caption_title {
   padding: 1em 0;
