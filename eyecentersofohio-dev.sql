@@ -35,7 +35,7 @@ CREATE TABLE `jos_assets` (
   UNIQUE KEY `idx_asset_name` (`name`),
   KEY `idx_lft_rgt` (`lft`,`rgt`),
   KEY `idx_parent_id` (`parent_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `jos_assets` (
 
 LOCK TABLES `jos_assets` WRITE;
 /*!40000 ALTER TABLE `jos_assets` DISABLE KEYS */;
-INSERT INTO `jos_assets` VALUES (1,0,0,185,0,'root.1','Root Asset','{\"core.login.site\":{\"6\":1,\"2\":1},\"core.login.admin\":{\"6\":1},\"core.login.offline\":{\"6\":1},\"core.admin\":{\"8\":1},\"core.manage\":{\"7\":1},\"core.create\":{\"6\":1,\"3\":1},\"core.delete\":{\"6\":1},\"core.edit\":{\"6\":1,\"4\":1},\"core.edit.state\":{\"6\":1,\"5\":1},\"core.edit.own\":{\"6\":1,\"3\":1}}');
+INSERT INTO `jos_assets` VALUES (1,0,0,191,0,'root.1','Root Asset','{\"core.login.site\":{\"6\":1,\"2\":1},\"core.login.admin\":{\"6\":1},\"core.login.offline\":{\"6\":1},\"core.admin\":{\"8\":1},\"core.manage\":{\"7\":1},\"core.create\":{\"6\":1,\"3\":1},\"core.delete\":{\"6\":1},\"core.edit\":{\"6\":1,\"4\":1},\"core.edit.state\":{\"6\":1,\"5\":1},\"core.edit.own\":{\"6\":1,\"3\":1}}');
 INSERT INTO `jos_assets` VALUES (2,1,1,2,1,'com_admin','com_admin','{}');
 INSERT INTO `jos_assets` VALUES (3,1,3,6,1,'com_banners','com_banners','{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1},\"core.create\":[],\"core.delete\":[],\"core.edit\":[],\"core.edit.state\":[]}');
 INSERT INTO `jos_assets` VALUES (4,1,7,8,1,'com_cache','com_cache','{\"core.admin\":{\"7\":1},\"core.manage\":{\"7\":1}}');
@@ -61,27 +61,27 @@ INSERT INTO `jos_assets` VALUES (14,1,89,90,1,'com_massmail','com_massmail','{}'
 INSERT INTO `jos_assets` VALUES (15,1,91,92,1,'com_media','com_media','{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1},\"core.create\":{\"3\":1},\"core.delete\":{\"5\":1}}');
 INSERT INTO `jos_assets` VALUES (16,1,93,94,1,'com_menus','com_menus','{\"core.admin\":{\"7\":1},\"core.manage\":[],\"core.create\":[],\"core.delete\":[],\"core.edit\":[],\"core.edit.state\":[]}');
 INSERT INTO `jos_assets` VALUES (17,1,95,96,1,'com_messages','com_messages','{\"core.admin\":{\"7\":1},\"core.manage\":{\"7\":1}}');
-INSERT INTO `jos_assets` VALUES (18,1,97,148,1,'com_modules','com_modules','{\"core.admin\":{\"7\":1},\"core.manage\":[],\"core.create\":[],\"core.delete\":[],\"core.edit\":[],\"core.edit.state\":[]}');
-INSERT INTO `jos_assets` VALUES (19,1,149,152,1,'com_newsfeeds','com_newsfeeds','{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1},\"core.create\":[],\"core.delete\":[],\"core.edit\":[],\"core.edit.state\":[],\"core.edit.own\":[]}');
-INSERT INTO `jos_assets` VALUES (20,1,153,154,1,'com_plugins','com_plugins','{\"core.admin\":{\"7\":1},\"core.manage\":[],\"core.edit\":[],\"core.edit.state\":[]}');
-INSERT INTO `jos_assets` VALUES (21,1,155,156,1,'com_redirect','com_redirect','{\"core.admin\":{\"7\":1},\"core.manage\":[]}');
-INSERT INTO `jos_assets` VALUES (22,1,157,158,1,'com_search','com_search','{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1},\"core.edit.state\":[]}');
-INSERT INTO `jos_assets` VALUES (23,1,159,160,1,'com_templates','com_templates','{\"core.admin\":{\"7\":1},\"core.manage\":[],\"core.create\":[],\"core.delete\":[],\"core.edit\":[],\"core.edit.state\":[]}');
-INSERT INTO `jos_assets` VALUES (24,1,161,164,1,'com_users','com_users','{\"core.admin\":{\"7\":1},\"core.manage\":[],\"core.create\":[],\"core.delete\":[],\"core.edit\":[],\"core.edit.state\":[]}');
-INSERT INTO `jos_assets` VALUES (25,1,165,168,1,'com_weblinks','com_weblinks','{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1},\"core.create\":{\"3\":1},\"core.delete\":[],\"core.edit\":{\"4\":1},\"core.edit.state\":{\"5\":1},\"core.edit.own\":[]}');
-INSERT INTO `jos_assets` VALUES (26,1,169,170,1,'com_wrapper','com_wrapper','{}');
+INSERT INTO `jos_assets` VALUES (18,1,97,150,1,'com_modules','com_modules','{\"core.admin\":{\"7\":1},\"core.manage\":[],\"core.create\":[],\"core.delete\":[],\"core.edit\":[],\"core.edit.state\":[]}');
+INSERT INTO `jos_assets` VALUES (19,1,151,154,1,'com_newsfeeds','com_newsfeeds','{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1},\"core.create\":[],\"core.delete\":[],\"core.edit\":[],\"core.edit.state\":[],\"core.edit.own\":[]}');
+INSERT INTO `jos_assets` VALUES (20,1,155,156,1,'com_plugins','com_plugins','{\"core.admin\":{\"7\":1},\"core.manage\":[],\"core.edit\":[],\"core.edit.state\":[]}');
+INSERT INTO `jos_assets` VALUES (21,1,157,158,1,'com_redirect','com_redirect','{\"core.admin\":{\"7\":1},\"core.manage\":[]}');
+INSERT INTO `jos_assets` VALUES (22,1,159,160,1,'com_search','com_search','{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1},\"core.edit.state\":[]}');
+INSERT INTO `jos_assets` VALUES (23,1,161,162,1,'com_templates','com_templates','{\"core.admin\":{\"7\":1},\"core.manage\":[],\"core.create\":[],\"core.delete\":[],\"core.edit\":[],\"core.edit.state\":[]}');
+INSERT INTO `jos_assets` VALUES (24,1,163,166,1,'com_users','com_users','{\"core.admin\":{\"7\":1},\"core.manage\":[],\"core.create\":[],\"core.delete\":[],\"core.edit\":[],\"core.edit.state\":[]}');
+INSERT INTO `jos_assets` VALUES (25,1,167,170,1,'com_weblinks','com_weblinks','{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1},\"core.create\":{\"3\":1},\"core.delete\":[],\"core.edit\":{\"4\":1},\"core.edit.state\":{\"5\":1},\"core.edit.own\":[]}');
+INSERT INTO `jos_assets` VALUES (26,1,171,172,1,'com_wrapper','com_wrapper','{}');
 INSERT INTO `jos_assets` VALUES (27,8,20,29,2,'com_content.category.2','Uncategorised','{\"core.create\":[],\"core.delete\":[],\"core.edit\":[],\"core.edit.state\":[],\"core.edit.own\":[]}');
 INSERT INTO `jos_assets` VALUES (28,3,4,5,2,'com_banners.category.3','Uncategorised','{\"core.create\":[],\"core.delete\":[],\"core.edit\":[],\"core.edit.state\":[]}');
 INSERT INTO `jos_assets` VALUES (29,7,14,15,2,'com_contact.category.4','Uncategorised','{\"core.create\":[],\"core.delete\":[],\"core.edit\":[],\"core.edit.state\":[],\"core.edit.own\":[]}');
-INSERT INTO `jos_assets` VALUES (30,19,150,151,2,'com_newsfeeds.category.5','Uncategorised','{\"core.create\":[],\"core.delete\":[],\"core.edit\":[],\"core.edit.state\":[],\"core.edit.own\":[]}');
-INSERT INTO `jos_assets` VALUES (31,25,166,167,2,'com_weblinks.category.6','Uncategorised','{\"core.create\":[],\"core.delete\":[],\"core.edit\":[],\"core.edit.state\":[],\"core.edit.own\":[]}');
-INSERT INTO `jos_assets` VALUES (32,24,162,163,1,'com_users.category.7','Uncategorised','{\"core.create\":[],\"core.delete\":[],\"core.edit\":[],\"core.edit.state\":[]}');
-INSERT INTO `jos_assets` VALUES (33,1,171,172,1,'com_finder','com_finder','{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1}}');
-INSERT INTO `jos_assets` VALUES (34,1,173,174,1,'com_joomlaupdate','com_joomlaupdate','{\"core.admin\":[],\"core.manage\":[],\"core.delete\":[],\"core.edit.state\":[]}');
-INSERT INTO `jos_assets` VALUES (35,1,175,176,1,'com_tags','com_tags','{\"core.admin\":[],\"core.manage\":[],\"core.manage\":[],\"core.delete\":[],\"core.edit.state\":[]}');
-INSERT INTO `jos_assets` VALUES (36,1,177,178,1,'com_contenthistory','com_contenthistory','{}');
-INSERT INTO `jos_assets` VALUES (37,1,179,180,1,'com_ajax','com_ajax','{}');
-INSERT INTO `jos_assets` VALUES (38,1,181,182,1,'com_postinstall','com_postinstall','{}');
+INSERT INTO `jos_assets` VALUES (30,19,152,153,2,'com_newsfeeds.category.5','Uncategorised','{\"core.create\":[],\"core.delete\":[],\"core.edit\":[],\"core.edit.state\":[],\"core.edit.own\":[]}');
+INSERT INTO `jos_assets` VALUES (31,25,168,169,2,'com_weblinks.category.6','Uncategorised','{\"core.create\":[],\"core.delete\":[],\"core.edit\":[],\"core.edit.state\":[],\"core.edit.own\":[]}');
+INSERT INTO `jos_assets` VALUES (32,24,164,165,1,'com_users.category.7','Uncategorised','{\"core.create\":[],\"core.delete\":[],\"core.edit\":[],\"core.edit.state\":[]}');
+INSERT INTO `jos_assets` VALUES (33,1,173,174,1,'com_finder','com_finder','{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1}}');
+INSERT INTO `jos_assets` VALUES (34,1,175,176,1,'com_joomlaupdate','com_joomlaupdate','{\"core.admin\":[],\"core.manage\":[],\"core.delete\":[],\"core.edit.state\":[]}');
+INSERT INTO `jos_assets` VALUES (35,1,177,178,1,'com_tags','com_tags','{\"core.admin\":[],\"core.manage\":[],\"core.manage\":[],\"core.delete\":[],\"core.edit.state\":[]}');
+INSERT INTO `jos_assets` VALUES (36,1,179,180,1,'com_contenthistory','com_contenthistory','{}');
+INSERT INTO `jos_assets` VALUES (37,1,181,182,1,'com_ajax','com_ajax','{}');
+INSERT INTO `jos_assets` VALUES (38,1,183,184,1,'com_postinstall','com_postinstall','{}');
 INSERT INTO `jos_assets` VALUES (39,18,98,99,2,'com_modules.module.1','Main Menu','{\"core.delete\":[],\"core.edit\":[],\"core.edit.state\":[]}');
 INSERT INTO `jos_assets` VALUES (40,18,100,101,2,'com_modules.module.2','Login','{\"core.delete\":[],\"core.edit\":[],\"core.edit.state\":[]}');
 INSERT INTO `jos_assets` VALUES (41,18,102,103,2,'com_modules.module.3','Popular Articles','{\"core.delete\":[],\"core.edit\":[],\"core.edit.state\":[]}');
@@ -105,7 +105,7 @@ INSERT INTO `jos_assets` VALUES (58,18,136,137,2,'com_modules.module.91','User M
 INSERT INTO `jos_assets` VALUES (59,18,138,139,2,'com_modules.module.92','Logo Image','{\"core.delete\":{\"6\":1},\"core.edit\":{\"6\":1,\"4\":1},\"core.edit.state\":{\"6\":1,\"5\":1}}');
 INSERT INTO `jos_assets` VALUES (60,18,140,141,2,'com_modules.module.93','Search','{\"core.delete\":{\"6\":1},\"core.edit\":{\"6\":1,\"4\":1},\"core.edit.state\":{\"6\":1,\"5\":1}}');
 INSERT INTO `jos_assets` VALUES (61,27,21,22,3,'com_content.article.1','Getting Started','{\"core.delete\":{\"6\":1},\"core.edit\":{\"6\":1,\"4\":1},\"core.edit.state\":{\"6\":1,\"5\":1}}');
-INSERT INTO `jos_assets` VALUES (62,1,183,184,1,'jos_ucm_content.1','jos_ucm_content.1','[]');
+INSERT INTO `jos_assets` VALUES (62,1,185,186,1,'jos_ucm_content.1','jos_ucm_content.1','[]');
 INSERT INTO `jos_assets` VALUES (63,8,30,39,2,'com_content.category.8','Main Content','{\"core.create\":{\"6\":1,\"3\":1},\"core.delete\":{\"6\":1},\"core.edit\":{\"6\":1,\"4\":1},\"core.edit.state\":{\"6\":1,\"5\":1},\"core.edit.own\":{\"6\":1,\"3\":1}}');
 INSERT INTO `jos_assets` VALUES (64,8,40,45,2,'com_content.category.9','About Us','{\"core.create\":{\"6\":1,\"3\":1},\"core.delete\":{\"6\":1},\"core.edit\":{\"6\":1,\"4\":1},\"core.edit.state\":{\"6\":1,\"5\":1},\"core.edit.own\":{\"6\":1,\"3\":1}}');
 INSERT INTO `jos_assets` VALUES (65,8,46,49,2,'com_content.category.10','LASIK','{\"core.create\":{\"6\":1,\"3\":1},\"core.delete\":{\"6\":1},\"core.edit\":{\"6\":1,\"4\":1},\"core.edit.state\":{\"6\":1,\"5\":1},\"core.edit.own\":{\"6\":1,\"3\":1}}');
@@ -137,6 +137,9 @@ INSERT INTO `jos_assets` VALUES (90,18,142,143,2,'com_modules.module.94','Footer
 INSERT INTO `jos_assets` VALUES (91,8,76,77,2,'com_content.category.15','News','{\"core.create\":{\"6\":1,\"3\":1},\"core.delete\":{\"6\":1},\"core.edit\":{\"6\":1,\"4\":1},\"core.edit.state\":{\"6\":1,\"5\":1},\"core.edit.own\":{\"6\":1,\"3\":1}}');
 INSERT INTO `jos_assets` VALUES (92,18,144,145,2,'com_modules.module.95','Newsflash','{\"core.delete\":{\"6\":1},\"core.edit\":{\"6\":1,\"4\":1},\"core.edit.state\":{\"6\":1,\"5\":1}}');
 INSERT INTO `jos_assets` VALUES (93,18,146,147,2,'com_modules.module.96','Contact Info','{\"core.delete\":{\"6\":1},\"core.edit\":{\"6\":1,\"4\":1},\"core.edit.state\":{\"6\":1,\"5\":1}}');
+INSERT INTO `jos_assets` VALUES (94,1,187,190,1,'com_djimageslider','com_djimageslider','{}');
+INSERT INTO `jos_assets` VALUES (95,18,148,149,2,'com_modules.module.97','DJ-ImageSlider','{\"core.delete\":[],\"core.edit\":[],\"core.edit.state\":[]}');
+INSERT INTO `jos_assets` VALUES (96,94,188,189,2,'com_djimageslider.category.16','Home Slider','{\"core.create\":{\"6\":1,\"3\":1},\"core.delete\":{\"6\":1},\"core.edit\":{\"6\":1,\"4\":1},\"core.edit.state\":{\"6\":1,\"5\":1},\"core.edit.own\":{\"6\":1,\"3\":1}}');
 /*!40000 ALTER TABLE `jos_assets` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -333,7 +336,7 @@ CREATE TABLE `jos_categories` (
   KEY `idx_left_right` (`lft`,`rgt`),
   KEY `idx_alias` (`alias`),
   KEY `idx_language` (`language`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -342,7 +345,7 @@ CREATE TABLE `jos_categories` (
 
 LOCK TABLES `jos_categories` WRITE;
 /*!40000 ALTER TABLE `jos_categories` DISABLE KEYS */;
-INSERT INTO `jos_categories` VALUES (1,0,0,0,29,0,'','system','ROOT','root','','',1,0,'0000-00-00 00:00:00',1,'{}','','','{}',42,'2011-01-01 00:00:01',0,'0000-00-00 00:00:00',0,'*',1);
+INSERT INTO `jos_categories` VALUES (1,0,0,0,31,0,'','system','ROOT','root','','',1,0,'0000-00-00 00:00:00',1,'{}','','','{}',42,'2011-01-01 00:00:01',0,'0000-00-00 00:00:00',0,'*',1);
 INSERT INTO `jos_categories` VALUES (2,27,1,1,2,1,'uncategorised','com_content','Uncategorised','uncategorised','','',1,0,'0000-00-00 00:00:00',1,'{\"category_layout\":\"\",\"image\":\"\"}','','','{\"author\":\"\",\"robots\":\"\"}',42,'2011-01-01 00:00:01',0,'0000-00-00 00:00:00',0,'*',1);
 INSERT INTO `jos_categories` VALUES (3,28,1,3,4,1,'uncategorised','com_banners','Uncategorised','uncategorised','','',1,0,'0000-00-00 00:00:00',1,'{\"category_layout\":\"\",\"image\":\"\"}','','','{\"author\":\"\",\"robots\":\"\"}',42,'2011-01-01 00:00:01',0,'0000-00-00 00:00:00',0,'*',1);
 INSERT INTO `jos_categories` VALUES (4,29,1,5,6,1,'uncategorised','com_contact','Uncategorised','uncategorised','','',1,0,'0000-00-00 00:00:00',1,'{\"category_layout\":\"\",\"image\":\"\"}','','','{\"author\":\"\",\"robots\":\"\"}',42,'2011-01-01 00:00:01',0,'0000-00-00 00:00:00',0,'*',1);
@@ -357,6 +360,7 @@ INSERT INTO `jos_categories` VALUES (12,67,1,21,22,1,'appointments','com_content
 INSERT INTO `jos_categories` VALUES (13,78,1,23,24,1,'our-staff','com_contact','Our Staff','our-staff','','<p>Eye Centers of Ohio features 6 board-certified ophthalmologists.  We offer specialists in every major area of medical and surgical vision care.  Our staff is committed to providing excellent care in a comfortable setting.  Our administrative and clerical staff, nursing and technical personnel, and opticians are highly trained, qualified professionals.</p>',1,0,'0000-00-00 00:00:00',1,'{\"category_layout\":\"\",\"image\":\"\"}','','','{\"author\":\"\",\"robots\":\"\"}',42,'2014-12-16 12:14:52',42,'2014-12-16 15:14:27',0,'*',1);
 INSERT INTO `jos_categories` VALUES (14,80,1,25,26,1,'success-stories','com_content','Success Stories','success-stories','','',-2,0,'0000-00-00 00:00:00',1,'{\"category_layout\":\"\",\"image\":\"\",\"t3_extrafields\":\"\"}','','','{\"author\":\"\",\"robots\":\"\"}',42,'2015-01-27 05:25:35',0,'0000-00-00 00:00:00',0,'*',1);
 INSERT INTO `jos_categories` VALUES (15,91,1,27,28,1,'news','com_content','News','news','','Contains all the news articles',1,0,'0000-00-00 00:00:00',1,'{\"category_layout\":\"\",\"image\":\"\",\"t3_extrafields\":\"\"}','','','{\"author\":\"\",\"robots\":\"\"}',42,'2015-06-24 04:40:10',0,'0000-00-00 00:00:00',0,'*',1);
+INSERT INTO `jos_categories` VALUES (16,96,1,29,30,1,'home-slider','com_djimageslider','Home Slider','home-slider','','',1,0,'0000-00-00 00:00:00',1,'{\"category_layout\":\"\",\"image\":\"\"}','','','{\"author\":\"\",\"robots\":\"\"}',42,'2015-08-12 02:56:14',0,'0000-00-00 00:00:00',0,'*',1);
 /*!40000 ALTER TABLE `jos_categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -676,6 +680,43 @@ INSERT INTO `jos_core_log_searches` VALUES ('contact',1);
 UNLOCK TABLES;
 
 --
+-- Table structure for table `jos_djimageslider`
+--
+
+DROP TABLE IF EXISTS `jos_djimageslider`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `jos_djimageslider` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `catid` int(10) unsigned NOT NULL DEFAULT '0',
+  `title` varchar(255) NOT NULL,
+  `alias` varchar(255) NOT NULL DEFAULT '',
+  `image` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `published` tinyint(1) NOT NULL DEFAULT '0',
+  `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `checked_out` int(10) unsigned NOT NULL DEFAULT '0',
+  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `ordering` int(11) NOT NULL DEFAULT '0',
+  `params` text NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `catid` (`catid`,`published`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `jos_djimageslider`
+--
+
+LOCK TABLES `jos_djimageslider` WRITE;
+/*!40000 ALTER TABLE `jos_djimageslider` DISABLE KEYS */;
+INSERT INTO `jos_djimageslider` VALUES (1,16,'Doctor Slide','doctor-slide','images/doctorsGroupShot.png','We are doctors. We do stuff.',1,'0000-00-00 00:00:00','0000-00-00 00:00:00',0,'0000-00-00 00:00:00',0,'{\"link_type\":\"menu\",\"link_menu\":\"112\",\"link_url\":\"\",\"link_article\":\"\",\"link_target\":\"\"}');
+INSERT INTO `jos_djimageslider` VALUES (2,16,'Eyecare Tool','eyecare-tool','images/eyecare-tool.jpg','This eyecare thing does stuff to figure out your eyesight.',1,'0000-00-00 00:00:00','0000-00-00 00:00:00',0,'0000-00-00 00:00:00',0,'{\"link_type\":\"menu\",\"link_menu\":\"110\",\"link_url\":\"\",\"link_article\":\"\",\"link_target\":\"\"}');
+/*!40000 ALTER TABLE `jos_djimageslider` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `jos_extensions`
 --
 
@@ -704,7 +745,7 @@ CREATE TABLE `jos_extensions` (
   KEY `element_clientid` (`element`,`client_id`),
   KEY `element_folder_clientid` (`element`,`folder`,`client_id`),
   KEY `extension` (`type`,`element`,`folder`,`client_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10032 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10035 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -747,7 +788,7 @@ INSERT INTO `jos_extensions` VALUES (32,'com_postinstall','component','com_posti
 INSERT INTO `jos_extensions` VALUES (100,'PHPMailer','library','phpmailer','',0,1,1,1,'{\"name\":\"PHPMailer\",\"type\":\"library\",\"creationDate\":\"2001\",\"author\":\"PHPMailer\",\"copyright\":\"(c) 2001-2003, Brent R. Matzelle, (c) 2004-2009, Andy Prevost. All Rights Reserved., (c) 2010-2013, Jim Jagielski. All Rights Reserved.\",\"authorEmail\":\"jimjag@gmail.com\",\"authorUrl\":\"https:\\/\\/github.com\\/PHPMailer\\/PHPMailer\",\"version\":\"5.2.6\",\"description\":\"LIB_PHPMAILER_XML_DESCRIPTION\",\"group\":\"\"}','','','',0,'0000-00-00 00:00:00',0,0);
 INSERT INTO `jos_extensions` VALUES (101,'SimplePie','library','simplepie','',0,1,1,1,'{\"name\":\"SimplePie\",\"type\":\"library\",\"creationDate\":\"2004\",\"author\":\"SimplePie\",\"copyright\":\"Copyright (c) 2004-2009, Ryan Parman and Geoffrey Sneddon\",\"authorEmail\":\"\",\"authorUrl\":\"http:\\/\\/simplepie.org\\/\",\"version\":\"1.2\",\"description\":\"LIB_SIMPLEPIE_XML_DESCRIPTION\",\"group\":\"\"}','','','',0,'0000-00-00 00:00:00',0,0);
 INSERT INTO `jos_extensions` VALUES (102,'phputf8','library','phputf8','',0,1,1,1,'{\"name\":\"phputf8\",\"type\":\"library\",\"creationDate\":\"2006\",\"author\":\"Harry Fuecks\",\"copyright\":\"Copyright various authors\",\"authorEmail\":\"hfuecks@gmail.com\",\"authorUrl\":\"http:\\/\\/sourceforge.net\\/projects\\/phputf8\",\"version\":\"0.5\",\"description\":\"LIB_PHPUTF8_XML_DESCRIPTION\",\"group\":\"\"}','','','',0,'0000-00-00 00:00:00',0,0);
-INSERT INTO `jos_extensions` VALUES (103,'Joomla! Platform','library','joomla','',0,1,1,1,'{\"name\":\"Joomla! Platform\",\"type\":\"library\",\"creationDate\":\"2008\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2014 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"http:\\/\\/www.joomla.org\",\"version\":\"13.1\",\"description\":\"LIB_JOOMLA_XML_DESCRIPTION\",\"group\":\"\"}','{\"mediaversion\":\"4b0e9482274b8cd9a9872ab75c1e16f5\"}','','',0,'0000-00-00 00:00:00',0,0);
+INSERT INTO `jos_extensions` VALUES (103,'Joomla! Platform','library','joomla','',0,1,1,1,'{\"name\":\"Joomla! Platform\",\"type\":\"library\",\"creationDate\":\"2008\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2014 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"http:\\/\\/www.joomla.org\",\"version\":\"13.1\",\"description\":\"LIB_JOOMLA_XML_DESCRIPTION\",\"group\":\"\"}','{\"mediaversion\":\"4f4b40721d205d851e3c9aa5b2f33967\"}','','',0,'0000-00-00 00:00:00',0,0);
 INSERT INTO `jos_extensions` VALUES (104,'IDNA Convert','library','idna_convert','',0,1,1,1,'{\"name\":\"IDNA Convert\",\"type\":\"library\",\"creationDate\":\"2004\",\"author\":\"phlyLabs\",\"copyright\":\"2004-2011 phlyLabs Berlin, http:\\/\\/phlylabs.de\",\"authorEmail\":\"phlymail@phlylabs.de\",\"authorUrl\":\"http:\\/\\/phlylabs.de\",\"version\":\"0.8.0\",\"description\":\"LIB_IDNA_XML_DESCRIPTION\",\"group\":\"\"}','','','',0,'0000-00-00 00:00:00',0,0);
 INSERT INTO `jos_extensions` VALUES (105,'FOF','library','fof','',0,1,1,1,'{\"name\":\"FOF\",\"type\":\"library\",\"creationDate\":\"2014-03-09 12:54:48\",\"author\":\"Nicholas K. Dionysopoulos \\/ Akeeba Ltd\",\"copyright\":\"(C)2011-2014 Nicholas K. Dionysopoulos\",\"authorEmail\":\"nicholas@akeebabackup.com\",\"authorUrl\":\"https:\\/\\/www.akeebabackup.com\",\"version\":\"2.2.1\",\"description\":\"LIB_FOF_XML_DESCRIPTION\",\"group\":\"\"}','','','',0,'0000-00-00 00:00:00',0,0);
 INSERT INTO `jos_extensions` VALUES (106,'PHPass','library','phpass','',0,1,1,1,'{\"name\":\"PHPass\",\"type\":\"library\",\"creationDate\":\"2004-2006\",\"author\":\"Solar Designer\",\"copyright\":\"\",\"authorEmail\":\"solar@openwall.com\",\"authorUrl\":\"http:\\/\\/www.openwall.com\\/phpass\\/\",\"version\":\"0.3\",\"description\":\"LIB_PHPASS_XML_DESCRIPTION\",\"group\":\"\"}','','','',0,'0000-00-00 00:00:00',0,0);
@@ -881,6 +922,9 @@ INSERT INTO `jos_extensions` VALUES (10027,'PLG_CONTENT_ACCORDIONFAQ','plugin','
 INSERT INTO `jos_extensions` VALUES (10029,'System - RokBox','plugin','rokbox','system',0,1,1,0,'{\"name\":\"System - RokBox\",\"type\":\"plugin\",\"creationDate\":\"June 19, 2015\",\"author\":\"RocketTheme, LLC\",\"copyright\":\"(C) 2005 - 2015 RocketTheme, LLC. All rights reserved.\",\"authorEmail\":\"support@rockettheme.com\",\"authorUrl\":\"http:\\/\\/www.rockettheme.com\",\"version\":\"2.0.11\",\"description\":\"\\n        <div class=\\\"rokbox-description\\\">\\n        <img src=\\\"..\\/plugins\\/system\\/rokbox\\/assets\\/admin\\/images\\/rokbox.jpg\\\" class=\\\"img-padding\\\" \\/><h1>RokBox2<\\/h1>\\n        <p>RokBox2 is a fully responsive modal pop-up plug-in for Joomla.  It displays <strong>images<\\/strong>, <strong>videos<\\/strong>, <strong>embedded widgets<\\/strong>, <strong>Ajax content<\\/strong> and <strong>Joomla modules<\\/strong>.<\\/p>\\n\\n        <p>RokBox2 contains a <strong>Content plug-in<\\/strong> and <strong>Button Editor plug-in<\\/strong>. The <strong>Content plug-in<\\/strong> can auto-generate thumbnails of <strong>local images<\\/strong> that can be used as content for your RokBox2 links. All thumbnails generated are <strong>responsive<\\/strong> so that they can easily adapt to any device. The <strong>Button Editor plug-in<\\/strong> allows for easy creation of RokBox2 style snippets with just a few clicks.<\\/p>\\n        <p>RokBox2 also provides backward compatibility for RokBox1 style <code>{rokbox}<\\/code> syntax.<\\/p>\\n\\n        <h2>Key Features:<\\/h2>\\n        <ul class=\\\"features\\\">\\n            <li>HTML5 and CSS3<\\/li>\\n            <li>Fully Responsive<\\/li>\\n            <li>Auto thumbnails generator<\\/li>\\n            <li>Captions supporting HTML syntax<\\/li>\\n            <li>Ajax Content listener<\\/li>\\n            <li>Multiple media types supported:\\n                <ul class=\\\"features\\\">\\n                    <li>Images: base64 encoded, jpg, gif, png, bmp, webp<\\/li>\\n                    <li>HTML5 Video and Audio<\\/li>\\n                    <li>TwitPic<\\/li>\\n                    <li>Instagram<\\/li>\\n                    <li>YouTube<\\/li>\\n                    <li>Vimeo<\\/li>\\n                    <li>Telly (ex TwitVid)<\\/li>\\n                    <li>Metacafe<\\/li>\\n                    <li>Dailymotion<\\/li>\\n                    <li>Spotify<\\/li>\\n                    <li>Google Maps<\\/li>\\n                <\\/ul>\\n            <\\/li>\\n            <li>Fit\\/Unfit Screen: If an image is too big it gets shrunk to fit the view-port but you can always click the Fit Screen icon to expand it and scroll.<\\/li>\\n            <li>Albums to group related images<\\/li>\\n            <li>Key Bindings for easy navigation: <code>&larr;<\\/code> (Previous), <code>&rarr;<\\/code> (Next), <code>f<\\/code> Fitscreen\\/Unfitscreen, <code>esc<\\/code> Close<\\/li>\\n        <\\/ul>\\n\\n        <p class=\\\"note\\\"><strong>NOTE:<\\/strong> RokBox2 consists of 3 plug-ins: <strong>Content<\\/strong>, <strong>System<\\/strong> and <strong>Editor Button<\\/strong>. Make sure to have a look at all three plug-in manager pages to get an idea of what they do.<\\/p>\\n        <\\/div>\\n        \",\"group\":\"\"}','{\"backwards_compat\":\"0\"}','','',0,'0000-00-00 00:00:00',1,0);
 INSERT INTO `jos_extensions` VALUES (10030,'Content - RokBox','plugin','rokbox','content',0,1,1,0,'{\"name\":\"Content - RokBox\",\"type\":\"plugin\",\"creationDate\":\"June 19, 2015\",\"author\":\"RocketTheme, LLC\",\"copyright\":\"(C) 2005 - 2015 RocketTheme, LLC. All rights reserved.\",\"authorEmail\":\"support@rockettheme.com\",\"authorUrl\":\"http:\\/\\/www.rockettheme.com\",\"version\":\"2.0.11\",\"description\":\"\\n        <div class=\\\"rokbox-description\\\">\\n        <img src=\\\"..\\/plugins\\/system\\/rokbox\\/assets\\/admin\\/images\\/rokbox.jpg\\\" class=\\\"img-padding\\\" \\/><h1>RokBox2<\\/h1>\\n        <p>Auto generates thumbnails of <strong>local images<\\/strong> that can be used as content for your RokBox2 links. All thumbnails generated are <strong>responsive<\\/strong> so that they can be easily adapted to any device. RokBox2 Content plugins also provides backward compatibility for the old discontinued RokBox1 that allowed writing snippets through the <code>{rokbox}<\\/code> syntax.<\\/p>\\n\\n        <p class=\\\"note\\\"><strong>NOTE:<\\/strong> RokBox2 comes with 3 plugins: <strong>Content<\\/strong>, <strong>System<\\/strong> and <strong>Editor Button<\\/strong>. Make sure to have a look at all three plugin manager pages to get an idea of what they do.<\\/p>\\n        <\\/div>\\n        \",\"group\":\"\"}','{\"backwards_compat\":\"0\",\"thumb_width\":\"150\",\"thumb_height\":\"100\",\"thumb_quality\":\"90\"}','','',0,'0000-00-00 00:00:00',1,0);
 INSERT INTO `jos_extensions` VALUES (10031,'Button - RokBox','plugin','rokbox','editors-xtd',0,1,1,0,'{\"name\":\"Button - RokBox\",\"type\":\"plugin\",\"creationDate\":\"June 19, 2015\",\"author\":\"RocketTheme, LLC\",\"copyright\":\"(C) 2005 - 2015 RocketTheme, LLC. All rights reserved.\",\"authorEmail\":\"support@rockettheme.com\",\"authorUrl\":\"http:\\/\\/www.rockettheme.com\",\"version\":\"2.0.11\",\"description\":\"This is an Editor Button to allow injection of RokBox snippets into your Content\",\"group\":\"\"}','{}','','',0,'0000-00-00 00:00:00',1,0);
+INSERT INTO `jos_extensions` VALUES (10032,'com_djimageslider','component','com_djimageslider','',1,1,0,0,'{\"name\":\"com_djimageslider\",\"type\":\"component\",\"creationDate\":\"August 2012\",\"author\":\"DJ-Extensions.com\",\"copyright\":\"Copyright (C) 2012 DJ-Extensions.com, All rights reserved.\",\"authorEmail\":\"contact@dj-extensions.com\",\"authorUrl\":\"http:\\/\\/dj-extensions.com\",\"version\":\"3.0.3\",\"description\":\"DJ-ImageSlider component\",\"group\":\"\"}','{}','','',0,'0000-00-00 00:00:00',0,0);
+INSERT INTO `jos_extensions` VALUES (10033,'DJ-ImageSlider','module','mod_djimageslider','',0,1,0,0,'{\"name\":\"DJ-ImageSlider\",\"type\":\"module\",\"creationDate\":\"May 2015\",\"author\":\"DJ-Extensions.com\",\"copyright\":\"Copyright (C) 2013 DJ-Extensions.com, All rights reserved.\",\"authorEmail\":\"contact@dj-extensions.com\",\"authorUrl\":\"http:\\/\\/dj-extensions.com\",\"version\":\"3.0.3\",\"description\":\"DJ-ImageSlider Module\",\"group\":\"\"}','{\"slider_source\":\"0\",\"slider_type\":\"0\",\"theme\":\"default\",\"link_image\":\"1\",\"image_folder\":\"images\\/sampledata\\/fruitshop\",\"link\":\"\",\"show_title\":\"1\",\"show_desc\":\"1\",\"show_readmore\":\"0\",\"readmore_text\":\"\",\"link_title\":\"1\",\"link_desc\":\"0\",\"limit_desc\":\"\",\"full_width\":\"0\",\"image_width\":\"240\",\"image_height\":\"180\",\"fit_to\":\"0\",\"image_centering\":\"0\",\"visible_images\":\"3\",\"space_between_images\":\"10\",\"max_images\":\"20\",\"sort_by\":\"1\",\"css3\":\"1\",\"autoplay\":\"1\",\"show_buttons\":\"1\",\"show_arrows\":\"1\",\"show_custom_nav\":\"0\",\"desc_width\":\"\",\"desc_bottom\":\"0\",\"desc_horizontal\":\"0\",\"left_arrow\":\"\",\"right_arrow\":\"\",\"play_button\":\"\",\"pause_button\":\"\",\"arrows_top\":\"40\",\"arrows_horizontal\":\"10\",\"idx_style\":\"0\",\"effect\":\"Expo\",\"effect_type\":\"0\",\"duration\":\"\",\"delay\":\"\",\"preload\":\"800\",\"cache\":\"1\",\"cache_time\":\"900\"}','','',0,'0000-00-00 00:00:00',0,0);
+INSERT INTO `jos_extensions` VALUES (10034,'dj-imageslider','package','pkg_dj-imageslider','',0,1,1,0,'{\"name\":\"DJ-ImageSlider Package\",\"type\":\"package\",\"creationDate\":\"August 2012\",\"author\":\"DJ-Extensions.com\",\"copyright\":\"Copyright (C) 2012 DJ-Extensions.com, All rights reserved.\",\"authorEmail\":\"contact@dj-extensions.com\",\"authorUrl\":\"http:\\/\\/dj-extensions.com\",\"version\":\"3.0.3\",\"description\":\"\\n\\t\\t<style type=\\\"text\\/css\\\">\\n\\t\\t\\t.djex-info { padding: 20px 30px 10px; margin: 0 0 20px 0; background: #ac00d4; color: #fff; border: 1px solid #81009f; font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: normal; -webkit-border-radius: 4px; border-radius: 4px; }\\n\\t\\t\\t.djex-title { text-transform: uppercase; font-weight: bold; font-size: 14px; }\\n\\t\\t\\t.djex-info a:link, .djex-info a:visited, .djex-info a:hover { color:#fff; text-decoration:underline; font-weight: 600; }\\t\\n\\t\\t\\t.djex-info img { float: left; margin: 0 30px 10px 0; }\\n\\t\\t<\\/style>\\n\\t\\t<div class=\\\"djex-info\\\">\\n\\t\\t\\t<a href=\\\"index.php?option=com_djimageslider\\\"><img src=\\\"components\\/com_djimageslider\\/assets\\/ex_slider.png\\\" \\/><\\/a>\\n\\t\\t\\t<p class=\\\"djex-title\\\">Thank you for installing DJ-ImageSlider!<\\/p>\\n\\t\\t\\t<p>The DJ-ImageSlider extension allows you to display slideshows containing slides with title and short description linked to any menu item, article or custom url address. \\n\\t\\t\\tIf you want to learn how to use DJ-ImageSlider please read <a target=\\\"_blank\\\" href=\\\"http:\\/\\/dj-extensions.com\\/documentation\\\">Documentation<\\/a> and <a target=\\\"_blank\\\" href=\\\"http:\\/\\/dj-extensions.com\\/faq\\\">FAQ section<\\/a><\\/p>\\n\\t\\t\\t<p>Check out our other extensions at <a target=\\\"_blank\\\" href=\\\"http:\\/\\/dj-extensions.com\\\">DJ-Extensions.com<\\/a><\\/p>\\n\\t\\t\\t<div style=\\\"clear:both\\\"><\\/div>\\n\\t\\t<\\/div>\\n\\t\\t\",\"group\":\"\"}','{}','','',0,'0000-00-00 00:00:00',0,0);
 /*!40000 ALTER TABLE `jos_extensions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -5104,7 +5148,7 @@ CREATE TABLE `jos_menu` (
   KEY `idx_alias` (`alias`),
   KEY `idx_path` (`path`(255)),
   KEY `idx_language` (`language`)
-) ENGINE=InnoDB AUTO_INCREMENT=125 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=128 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5113,7 +5157,7 @@ CREATE TABLE `jos_menu` (
 
 LOCK TABLES `jos_menu` WRITE;
 /*!40000 ALTER TABLE `jos_menu` DISABLE KEYS */;
-INSERT INTO `jos_menu` VALUES (1,'','Menu_Item_Root','root','','','','',1,0,0,0,0,'0000-00-00 00:00:00',0,0,'',0,'',0,95,0,'*',0);
+INSERT INTO `jos_menu` VALUES (1,'','Menu_Item_Root','root','','','','',1,0,0,0,0,'0000-00-00 00:00:00',0,0,'',0,'',0,101,0,'*',0);
 INSERT INTO `jos_menu` VALUES (2,'menu','com_banners','Banners','','Banners','index.php?option=com_banners','component',0,1,1,4,0,'0000-00-00 00:00:00',0,0,'class:banners',0,'',1,10,0,'*',1);
 INSERT INTO `jos_menu` VALUES (3,'menu','com_banners','Banners','','Banners/Banners','index.php?option=com_banners','component',0,2,2,4,0,'0000-00-00 00:00:00',0,0,'class:banners',0,'',2,3,0,'*',1);
 INSERT INTO `jos_menu` VALUES (4,'menu','com_banners_categories','Categories','','Banners/Categories','index.php?option=com_categories&extension=com_banners','component',0,2,2,6,0,'0000-00-00 00:00:00',0,0,'class:banners-cat',0,'',4,5,0,'*',1);
@@ -5161,6 +5205,9 @@ INSERT INTO `jos_menu` VALUES (121,'mainmenu','Ocular Plastic Surgery','ocular-p
 INSERT INTO `jos_menu` VALUES (122,'mainmenu','Pediatrics','pediatrics','','procedures/pediatrics','index.php?option=com_content&view=article&id=19','component',1,110,2,22,0,'0000-00-00 00:00:00',0,1,'',11,'{\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_vote\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_hits\":\"\",\"show_tags\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_text\":1,\"page_title\":\"\",\"show_page_heading\":0,\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0,\"masthead-title\":\"\",\"masthead-slogan\":\"\"}',36,37,0,'*',0);
 INSERT INTO `jos_menu` VALUES (123,'mainmenu','Optical','optical','','procedures/optical','index.php?option=com_content&view=article&id=20','component',1,110,2,22,0,'0000-00-00 00:00:00',0,1,'',11,'{\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_vote\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_hits\":\"\",\"show_tags\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_text\":1,\"page_title\":\"\",\"show_page_heading\":0,\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0,\"masthead-title\":\"\",\"masthead-slogan\":\"\"}',38,39,0,'*',0);
 INSERT INTO `jos_menu` VALUES (124,'mainmenu','Contact Lenses','contact-lenses','','procedures/contact-lenses','index.php?option=com_content&view=article&id=21','component',1,110,2,22,0,'0000-00-00 00:00:00',0,1,'',11,'{\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_vote\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_hits\":\"\",\"show_tags\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_text\":1,\"page_title\":\"\",\"show_page_heading\":0,\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0,\"masthead-title\":\"\",\"masthead-slogan\":\"\"}',40,41,0,'*',0);
+INSERT INTO `jos_menu` VALUES (125,'main','COM_DJIMAGESLIDER','com-djimageslider','','com-djimageslider','index.php?option=com_djimageslider','component',0,1,1,10032,0,'0000-00-00 00:00:00',0,1,'components/com_djimageslider/assets/icon-16-djimageslider.png',0,'',95,100,0,'',1);
+INSERT INTO `jos_menu` VALUES (126,'main','COM_DJIMAGESLIDER_SLIDES','com-djimageslider-slides','','com-djimageslider/com-djimageslider-slides','index.php?option=com_djimageslider&view=items','component',0,125,2,10032,0,'0000-00-00 00:00:00',0,1,'components/com_djimageslider/assets/icon-16-menu-slides.png',0,'',96,97,0,'',1);
+INSERT INTO `jos_menu` VALUES (127,'main','COM_DJIMAGESLIDER_CATEGORIES','com-djimageslider-categories','','com-djimageslider/com-djimageslider-categories','index.php?option=com_categories&extension=com_djimageslider','component',0,125,2,10032,0,'0000-00-00 00:00:00',0,1,'class:category',0,'',98,99,0,'',1);
 /*!40000 ALTER TABLE `jos_menu` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -5278,7 +5325,7 @@ CREATE TABLE `jos_modules` (
   KEY `published` (`published`,`access`),
   KEY `newsfeeds` (`module`,`published`),
   KEY `idx_language` (`language`)
-) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=98 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5312,6 +5359,7 @@ INSERT INTO `jos_modules` VALUES (93,60,'Search','','',1,'position-3',0,'0000-00
 INSERT INTO `jos_modules` VALUES (94,90,'Footer Menu','','',1,'footer',0,'0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00',-2,'mod_menu',1,1,'{\"menutype\":\"mainmenu\",\"base\":\"\",\"startLevel\":\"1\",\"endLevel\":\"0\",\"showAllChildren\":\"1\",\"tag_id\":\"\",\"class_sfx\":\"\",\"window_open\":\"\",\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":\"1\",\"cache_time\":\"900\",\"cachemode\":\"itemid\",\"module_tag\":\"div\",\"bootstrap_size\":\"5\",\"header_tag\":\"h3\",\"header_class\":\"\",\"style\":\"Purity_iii-FeatureRow\"}',0,'*');
 INSERT INTO `jos_modules` VALUES (95,92,'Newsflash','','',1,'position-2',0,'0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00',1,'mod_articles_news',1,0,'{\"catid\":[\"15\"],\"image\":\"0\",\"item_title\":\"0\",\"link_titles\":\"\",\"item_heading\":\"h4\",\"showLastSeparator\":\"0\",\"readmore\":\"0\",\"count\":\"1\",\"ordering\":\"a.publish_up\",\"direction\":\"1\",\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":\"1\",\"cache_time\":\"900\",\"cachemode\":\"itemid\",\"module_tag\":\"div\",\"bootstrap_size\":\"0\",\"header_tag\":\"h3\",\"header_class\":\"\",\"style\":\"0\"}',0,'*');
 INSERT INTO `jos_modules` VALUES (96,93,'Contact Info','','<div id=\"contact_info\">\r\n  <h3>Contact</h3>\r\n  <div>1-800-EYES</div>\r\n</div>',1,'position-3',0,'0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00',1,'mod_custom',1,0,'{\"prepare_content\":\"0\",\"backgroundimage\":\"\",\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":\"1\",\"cache_time\":\"900\",\"cachemode\":\"static\",\"module_tag\":\"div\",\"bootstrap_size\":\"0\",\"header_tag\":\"h3\",\"header_class\":\"\",\"style\":\"0\"}',0,'*');
+INSERT INTO `jos_modules` VALUES (97,95,'DJ-ImageSlider','','',1,'slideshow',0,'0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00',1,'mod_djimageslider',1,1,'{\"slider_source\":\"1\",\"slider_type\":\"0\",\"theme\":\"default\",\"link_image\":\"1\",\"image_folder\":\"images\\/doctors\",\"link\":\"\",\"category\":\"16\",\"show_title\":\"1\",\"show_desc\":\"1\",\"show_readmore\":\"0\",\"readmore_text\":\"\",\"link_title\":\"1\",\"link_desc\":\"0\",\"limit_desc\":\"\",\"full_width\":\"0\",\"image_width\":\"1200\",\"image_height\":\"500\",\"fit_to\":\"0\",\"image_centering\":\"0\",\"visible_images\":\"1\",\"space_between_images\":\"10\",\"max_images\":\"20\",\"sort_by\":\"1\",\"css3\":\"1\",\"autoplay\":\"1\",\"show_buttons\":\"0\",\"show_arrows\":\"1\",\"show_custom_nav\":\"1\",\"desc_width\":\"\",\"desc_bottom\":\"0\",\"desc_horizontal\":\"0\",\"left_arrow\":\"\",\"right_arrow\":\"\",\"play_button\":\"\",\"pause_button\":\"\",\"arrows_top\":\"250\",\"arrows_horizontal\":\"10\",\"idx_style\":\"0\",\"effect\":\"ease\",\"effect_type\":\"0\",\"duration\":\"\",\"delay\":\"\",\"preload\":\"500\",\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":\"1\",\"cache_time\":\"900\",\"module_tag\":\"div\",\"bootstrap_size\":\"0\",\"header_tag\":\"h3\",\"header_class\":\"\",\"style\":\"0\"}',0,'*');
 /*!40000 ALTER TABLE `jos_modules` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -5367,6 +5415,7 @@ INSERT INTO `jos_modules_menu` VALUES (93,0);
 INSERT INTO `jos_modules_menu` VALUES (94,0);
 INSERT INTO `jos_modules_menu` VALUES (95,0);
 INSERT INTO `jos_modules_menu` VALUES (96,0);
+INSERT INTO `jos_modules_menu` VALUES (97,0);
 /*!40000 ALTER TABLE `jos_modules_menu` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -5545,6 +5594,7 @@ CREATE TABLE `jos_schemas` (
 LOCK TABLES `jos_schemas` WRITE;
 /*!40000 ALTER TABLE `jos_schemas` DISABLE KEYS */;
 INSERT INTO `jos_schemas` VALUES (700,'3.3.4-2014-08-03');
+INSERT INTO `jos_schemas` VALUES (10032,'2.0');
 /*!40000 ALTER TABLE `jos_schemas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -5575,8 +5625,8 @@ CREATE TABLE `jos_session` (
 
 LOCK TABLES `jos_session` WRITE;
 /*!40000 ALTER TABLE `jos_session` DISABLE KEYS */;
-INSERT INTO `jos_session` VALUES ('q438kf6rvuk6ic6a39r18hs5e0',1,0,'1439345015','__default|a:8:{s:15:\"session.counter\";i:7;s:19:\"session.timer.start\";i:1439344166;s:18:\"session.timer.last\";i:1439344174;s:17:\"session.timer.now\";i:1439345015;s:22:\"session.client.browser\";s:104:\"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.89 Safari/537.36\";s:8:\"registry\";O:24:\"Joomla\\Registry\\Registry\":1:{s:7:\"\\0\\0\\0data\";O:8:\"stdClass\":2:{s:11:\"application\";O:8:\"stdClass\":1:{s:4:\"lang\";s:0:\"\";}s:13:\"com_templates\";O:8:\"stdClass\":1:{s:4:\"edit\";O:8:\"stdClass\":1:{s:5:\"style\";O:8:\"stdClass\":2:{s:2:\"id\";a:1:{i:0;i:11;}s:4:\"data\";N;}}}}}s:4:\"user\";O:5:\"JUser\":27:{s:9:\"\\0\\0\\0isRoot\";b:1;s:2:\"id\";s:2:\"42\";s:4:\"name\";s:14:\"Andrew Turgeon\";s:8:\"username\";s:7:\"turgeon\";s:5:\"email\";s:26:\"andrew.p.turgeon@gmail.com\";s:8:\"password\";s:60:\"$2y$10$rZ/6oy6QOC8JonK/vIWRDOnY02CaA/35bzXsWogMYAaHYoy1nt0je\";s:14:\"password_clear\";s:0:\"\";s:5:\"block\";s:1:\"0\";s:9:\"sendEmail\";s:1:\"1\";s:12:\"registerDate\";s:19:\"2014-10-02 04:33:43\";s:13:\"lastvisitDate\";s:19:\"2015-08-12 00:43:11\";s:10:\"activation\";s:0:\"\";s:6:\"params\";s:2:\"{}\";s:6:\"groups\";a:1:{i:8;s:1:\"8\";}s:5:\"guest\";i:0;s:13:\"lastResetTime\";s:19:\"0000-00-00 00:00:00\";s:10:\"resetCount\";s:1:\"0\";s:12:\"requireReset\";s:1:\"0\";s:10:\"\\0\\0\\0_params\";O:24:\"Joomla\\Registry\\Registry\":1:{s:7:\"\\0\\0\\0data\";O:8:\"stdClass\":0:{}}s:14:\"\\0\\0\\0_authGroups\";a:2:{i:0;i:1;i:1;i:8;}s:14:\"\\0\\0\\0_authLevels\";a:5:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;i:4;i:6;}s:15:\"\\0\\0\\0_authActions\";N;s:12:\"\\0\\0\\0_errorMsg\";N;s:10:\"\\0\\0\\0_errors\";a:0:{}s:3:\"aid\";i:0;s:6:\"otpKey\";s:0:\"\";s:4:\"otep\";s:0:\"\";}s:13:\"session.token\";s:32:\"4d749dc40ec1a82e254e30ea1e75248f\";}',42,'turgeon');
-INSERT INTO `jos_session` VALUES ('s0aabovfauc8nc76uu94k02i91',0,1,'1439344994','__default|a:7:{s:15:\"session.counter\";i:9;s:19:\"session.timer.start\";i:1439344175;s:18:\"session.timer.last\";i:1439344970;s:17:\"session.timer.now\";i:1439344993;s:22:\"session.client.browser\";s:104:\"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.89 Safari/537.36\";s:8:\"registry\";O:24:\"Joomla\\Registry\\Registry\":1:{s:7:\"\\0\\0\\0data\";O:8:\"stdClass\":6:{s:13:\"current_theme\";s:16:\"eyecentersofohio\";s:17:\"current_direction\";s:3:\"ltr\";s:17:\"current_key_sufix\";s:21:\"_eyecentersofohio_ltr\";s:39:\"current_responsive_eyecentersofohio_ltr\";s:1:\"1\";s:39:\"vars_last_modified_eyecentersofohio_ltr\";i:1439344906;s:38:\"vars_urls_content_eyecentersofohio_ltr\";s:379:\"plugins/system/t3/base-bs3/bootstrap/less/variables.less|plugins/system/t3/base-bs3/less/variables.less|templates/purity_iii/less/variables.less|plugins/system/t3/base-bs3/bootstrap/less/mixins.less|plugins/system/t3/base-bs3/less/mixins.less|templates/purity_iii/less/themes/eyecentersofohio/variables.less|templates/purity_iii/less/themes/eyecentersofohio/variables-custom.less\";}}s:4:\"user\";O:5:\"JUser\":25:{s:9:\"\\0\\0\\0isRoot\";b:0;s:2:\"id\";i:0;s:4:\"name\";N;s:8:\"username\";N;s:5:\"email\";N;s:8:\"password\";N;s:14:\"password_clear\";s:0:\"\";s:5:\"block\";N;s:9:\"sendEmail\";i:0;s:12:\"registerDate\";N;s:13:\"lastvisitDate\";N;s:10:\"activation\";N;s:6:\"params\";N;s:6:\"groups\";a:1:{i:0;s:1:\"9\";}s:5:\"guest\";i:1;s:13:\"lastResetTime\";N;s:10:\"resetCount\";N;s:12:\"requireReset\";N;s:10:\"\\0\\0\\0_params\";O:24:\"Joomla\\Registry\\Registry\":1:{s:7:\"\\0\\0\\0data\";O:8:\"stdClass\":0:{}}s:14:\"\\0\\0\\0_authGroups\";a:2:{i:0;i:1;i:1;i:9;}s:14:\"\\0\\0\\0_authLevels\";a:3:{i:0;i:1;i:1;i:1;i:2;i:5;}s:15:\"\\0\\0\\0_authActions\";N;s:12:\"\\0\\0\\0_errorMsg\";N;s:10:\"\\0\\0\\0_errors\";a:0:{}s:3:\"aid\";i:0;}}',0,'');
+INSERT INTO `jos_session` VALUES ('q438kf6rvuk6ic6a39r18hs5e0',1,0,'1439350567','__default|a:9:{s:15:\"session.counter\";i:88;s:19:\"session.timer.start\";i:1439347724;s:18:\"session.timer.last\";i:1439350566;s:17:\"session.timer.now\";i:1439350567;s:22:\"session.client.browser\";s:104:\"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.89 Safari/537.36\";s:8:\"registry\";O:24:\"Joomla\\Registry\\Registry\":1:{s:7:\"\\0\\0\\0data\";O:8:\"stdClass\":4:{s:11:\"application\";O:8:\"stdClass\":1:{s:4:\"lang\";s:0:\"\";}s:11:\"com_modules\";O:8:\"stdClass\":3:{s:7:\"modules\";O:8:\"stdClass\":1:{s:6:\"filter\";O:8:\"stdClass\":1:{s:18:\"client_id_previous\";i:0;}}s:4:\"edit\";O:8:\"stdClass\":1:{s:6:\"module\";O:8:\"stdClass\":2:{s:2:\"id\";a:0:{}s:4:\"data\";N;}}s:3:\"add\";O:8:\"stdClass\":1:{s:6:\"module\";O:8:\"stdClass\":2:{s:12:\"extension_id\";N;s:6:\"params\";N;}}}s:14:\"com_categories\";O:8:\"stdClass\":2:{s:10:\"categories\";O:8:\"stdClass\":1:{s:6:\"filter\";O:8:\"stdClass\":1:{s:9:\"extension\";s:17:\"com_djimageslider\";}}s:4:\"edit\";O:8:\"stdClass\":1:{s:8:\"category\";O:8:\"stdClass\":2:{s:4:\"data\";N;s:2:\"id\";a:0:{}}}}s:17:\"com_djimageslider\";O:8:\"stdClass\":1:{s:4:\"edit\";O:8:\"stdClass\":1:{s:4:\"item\";O:8:\"stdClass\":2:{s:4:\"data\";N;s:2:\"id\";a:0:{}}}}}}s:4:\"user\";O:5:\"JUser\":27:{s:9:\"\\0\\0\\0isRoot\";b:1;s:2:\"id\";s:2:\"42\";s:4:\"name\";s:14:\"Andrew Turgeon\";s:8:\"username\";s:7:\"turgeon\";s:5:\"email\";s:26:\"andrew.p.turgeon@gmail.com\";s:8:\"password\";s:60:\"$2y$10$rZ/6oy6QOC8JonK/vIWRDOnY02CaA/35bzXsWogMYAaHYoy1nt0je\";s:14:\"password_clear\";s:0:\"\";s:5:\"block\";s:1:\"0\";s:9:\"sendEmail\";s:1:\"1\";s:12:\"registerDate\";s:19:\"2014-10-02 04:33:43\";s:13:\"lastvisitDate\";s:19:\"2015-08-12 01:49:28\";s:10:\"activation\";s:0:\"\";s:6:\"params\";s:2:\"{}\";s:6:\"groups\";a:1:{i:8;s:1:\"8\";}s:5:\"guest\";i:0;s:13:\"lastResetTime\";s:19:\"0000-00-00 00:00:00\";s:10:\"resetCount\";s:1:\"0\";s:12:\"requireReset\";s:1:\"0\";s:10:\"\\0\\0\\0_params\";O:24:\"Joomla\\Registry\\Registry\":1:{s:7:\"\\0\\0\\0data\";O:8:\"stdClass\":0:{}}s:14:\"\\0\\0\\0_authGroups\";a:2:{i:0;i:1;i:1;i:8;}s:14:\"\\0\\0\\0_authLevels\";a:5:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;i:4;i:6;}s:15:\"\\0\\0\\0_authActions\";N;s:12:\"\\0\\0\\0_errorMsg\";N;s:10:\"\\0\\0\\0_errors\";a:0:{}s:3:\"aid\";i:0;s:6:\"otpKey\";s:0:\"\";s:4:\"otep\";s:0:\"\";}s:13:\"session.token\";s:32:\"ac631885fc41697ed8acccc669a1ebfc\";s:20:\"com_media.return_url\";s:113:\"index.php?option=com_media&view=images&tmpl=component&fieldid=jform_image&e_name=&asset=com_djimageslider&author=\";}',42,'turgeon');
+INSERT INTO `jos_session` VALUES ('s0aabovfauc8nc76uu94k02i91',0,1,'1439350428','__default|a:7:{s:15:\"session.counter\";i:72;s:19:\"session.timer.start\";i:1439344175;s:18:\"session.timer.last\";i:1439350395;s:17:\"session.timer.now\";i:1439350427;s:22:\"session.client.browser\";s:104:\"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.89 Safari/537.36\";s:8:\"registry\";O:24:\"Joomla\\Registry\\Registry\":1:{s:7:\"\\0\\0\\0data\";O:8:\"stdClass\":6:{s:13:\"current_theme\";s:16:\"eyecentersofohio\";s:17:\"current_direction\";s:3:\"ltr\";s:17:\"current_key_sufix\";s:21:\"_eyecentersofohio_ltr\";s:39:\"current_responsive_eyecentersofohio_ltr\";s:1:\"1\";s:39:\"vars_last_modified_eyecentersofohio_ltr\";i:1439344906;s:38:\"vars_urls_content_eyecentersofohio_ltr\";s:379:\"plugins/system/t3/base-bs3/bootstrap/less/variables.less|plugins/system/t3/base-bs3/less/variables.less|templates/purity_iii/less/variables.less|plugins/system/t3/base-bs3/bootstrap/less/mixins.less|plugins/system/t3/base-bs3/less/mixins.less|templates/purity_iii/less/themes/eyecentersofohio/variables.less|templates/purity_iii/less/themes/eyecentersofohio/variables-custom.less\";}}s:4:\"user\";O:5:\"JUser\":25:{s:9:\"\\0\\0\\0isRoot\";b:0;s:2:\"id\";i:0;s:4:\"name\";N;s:8:\"username\";N;s:5:\"email\";N;s:8:\"password\";N;s:14:\"password_clear\";s:0:\"\";s:5:\"block\";N;s:9:\"sendEmail\";i:0;s:12:\"registerDate\";N;s:13:\"lastvisitDate\";N;s:10:\"activation\";N;s:6:\"params\";N;s:6:\"groups\";a:1:{i:0;s:1:\"9\";}s:5:\"guest\";i:1;s:13:\"lastResetTime\";N;s:10:\"resetCount\";N;s:12:\"requireReset\";N;s:10:\"\\0\\0\\0_params\";O:24:\"Joomla\\Registry\\Registry\":1:{s:7:\"\\0\\0\\0data\";O:8:\"stdClass\":0:{}}s:14:\"\\0\\0\\0_authGroups\";a:2:{i:0;i:1;i:1;i:9;}s:14:\"\\0\\0\\0_authLevels\";a:3:{i:0;i:1;i:1;i:1;i:2;i:5;}s:15:\"\\0\\0\\0_authActions\";N;s:12:\"\\0\\0\\0_errorMsg\";N;s:10:\"\\0\\0\\0_errors\";a:0:{}s:3:\"aid\";i:0;}}',0,'');
 /*!40000 ALTER TABLE `jos_session` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -5671,7 +5721,7 @@ INSERT INTO `jos_template_styles` VALUES (5,'hathor',1,'0','Hathor - Default','{
 INSERT INTO `jos_template_styles` VALUES (7,'protostar',0,'0','protostar - Default','{\"templateColor\":\"\",\"logoFile\":\"\",\"googleFont\":\"1\",\"googleFontName\":\"Open+Sans\",\"fluidContainer\":\"0\"}');
 INSERT INTO `jos_template_styles` VALUES (8,'isis',1,'1','isis - Default','{\"templateColor\":\"\",\"logoFile\":\"\"}');
 INSERT INTO `jos_template_styles` VALUES (10,'purity_iii',0,'0','Eye Centers Of Ohio 2014','{\"tpl_article_info_datetime_format\":\"d M Y\",\"t3_template\":\"1\",\"devmode\":\"1\",\"themermode\":\"1\",\"legacy_css\":\"1\",\"responsive\":\"1\",\"non_responsive_width\":\"970px\",\"build_rtl\":\"0\",\"t3-assets\":\"t3-assets\",\"t3-rmvlogo\":\"0\",\"minify\":\"0\",\"minify_js\":\"0\",\"minify_js_tool\":\"jsmin\",\"minify_exclude\":null,\"link_titles\":null,\"theme\":\"eyecentersofohio\",\"logotype\":\"text\",\"sitename\":\"Eye Centers of Ohio\",\"slogan\":\"It\'s easy to see the difference\",\"logoimage\":\"\",\"enable_logoimage_sm\":\"0\",\"logoimage_sm\":\"\",\"mainlayout\":\"eye-centers-of-ohio\",\"mm_type\":\"mainmenu\",\"navigation_trigger\":\"hover\",\"navigation_type\":\"megamenu\",\"navigation_animation\":\"slide\",\"navigation_animation_duration\":\"400\",\"mm_config\":\"{\\\"mainmenu\\\":{\\\"item-108\\\":{\\\"sub\\\":{\\\"rows\\\":[[{\\\"item\\\":117,\\\"width\\\":12}]]}},\\\"item-109\\\":{\\\"sub\\\":{\\\"rows\\\":[[{\\\"item\\\":112,\\\"width\\\":12}]]}},\\\"item-110\\\":{\\\"sub\\\":{\\\"rows\\\":[[{\\\"item\\\":118,\\\"width\\\":12}]]}},\\\"item-111\\\":{\\\"sub\\\":{\\\"rows\\\":[[{\\\"item\\\":113,\\\"width\\\":12}]]}}}}\",\"navigation_collapse_enable\":\"0\",\"addon_offcanvas_enable\":\"1\",\"addon_offcanvas_effect\":\"off-canvas-effect-7\",\"snippet_open_head\":null,\"snippet_close_head\":null,\"snippet_open_body\":null,\"snippet_close_body\":null,\"snippet_debug\":\"0\",\"theme_extras_com_community\":null,\"theme_extras_com_easyblog\":null,\"theme_extras_com_easydiscuss\":null,\"theme_extras_com_easysocial\":null,\"theme_extras_com_kunena\":null,\"theme_extras_com_mijoshop\":null,\"theme_extras_layout_glossary\":null,\"mm_config_needupdate\":\"\"}');
-INSERT INTO `jos_template_styles` VALUES (11,'purity_iii',0,'1','Eye Centers Of Ohio 2015','{\"tpl_article_info_datetime_format\":\"d M Y\",\"t3_template\":\"1\",\"devmode\":\"1\",\"themermode\":\"1\",\"legacy_css\":\"1\",\"responsive\":\"1\",\"non_responsive_width\":\"970px\",\"build_rtl\":\"0\",\"t3-assets\":\"t3-assets\",\"t3-rmvlogo\":\"0\",\"minify\":\"0\",\"minify_js\":\"0\",\"minify_js_tool\":\"jsmin\",\"minify_exclude\":\"\",\"link_titles\":\"\",\"theme\":\"eyecentersofohio\",\"logotype\":\"image\",\"sitename\":\"Eye Centers of Ohio\",\"slogan\":\"It\'s easy to see the difference\",\"logoimage\":\"images\\/eyecenters-logo.png\",\"enable_logoimage_sm\":\"0\",\"logoimage_sm\":\"\",\"mainlayout\":\"eye-centers-of-ohio-2015\",\"mm_type\":\"mainmenu\",\"navigation_trigger\":\"hover\",\"navigation_type\":\"megamenu\",\"navigation_animation\":\"slide\",\"navigation_animation_duration\":\"400\",\"mm_config\":\"{\\\"mainmenu\\\":{\\\"item-108\\\":{\\\"sub\\\":{\\\"rows\\\":[[{\\\"item\\\":117,\\\"width\\\":12}]]}},\\\"item-109\\\":{\\\"sub\\\":{\\\"rows\\\":[[{\\\"item\\\":112,\\\"width\\\":12}]]}},\\\"item-110\\\":{\\\"sub\\\":{\\\"rows\\\":[[{\\\"item\\\":118,\\\"width\\\":12}]]}},\\\"item-111\\\":{\\\"sub\\\":{\\\"rows\\\":[[{\\\"item\\\":113,\\\"width\\\":12}]]}}}}\",\"navigation_collapse_enable\":\"0\",\"addon_offcanvas_enable\":\"1\",\"addon_offcanvas_effect\":\"off-canvas-effect-7\",\"snippet_open_head\":\"\",\"snippet_close_head\":\"\",\"snippet_open_body\":\"\",\"snippet_close_body\":\"\",\"snippet_debug\":\"0\",\"mm_config_needupdate\":\"\"}');
+INSERT INTO `jos_template_styles` VALUES (11,'purity_iii',0,'1','Eye Centers Of Ohio 2015','{\"tpl_article_info_datetime_format\":\"d M Y\",\"t3_template\":\"1\",\"devmode\":\"1\",\"themermode\":\"1\",\"legacy_css\":\"1\",\"responsive\":\"1\",\"non_responsive_width\":\"970px\",\"build_rtl\":\"0\",\"t3-assets\":\"t3-assets\",\"t3-rmvlogo\":\"0\",\"minify\":\"0\",\"minify_js\":\"0\",\"minify_js_tool\":\"jsmin\",\"minify_exclude\":\"\",\"link_titles\":\"\",\"theme\":\"eyecentersofohio\",\"logotype\":\"image\",\"sitename\":\"Eye Centers of Ohio\",\"slogan\":\"It\'s easy to see the difference\",\"logoimage\":\"images\\/eyecenters-logo.png\",\"enable_logoimage_sm\":\"0\",\"logoimage_sm\":\"\",\"mainlayout\":\"eye-centers-of-ohio-2015\",\"mm_type\":\"mainmenu\",\"navigation_trigger\":\"hover\",\"navigation_type\":\"megamenu\",\"navigation_animation\":\"slide\",\"navigation_animation_duration\":\"400\",\"mm_config\":\"{\\\"mainmenu\\\":{\\\"item-108\\\":{\\\"sub\\\":{\\\"rows\\\":[[{\\\"item\\\":117,\\\"width\\\":12}]]}},\\\"item-109\\\":{\\\"sub\\\":{\\\"rows\\\":[[{\\\"item\\\":112,\\\"width\\\":12}]]}},\\\"item-110\\\":{\\\"sub\\\":{\\\"rows\\\":[[{\\\"item\\\":118,\\\"width\\\":12}]]}},\\\"item-111\\\":{\\\"sub\\\":{\\\"rows\\\":[[{\\\"item\\\":113,\\\"width\\\":12}]]}}}}\",\"navigation_collapse_enable\":\"0\",\"addon_offcanvas_enable\":\"1\",\"addon_offcanvas_effect\":\"off-canvas-effect-7\",\"snippet_open_head\":\"\",\"snippet_close_head\":\"\",\"snippet_open_body\":\"\",\"snippet_close_body\":\"\",\"snippet_debug\":\"0\"}');
 /*!40000 ALTER TABLE `jos_template_styles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -5957,7 +6007,7 @@ CREATE TABLE `jos_update_sites` (
   `last_check_timestamp` bigint(20) DEFAULT '0',
   `extra_query` varchar(1000) DEFAULT '',
   PRIMARY KEY (`update_site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='Update Sites';
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='Update Sites';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5973,6 +6023,7 @@ INSERT INTO `jos_update_sites` VALUES (5,'','collection','http://update.joomlart
 INSERT INTO `jos_update_sites` VALUES (6,'WebInstaller Update Site','extension','http://appscdn.joomla.org/webapps/jedapps/webinstaller.xml',1,1439340404,'');
 INSERT INTO `jos_update_sites` VALUES (8,'Plugin Googlemap Update Site','extension','http://tech.reumer.net/update/plugin_googlemap3/extension.xml',1,1439340401,'');
 INSERT INTO `jos_update_sites` VALUES (9,'RocketTheme Update Directory','collection','http://updates.rockettheme.com/joomla/updates.xml',1,1439340401,'');
+INSERT INTO `jos_update_sites` VALUES (10,'DJ-ImageSlider Package','extension','http://dj-extensions.com/updates/djimageslider.xml',1,0,'');
 /*!40000 ALTER TABLE `jos_update_sites` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -6004,6 +6055,7 @@ INSERT INTO `jos_update_sites_extensions` VALUES (5,10021);
 INSERT INTO `jos_update_sites_extensions` VALUES (6,10022);
 INSERT INTO `jos_update_sites_extensions` VALUES (8,10025);
 INSERT INTO `jos_update_sites_extensions` VALUES (9,10029);
+INSERT INTO `jos_update_sites_extensions` VALUES (10,10034);
 /*!40000 ALTER TABLE `jos_update_sites_extensions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -6532,7 +6584,7 @@ CREATE TABLE `jos_users` (
 
 LOCK TABLES `jos_users` WRITE;
 /*!40000 ALTER TABLE `jos_users` DISABLE KEYS */;
-INSERT INTO `jos_users` VALUES (42,'Andrew Turgeon','turgeon','andrew.p.turgeon@gmail.com','$2y$10$rZ/6oy6QOC8JonK/vIWRDOnY02CaA/35bzXsWogMYAaHYoy1nt0je',0,1,'2014-10-02 04:33:43','2015-08-12 01:49:28','','{}','0000-00-00 00:00:00',0,'','',0);
+INSERT INTO `jos_users` VALUES (42,'Andrew Turgeon','turgeon','andrew.p.turgeon@gmail.com','$2y$10$rZ/6oy6QOC8JonK/vIWRDOnY02CaA/35bzXsWogMYAaHYoy1nt0je',0,1,'2014-10-02 04:33:43','2015-08-12 02:48:47','','{}','0000-00-00 00:00:00',0,'','',0);
 /*!40000 ALTER TABLE `jos_users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -6633,4 +6685,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-08-11 22:03:49
+-- Dump completed on 2015-08-11 23:37:19
