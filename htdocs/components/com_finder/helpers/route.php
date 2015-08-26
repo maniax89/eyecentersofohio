@@ -52,7 +52,7 @@ class FinderHelperRoute
 		// Add the menu item id if present.
 		if ($item !== null)
 		{
-			$uri->setVar('Itemid', $item);
+			//$uri->setVar('Itemid', $item);
 		}
 
 		return $uri->toString(array('path', 'query'));

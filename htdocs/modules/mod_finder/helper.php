@@ -53,7 +53,7 @@ class ModFinderHelper
 		 * First, check if the param is set.  If not, fall back to the Itemid from the JInput object
 		 */
 		$Itemid = $paramItem > 0 ? $paramItem : JFactory::getApplication()->input->getInt('Itemid');
-		$fields .= '<input type="hidden" name="Itemid" value="' . $Itemid . '" />';
+		//$fields .= '<input type="hidden" name="Itemid" value="' . $Itemid . '" />';
 
 		return $fields;
 	}
