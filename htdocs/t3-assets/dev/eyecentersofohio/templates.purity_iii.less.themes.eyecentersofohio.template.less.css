@@ -76,15 +76,6 @@ article,
     padding: 2em 1.5em;
     width: 760px;
   }
-  .t3-sl.t3-sl-1 {
-    padding: 0.5em 0;
-    -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
-  }
-  .corporate .t3-sl-1 {
-    border-bottom: 1px solid #f7f7f7;
-  }
   .leading-0 {
     min-height: 850px;
     background-image: url(/eyecentersofohio/images/eyecare-tool.jpg);
@@ -240,6 +231,9 @@ article,
   color: #eeeeee;
 }
 
+.t3-spotlight-1 {
+  padding-top: 0;
+}
 .t3-sl {
   padding: 0.5em 0;
 }
@@ -252,6 +246,9 @@ article,
 .corporate .t3-sl.t3-sl-1 {
   border-bottom: none;
 }
+#eco_logo {
+  width: 200px;
+}
 #eco_logo h1 {
   font-family: 'Exo 2', sans-serif;
   font-size: 1em;
@@ -262,6 +259,34 @@ article,
 }
 .t3-sl .t3-module + .t3-module {
   margin-top: 0;
+}
+.t3-spotlight-1 div:last-child .t3-module {
+  float: right;
+  clear: both;
+}
+.search label {
+  display: none;
+}
+.search .fa-search {
+  position: relative;
+  left: -22px;
+}
+#mod-search-searchword {
+  display: inline;
+}
+@media (min-width: 992px) {
+  .t3-sl.t3-sl-1 {
+    padding: 0.5em 0;
+    -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+  }
+  .t3-spotlight-1 {
+    padding-top: 1em;
+  }
+  .corporate .t3-sl-1 {
+    border-bottom: 1px solid #f7f7f7;
+  }
 }
 
 .slideshowck {
@@ -587,7 +612,7 @@ article,
 #jform_contact_message {
   height: 8em;
 }
-@media (min-width: 786px) {
+@media (min-width: 768px) {
   .form-horizontal .control-group .controls {
     margin-left: 11em;
   }
