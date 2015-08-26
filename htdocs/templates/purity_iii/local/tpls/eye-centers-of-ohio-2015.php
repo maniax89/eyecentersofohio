@@ -1,14 +1,14 @@
 <?php
-/** 
+/**
  *------------------------------------------------------------------------------
  * @package       T3 Framework for Joomla!
  *------------------------------------------------------------------------------
  * @copyright     Copyright (C) 2004-2013 JoomlArt.com. All Rights Reserved.
  * @license       GNU General Public License version 2 or later; see LICENSE.txt
- * @authors       JoomlArt, JoomlaBamboo, (contribute to this project at github 
+ * @authors       JoomlArt, JoomlaBamboo, (contribute to this project at github
  *                & Google group to become co-author)
  * @Google group: https://groups.google.com/forum/#!forum/t3fw
- * @Link:         http://t3-framework.org 
+ * @Link:         http://t3-framework.org
  *------------------------------------------------------------------------------
  */
 
@@ -34,9 +34,11 @@ defined('_JEXEC') or die;
 
 	<?php $this->loadBlock('header') ?>
 
+	<?php $this->loadBlock('spotlight-2') ?>
+
 	<?php $this->loadBlock('slideshow') ?>
 
-	<?php $this->loadBlock('spotlight-2') ?>
+	<?php $this->loadBlock('spotlight-3') ?>
 
 	<?php $this->loadBlock('mainbody/full-width') ?>
 
