@@ -264,14 +264,11 @@ article,
   float: right;
   clear: both;
 }
-.search label {
-  display: none;
-}
-.search .fa-search {
+.finder .fa-search {
   position: relative;
   left: -22px;
 }
-#mod-search-searchword {
+#mod-finder-searchword {
   display: inline;
 }
 @media (min-width: 992px) {
