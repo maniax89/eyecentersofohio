@@ -151,8 +151,6 @@ article, .contact, .contact-category, #t3-content .search {
 	border: none;
 }
 
-
-
 #t3-mainnav {
 	position: static;
 	.drop-shadow (0, 5px, 10px, 0, 0.25);
@@ -307,6 +305,13 @@ article, .contact, .contact-category, #t3-content .search {
 		margin: 0 auto;
 		display: block;
 	}
+	.t3-spotlight-2 & {
+		width: auto;
+	}
+}
+
+.t3-spotlight-2 #contact_info {
+	text-align: center;
 }
 
 .t3-sl .t3-module + .t3-module {
@@ -318,13 +323,8 @@ article, .contact, .contact-category, #t3-content .search {
 	clear: both;
 }
 
-.t3-spotlight-1 .finder .fa-search{
-	position: relative;
-	left: -22px;
-}
-
-#mod-finder-searchword {
-	display: inline;
+.t3-spotlight-2 #mod-finder-searchword {
+	margin: 0 auto;
 }
 
 @media (min-width: @screen-md-min) {

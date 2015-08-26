@@ -257,6 +257,12 @@ article,
   margin: 0 auto;
   display: block;
 }
+.t3-spotlight-2 #eco_logo {
+  width: auto;
+}
+.t3-spotlight-2 #contact_info {
+  text-align: center;
+}
 .t3-sl .t3-module + .t3-module {
   margin-top: 0;
 }
@@ -264,12 +270,8 @@ article,
   float: right;
   clear: both;
 }
-.finder .fa-search {
-  position: relative;
-  left: -22px;
-}
-#mod-finder-searchword {
-  display: inline;
+.t3-spotlight-2 #mod-finder-searchword {
+  margin: 0 auto;
 }
 @media (min-width: 992px) {
   .t3-sl.t3-sl-1 {
