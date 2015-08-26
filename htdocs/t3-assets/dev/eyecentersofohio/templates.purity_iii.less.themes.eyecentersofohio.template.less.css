@@ -76,6 +76,15 @@ article,
     padding: 2em 1.5em;
     width: 760px;
   }
+  .t3-sl.t3-sl-1 {
+    padding: 0.5em 0;
+    -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+  }
+  .corporate .t3-sl-1 {
+    border-bottom: 1px solid #f7f7f7;
+  }
   .leading-0 {
     min-height: 850px;
     background-image: url(/eyecentersofohio/images/eyecare-tool.jpg);
@@ -139,11 +148,6 @@ article,
   -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25);
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25);
-}
-#t3-mainnav .off-canvas-toggle:hover,
-#t3-mainnav .off-canvas-toggle:focus,
-#t3-mainnav .off-canvas-toggle:active {
-  background-color: #3b2182;
 }
 .t3-mainnav .t3-navbar {
   float: none;
@@ -239,11 +243,14 @@ article,
 .t3-sl {
   padding: 0.5em 0;
 }
+.t3-sl.t3-sl-1 {
+  padding: 0;
+}
 .t3-sl-1 {
-  -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
-  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
   position: relative;
+}
+.corporate .t3-sl.t3-sl-1 {
+  border-bottom: none;
 }
 #eco_logo h1 {
   font-family: 'Exo 2', sans-serif;

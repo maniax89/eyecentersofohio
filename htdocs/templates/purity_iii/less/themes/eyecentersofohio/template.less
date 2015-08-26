@@ -91,6 +91,13 @@ article, .contact, .contact-category, #t3-content .search {
 		padding: 2em 1.5em;
 		width: 760px;
 	}
+	.t3-sl.t3-sl-1 {
+		padding: 0.5em 0;
+		.drop-shadow (0, 5px, 10px, 0, 0.5);
+	}
+	.corporate .t3-sl-1 {
+		border-bottom: 1px solid @gray-lightest;
+	}
 	.leading-0 {
 		min-height: 850px;
 		background-image: url(../../../images/eyecare-tool.jpg);
@@ -155,12 +162,6 @@ article, .contact, .contact-category, #t3-content .search {
 #t3-mainnav {
 	position: static;
 	.drop-shadow (0, 5px, 10px, 0, 0.25);
-
-	.off-canvas-toggle:hover, 
-	.off-canvas-toggle:focus, 
-	.off-canvas-toggle:active {
-		background-color: @brand-secondary;
-	}
 }
 
 .t3-mainnav .t3-navbar {
@@ -286,11 +287,17 @@ article, .contact, .contact-category, #t3-content .search {
 /* spotlight styles */
 .t3-sl {
 	padding: 0.5em 0;
+	&.t3-sl-1 {
+		padding: 0;
+	}
 }
 
 .t3-sl-1 {
-	.drop-shadow (0, 5px, 10px, 0, 0.5);
 	position: relative;
+}
+
+.corporate .t3-sl.t3-sl-1 {
+	border-bottom: none;
 }
 
 #eco_logo {
