@@ -296,6 +296,28 @@ article, .contact, .contact-category, #t3-content .finder {
 #finder-search {
 	display: none;
 }
+
+button.finder {
+	position: absolute;
+	background-color: transparent;
+	color: @brand-primary;
+	border: none;
+	padding: 0.5em;
+	top: 0;
+	right: 20px;
+}
+
+@media (min-width: @screen-sm-min) {
+	button.finder {
+		right: 240px;
+	}
+}
+
+@media (min-width: @screen-md-min) {
+	button.finder {
+		right: 20px;
+	}
+}
 /* end search styles */
 
 

@@ -248,6 +248,25 @@ article,
 #finder-search {
   display: none;
 }
+button.finder {
+  position: absolute;
+  background-color: transparent;
+  color: #7abac0;
+  border: none;
+  padding: 0.5em;
+  top: 0;
+  right: 20px;
+}
+@media (min-width: 768px) {
+  button.finder {
+    right: 240px;
+  }
+}
+@media (min-width: 992px) {
+  button.finder {
+    right: 20px;
+  }
+}
 
 .t3-spotlight-1 {
   padding-top: 0;
