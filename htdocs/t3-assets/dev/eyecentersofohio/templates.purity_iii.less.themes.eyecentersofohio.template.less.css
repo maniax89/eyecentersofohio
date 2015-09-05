@@ -59,20 +59,20 @@ body {
 article,
 .contact,
 .contact-category,
-#t3-content .search {
+#t3-content .finder {
   margin: 0 auto;
 }
 .contact-category,
 .contact,
 .content-category,
-#t3-content .search {
+#t3-content .finder {
   padding: 2em 1.5em;
 }
 @media (min-width: 768px) {
   article,
   .contact,
   .contact-category,
-  #t3-content .search {
+  #t3-content .finder {
     padding: 2em 1.5em;
     width: 760px;
   }
@@ -104,7 +104,7 @@ article,
   article,
   .contact,
   .contact-category,
-  #t3-content .search {
+  #t3-content .finder {
     width: 980px;
   }
   .leading-2 {
@@ -120,7 +120,7 @@ article,
   article,
   .contact,
   .contact-category,
-  #t3-content .search {
+  #t3-content .finder {
     width: 1180px;
   }
   .leading-0 article,
@@ -130,8 +130,7 @@ article,
   }
 }
 
-#t3-mainnav,
-.head-search .search {
+#t3-mainnav {
   border: none;
 }
 #t3-mainnav {
@@ -231,6 +230,25 @@ article,
   color: #eeeeee;
 }
 
+#eco_logo {
+  width: 200px;
+}
+#eco_logo h1 {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1em;
+}
+#eco_logo img {
+  margin: 0 auto;
+  display: block;
+}
+.t3-spotlight-2 #eco_logo {
+  width: auto;
+}
+
+#finder-search {
+  display: none;
+}
+
 .t3-spotlight-1 {
   padding-top: 0;
 }
@@ -245,20 +263,6 @@ article,
 }
 .corporate .t3-sl.t3-sl-1 {
   border-bottom: none;
-}
-#eco_logo {
-  width: 200px;
-}
-#eco_logo h1 {
-  font-family: 'Exo 2', sans-serif;
-  font-size: 1em;
-}
-#eco_logo img {
-  margin: 0 auto;
-  display: block;
-}
-.t3-spotlight-2 #eco_logo {
-  width: auto;
 }
 .t3-spotlight-2 #contact_info {
   text-align: center;

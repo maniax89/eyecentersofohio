@@ -78,16 +78,16 @@ body {
 	background-image: none;
 }
 
-article, .contact, .contact-category, #t3-content .search {
+article, .contact, .contact-category, #t3-content .finder {
 	margin: 0 auto;
 }
 
-.contact-category, .contact, .content-category, #t3-content .search {
+.contact-category, .contact, .content-category, #t3-content .finder {
 	padding: 2em 1.5em;
 }
 
 @media (min-width: @screen-sm-min) {
-	article, .contact, .contact-category, #t3-content .search {
+	article, .contact, .contact-category, #t3-content .finder {
 		padding: 2em 1.5em;
 		width: 760px;
 	}
@@ -118,7 +118,7 @@ article, .contact, .contact-category, #t3-content .search {
 	}
 }
 @media (min-width: @screen-md-min) {
-	article, .contact, .contact-category, #t3-content .search {
+	article, .contact, .contact-category, #t3-content .finder {
 		width: 980px;
 	}
 	.leading-2 {
@@ -132,7 +132,7 @@ article, .contact, .contact-category, #t3-content .search {
 	}
 }
 @media (min-width: @screen-lg-min) {
-	article, .contact, .contact-category, #t3-content .search {
+	article, .contact, .contact-category, #t3-content .finder {
 		width: 1180px;
 	}
 	.leading-0, .leading-2 {
@@ -147,7 +147,7 @@ article, .contact, .contact-category, #t3-content .search {
 
 
 /* navigation overrides */
-#t3-mainnav, .head-search .search {
+#t3-mainnav {
 	border: none;
 }
 
@@ -276,6 +276,31 @@ article, .contact, .contact-category, #t3-content .search {
 
 /* end extra-class styles */
 
+/* header styles */
+#eco_logo {
+	width: 200px;
+	h1 {
+		font-family: 'Exo 2', sans-serif;
+		font-size: 1em;
+	}
+	img {
+		margin: 0 auto;
+		display: block;
+	}
+	.t3-spotlight-2 & {
+		width: auto;
+	}
+}
+
+/* search styles */
+#finder-search {
+	display: none;
+}
+/* end search styles */
+
+
+/* end header styles */
+
 /* spotlight styles */
 .t3-spotlight-1 {
 	padding-top: 0;
@@ -293,21 +318,6 @@ article, .contact, .contact-category, #t3-content .search {
 
 .corporate .t3-sl.t3-sl-1 {
 	border-bottom: none;
-}
-
-#eco_logo {
-	width: 200px;
-	h1 {
-		font-family: 'Exo 2', sans-serif;
-		font-size: 1em;
-	}
-	img {
-		margin: 0 auto;
-		display: block;
-	}
-	.t3-spotlight-2 & {
-		width: auto;
-	}
 }
 
 .t3-spotlight-2 #contact_info {
