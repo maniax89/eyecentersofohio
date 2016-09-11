@@ -550,7 +550,6 @@ htdocs/libraries/vendor/symfony/yaml/Symfony/Component/Yaml/README.md
 /database_import_andrewpturgeon.php
 /push_andrewpturgeon.sh
 /eyecentersofohio-dev.sql
-/bnconfig
 /uninstall
 /uninstall.dat
 /updateip
