@@ -546,3 +546,14 @@ htdocs/libraries/vendor/symfony/yaml/Symfony/Component/Yaml/CHANGELOG.md
 htdocs/libraries/vendor/symfony/yaml/Symfony/Component/Yaml/composer.json
 htdocs/libraries/vendor/symfony/yaml/Symfony/Component/Yaml/phpunit.xml.dist
 htdocs/libraries/vendor/symfony/yaml/Symfony/Component/Yaml/README.md
+
+# Custom Ignore (DEV)
+push_andrewpturgeon.sh
+eyecentersofohio-dev.sql
+bnconfig
+uninstall
+uninstall.dat
+updateip
+conf
+import_script/*
+htdocs/configuration.php
