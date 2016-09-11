@@ -549,10 +549,9 @@ htdocs/libraries/vendor/symfony/yaml/Symfony/Component/Yaml/README.md
 # Custom Ignore (DEV)
 /database_import_andrewpturgeon.php
 /push_andrewpturgeon.sh
-/eyecentersofohio-dev.sql
 /uninstall
 /uninstall.dat
 /updateip
 /conf
-/import_script/*
+/htdocs/import_script/*
 /htdocs/configuration.php
