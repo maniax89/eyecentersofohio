@@ -1,0 +1,720 @@
+/**
+ *------------------------------------------------------------------------------
+ * @package       T3 Framework for Joomla!
+ *------------------------------------------------------------------------------
+ * @copyright     Copyright (C) 2004-2013 JoomlArt.com. All Rights Reserved.
+ * @license       GNU General Public License version 2 or later; see LICENSE.txt
+ * @authors       JoomlArt, JoomlaBamboo, (contribute to this project at github
+ *                & Google group to become co-author)
+ * @Google group: https://groups.google.com/forum/#!forum/t3fw
+ * @Link:         http://t3-framework.org
+ *------------------------------------------------------------------------------
+ */
+
+/* core overrides for full-page width */
+body {
+	padding-top: 0;
+}
+
+#t3-mainbody {
+ 	width: 100%;
+ 	margin: 0;
+ 	padding: 0;
+ 	font-size: 1.2em;
+ }
+
+#t3-content {
+	padding: 0;
+}
+
+.row {
+	margin: 0;
+}
+
+.corporate .blog-featured .items-leading {
+	margin-bottom: 0;
+}
+
+.items-leading .leading, .item-page {
+	margin-bottom: 0;
+	padding: 1.5em;
+}
+
+.leading-0, .leading-2 {
+	background-attachment: fixed;
+	background-position: 50% 0;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+	width: 100%;
+	article {
+		position: absolute;
+		text-align: center;
+		width: 350px;
+		left: 50%;
+		margin-left: -175px;
+	}
+
+}
+
+.leading-0 {
+	min-height: 500px;
+	background-image: none;
+	article {
+		top: 25px;
+	}
+}
+
+.leading-1 {
+	-webkit-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+	border-top: 3px solid @darkest-brand;
+	border-bottom: 3px solid @darkest-brand;
+}
+
+.leading-2 {
+	min-height: 1200px;
+	background-image: none;
+}
+
+article, .contact, .contact-category, #t3-content .finder {
+	margin: 0 auto;
+}
+
+.contact-category, .contact, .content-category, #t3-content .finder {
+	padding: 2em 1.5em;
+}
+
+@media (min-width: @screen-sm-min) {
+	article, .contact, .contact-category, #t3-content .finder {
+		padding: 2em 1.5em;
+		width: 760px;
+	}
+
+	.leading-0 {
+		min-height: 850px;
+		background-image: url(../../../images/eyecare-tool.jpg);
+		&:before {
+		    content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background-image: linear-gradient(to bottom,@gray-darker,@gray-dark);
+			opacity: .6;
+		}
+	}
+	.leading-2 {
+		min-height: 900px;
+		background-image: url(../../../images/reading-glasses.jpg);
+	}
+	.leading-0, .leading-2 {
+		article {
+			width: 760px;
+			margin-left: -380px;
+		}
+	}
+}
+@media (min-width: @screen-md-min) {
+	article, .contact, .contact-category, #t3-content .finder {
+		width: 980px;
+	}
+	.leading-2 {
+		min-height: 575px;
+	}
+	.leading-0, .leading-2 {
+		article {
+			width: 980px;
+			margin-left: -490px;
+		}
+	}
+}
+@media (min-width: @screen-lg-min) {
+	article, .contact, .contact-category, #t3-content .finder {
+		width: 1180px;
+	}
+	.leading-0, .leading-2 {
+		article {
+			width: 1180px;
+			margin-left: -590px;
+		}
+	}
+}
+
+/* end core overrides for full-page width */
+
+
+/* navigation overrides */
+#t3-mainnav {
+	border: none;
+}
+
+#t3-mainnav {
+	position: static;
+	.drop-shadow (0, 5px, 10px, 0, 0.25);
+}
+
+.t3-mainnav .t3-navbar {
+	float: none;
+}
+
+.navbar-nav {
+	float: none;
+	width: 64.5em;
+	margin: 0 auto;
+}
+
+.navbar-default .navbar-nav > .active > a {
+	box-shadow: none;
+
+	&:hover {
+		box-shadow: none;
+	}
+}
+
+.navbar-default .navbar-nav > li {
+	width: 10em;
+	margin-left: 28px;
+
+	&:nth-child(3) {
+		width: 13em;
+	}
+
+	a {
+		text-align: center;
+
+		&:hover {
+			box-shadow: none;
+		}
+	}
+}
+
+/* sidebar overrides */
+#t3-off-canvas {
+	background-color: @gray-dark;
+
+	a, .t3-off-canvas-header {
+		border-bottom: 1px solid @brand-primary;
+	}
+
+	li {
+		border-top: none;
+	}
+
+	li.active {
+		display: none;
+	}
+
+	li.parent {
+		background-color: @gray-dark;
+	}
+
+	.t3-off-canvas-header {
+		background-color: @gray-darker;
+	}
+
+	.t3-off-canvas-body {
+		padding: 0;
+	}
+
+	.close {
+		color: @brand-primary;
+		opacity: 0.6;
+		filter: alpha(opacity=60);
+	}
+}
+/* end sidebar overrides */
+
+/* end navigation overrides */
+
+/* bootstrap overrides */
+
+#cboxTitle {
+	display: none !important;
+}
+
+#cboxLoadedContent {
+	margin-top: 0;
+	.contact {
+		padding: 0;
+	}
+}
+/* end bootstrap overrides */
+
+/* extra-class styles */
+.lightest_blue {
+	background-color: @lightest-brand;
+	color: @gray-dark;
+}
+
+.lighter_blue {
+	background-color: @lighter-brand;
+	color: @gray-dark;
+}
+
+.light_blue {
+	background-color: @light-brand;
+	color: @gray-lighter;
+}
+
+.lightest_purple {
+	background-color: @lightest-brand-secondary;
+	color: @gray-dark;
+}
+
+.lighter_purple {
+	background-color: @lighter-brand-secondary;
+	color: @gray-dark;
+}
+
+.light_purple {
+	background-color: @light-brand-secondary;
+	color: @gray-lighter;
+}
+
+/* end extra-class styles */
+
+/* header styles */
+#eco_logo {
+	width: 200px;
+	h1 {
+		font-family: 'Exo 2', sans-serif;
+		font-size: 1em;
+	}
+	img {
+		margin: 0 auto;
+		display: block;
+	}
+	.t3-spotlight-2 & {
+		width: auto;
+	}
+}
+
+/* search styles */
+#finder-search {
+	display: none;
+}
+
+button.finder {
+	position: absolute;
+	background-color: transparent;
+	color: @brand-primary;
+	border: none;
+	padding: 0.5em;
+	top: 0;
+	right: 20px;
+}
+
+@media (min-width: @screen-sm-min) {
+	button.finder {
+		right: 240px;
+	}
+}
+
+@media (min-width: @screen-md-min) {
+	button.finder {
+		right: 20px;
+	}
+}
+/* end search styles */
+
+
+/* end header styles */
+
+/* spotlight styles */
+.t3-spotlight-1 {
+	padding-top: 0;
+}
+.t3-sl {
+	padding: 0.5em 0;
+	&.t3-sl-1 {
+		padding: 0;
+	}
+}
+
+.t3-sl-1 {
+	position: relative;
+}
+
+.corporate .t3-sl.t3-sl-1 {
+	border-bottom: none;
+}
+
+.t3-spotlight-2 #contact_info {
+	text-align: center;
+}
+
+.t3-sl .t3-module + .t3-module {
+	margin-top: 0;
+}
+
+.t3-spotlight-1 div:last-child .t3-module {
+	float: right;
+	clear: both;
+}
+
+.t3-spotlight-2 #mod-finder-searchword {
+	margin: 0 auto;
+}
+
+@media (min-width: @screen-md-min) {
+	.t3-sl.t3-sl-1 {
+		padding: 0.5em 0;
+		.drop-shadow (0, 5px, 10px, 0, 0.5);
+	}
+	.t3-spotlight-1 {
+		padding-top: 1em;
+	}
+	.corporate .t3-sl-1 {
+		border-bottom: 1px solid @gray-lightest;
+	}
+}
+/* end spotlight styles */
+/* slideshow */
+.slideshowck {
+	width: 100% !important;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.cameraSlide {
+	background-color: @white;
+}
+
+.corporate div.slideshow {
+	background: none;
+}
+
+.camera_caption_title {
+	padding: 1em 0;
+}
+
+.camera_caption_desc {
+	padding-bottom: 1em;
+}
+/* end slideshow */
+/* spash page */
+
+.eye_chart_loop(@start_font_size, @end_font_size, @max_iterations, @counter: 0) when (@counter < @max_iterations){
+	@increment: (@start_font_size - @end_font_size) / @max_iterations;
+	@nth-child: @counter + 1;
+	&:nth-child(@{nth-child}) {
+		font-size: @start_font_size - (@increment * @counter);
+	}
+	.eye_chart_loop(@start_font_size, @end_font_size, @max_iterations, (@counter + 1));
+}
+
+#splash_home {
+	text-shadow: 0 0 20px @gray-dark;
+	color: transparent;
+	transition: all 2s ease-in-out;
+	background-color: @white;
+	border: 1px solid @gray-darker;
+	padding: 1em;
+	margin: 0 auto;
+
+	&.loaded {
+		text-shadow: none;
+		color: @gray-dark;
+	}
+
+	.eye_chart_line {
+		font-family: "Courier New", Courier, monospace;
+		letter-spacing: 0.6em;
+		padding-top: 20px;
+		padding-left: 0.6em;
+		text-align: center;
+		position: relative;
+
+		.acuity {
+			visibility: hidden;
+			letter-spacing: normal;
+			font-size: 8pt;
+			margin-top: -8px;
+			position: absolute;
+			top: 50%;
+			left: 0;
+
+			.top_acuity {
+				border-bottom: 1px solid @gray-darker;
+			}
+		}
+
+		img {
+			display: inline-block;
+			width: auto !important;
+			margin-left: -0.5em;
+		}
+
+		&.divider {
+			border-top: 2px solid @gray-darker;
+		}
+
+		.eye_chart_loop(1.7em, 0.6em, 7);
+	}
+}
+
+@media (min-width: @screen-sm-min) {
+	#splash_home {
+		width: 40em;
+		.eye_chart_line {
+			.acuity {
+				visibility: visible;
+			}
+			.eye_chart_loop(4em, 1em, 7);
+		}
+	}
+}
+
+/* end splash page */
+
+/* Welcome */
+#welcome {
+	p {
+		font-size: 1.2em;
+		color: @gray;
+	}
+}
+/* end Welcome */
+
+/* Services */
+#services {
+
+	.service-list {
+		font-family: 'FontAwesome';
+		text-align: center;
+	}
+
+	.service-item {
+		width: 15em;
+		border: 5px solid @brand-secondary;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+		display: inline-block;
+		padding: 1em;
+		margin: 1em;
+		height: 20em;
+		background-color: @white;
+
+		h3 {
+			color: @brand-secondary;
+		}
+
+		p {
+			color: @gray;
+			&:before {
+				display:block;
+				font-size: 10em;
+				line-height: 1em;
+				color: @brand-secondary;
+			}
+		}
+
+		&:hover {
+			text-decoration: none;
+			background-color: @brand-secondary;
+			h3, p, p:before, a {
+				color: @white;
+			}
+		}
+
+	}
+}
+
+/* end Services */
+
+/* doctors page */
+.contacts-grid {
+	text-align: center;
+}
+
+.contact-card {
+	display: inline-block;
+}
+
+.contact-image {
+	height: 15em;
+	width: 15em;
+	overflow: hidden;
+	.border-radius(10em);
+	.drop-shadow(10px, 10px, 5px, 0px, 0.75);
+	display:inline-block;
+
+	img{
+		max-width: 100%;
+	}
+
+	& + .contact-name {
+		padding: 1em 0;
+	}
+}
+
+.contact-link:focus {
+	outline: none;
+}
+
+.contact-link-container {
+	text-align: center;
+	font-weight: bold;
+	padding: 1em;
+}
+
+.contact-extra-info {
+	vertical-align: top;
+	display:inline-block;
+	padding: 1em;
+	min-width: 20em;
+}
+
+/* end doctors page */
+
+/* locations */
+#locations_container .location {
+	padding: 1em;
+	float: none;
+	width: 100%%;
+	border: 2px solid @dark-brand;
+	margin: 1%;
+	.border-radius(1em);
+
+	h4 {
+		margin-top: 2em;
+		color: @brand-secondary;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	.img_container {
+		height: 240px;
+		line-height: 238px;
+		text-align: center;
+	}
+	img {
+		display: inline;
+		margin-top: 0;
+		vertical-align: middle;
+		width: 300px !important;
+		transition: 0.5s ease-in-out;
+		.border-radius(10em);
+		.drop-shadow(10px, 10px, 5px, 0px, 0.75);
+		&:hover {
+			.scale(1.2, 1.2);
+		}
+	}
+
+	iframe {
+		height: 200px !important;
+	}
+}
+
+@media (min-width: @screen-md-min) {
+	#locations_container .location {
+		width: 48%;
+		float: left;
+		iframe {
+			height: 400px !important;
+		}
+	}
+}
+/* end locations */
+
+/* about us */
+#about_us {
+	border: 4px solid @brand-secondary;
+	.border-radius(1em);
+	h4 {
+		margin: 0;
+		padding: 1em 1em 0;
+		font-weight: bold;
+	}
+}
+
+.left, .right {
+	float: none;
+	width: 100%;
+	padding: 1em;
+}
+
+.huge_banner {
+	font-style: italic;
+	font-weight: bold;
+	font-size: 2.5em;
+	color: @dark-brand;
+	display: block;
+	text-align: center;
+}
+
+.signature {
+	color: @gray;
+	font-style: italic;
+	float: right;
+}
+
+@media (min-width: @screen-sm-min) {
+	.left, .right {
+		float: left !important;
+		width: 48% !important;
+		padding: 1%;
+	}
+}
+
+
+/* end about us */
+
+/*LASIK */
+#lasik_faq {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+	h3.accordionfaqheader {
+		padding: 1em !important;
+		line-height: 1.5em;
+	}
+
+	div.accordionfaqitem {
+		padding: 1em;
+		line-height: 1.5em;
+
+		a {
+			color: @brand-secondary !important;
+			font-weight: bold;
+			text-decoration: underline;
+			&:hover {
+				color: @light-brand-secondary !important;
+			}
+		}
+	}
+}
+
+/* LASIK success stories */
+.quote_container {
+	.border-radius(1em);
+	background-color: @gray-lighter;
+	border: 2px solid @gray-light;
+	padding: 1em;
+	margin: 1em 0;
+}
+#success_stories {
+	a {
+		color: @brand-secondary;
+	}
+}
+/* end LASIK success stories */
+/* end LASIK */
+
+/* contact us */
+.form-horizontal .control-group .controls {
+	margin-left: 0;
+}
+
+#jform_contact_message {
+	height: 8em;
+}
+
+@media (min-width: @screen-sm-min) {
+	.form-horizontal .control-group .controls {
+		margin-left: 11em;
+	}
+}
+/* end contact us */
