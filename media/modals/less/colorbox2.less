@@ -1,4 +1,4 @@
-@import "../../nnframework/less/init.less";
+@import "../../regularlabs/less/init.less";
 @import "base.less";
 
 /*
@@ -11,10 +11,11 @@
 #cboxContent{margin-top:32px; overflow:visible; background:#000;}
 .cboxIframe{background:#fff;}
 #cboxError{padding:50px; border:1px solid #ccc;}
-#cboxLoadedContent{background:#000; padding:1px;}
+#cboxLoadedContent{background:#000; padding:6px 12px; color: #fff;}
+#colorbox.is_image #cboxLoadedContent,#colorbox.is_video #cboxLoadedContent{padding:0;}
 #cboxLoadingGraphic{background:url(../images/colorbox2/loading.gif) no-repeat center center;}
 #cboxLoadingOverlay{background:#000;}
-#cboxTitle{position:absolute; top:-22px; left:0; color:#000;}
+#cboxTitle{position:absolute; top:-22px; left:0; color:#000;background:#fff;}
 #cboxCurrent{position:absolute; top:-22px; right:205px; text-indent:-9999px;}
 
 /* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles */

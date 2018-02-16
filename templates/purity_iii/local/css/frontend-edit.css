@@ -34,6 +34,54 @@
     margin-left: 280px;
   }
 }
+.com_config #modules-form .input-append .add-on,
+.com_config #modules-form .input-prepend .add-on {
+  width: 35px;
+}
+.com_config #modules-form .input-append input,
+.com_config #modules-form .input-prepend input {
+  display: inline-block;
+}
+.com_config #modules-form .input-append .btn,
+.com_config #modules-form .input-prepend .btn {
+  border: 1px solid #cccccc;
+}
+.com_config #modules-form .accordion-group {
+  margin-bottom: 20px;
+}
+.com_config #modules-form .accordion-group .accordion-heading .accordion-toggle {
+  border: 1px solid #ddd;
+  border-radius: 5px 5px 0 0;
+  color: #428bca;
+  display: block;
+  padding: 10px;
+  outline: none;
+}
+.com_config #modules-form .accordion-group .accordion-heading .accordion-toggle.collapsed {
+  border-radius: 5px;
+  color: #666;
+}
+.com_config #modules-form .accordion-group .accordion-body {
+  border: 1px solid #ddd;
+  border-top: 0;
+  border-radius: 0 0 5px 5px;
+  padding-top: 20px;
+}
+.com_config #modules-form .accordion-group .accordion-body .nav-tabs {
+  border-bottom: 0;
+}
+.com_config #modules-form .radio input[type="radio"] {
+  margin-left: 0;
+  position: relative;
+}
+.com_config #modules-form .radio label {
+  padding-left: 5px;
+  padding-right: 20px;
+}
+.controls select {
+  vertical-align: middle;
+  width: 220px;
+}
 @media (min-width: 768px) {
   .edit .inputbox,
   .edit input[type="text"],
@@ -63,6 +111,76 @@
 .edit .input-prepend .btn {
   border: 1px solid #cccccc;
   background-color: #ffffff;
+}
+.edit.item-page #jform_com_fields_checkboxs label.checkbox,
+.profile-edit #jform_com_fields_checkboxs label.checkbox {
+  display: inline-block;
+  margin-right: 10px;
+}
+.edit.item-page #jform_com_fields_checkboxs input[type="checkbox"],
+.profile-edit #jform_com_fields_checkboxs input[type="checkbox"] {
+  margin-left: 0;
+  margin-top: -2px;
+  position: relative;
+  vertical-align: middle;
+  width: auto;
+}
+.edit.item-page .minicolors-input,
+.profile-edit .minicolors-input {
+  height: 28px;
+  width: auto;
+}
+.profile-edit #jform_com_fields_user_checkbox label.checkbox {
+  display: inline-block;
+  margin-right: 10px;
+}
+.profile-edit #jform_com_fields_user_checkbox input {
+  position: relative;
+  margin-left: 0;
+  margin-right: 5px;
+  width: auto;
+}
+.profile-edit .minicolors-input {
+  height: 28px;
+  width: auto;
+}
+.profile-edit #jform_com_fields_user_image_chzn .chzn-search {
+  box-sizing: border-box;
+}
+.profile-edit #jform_com_fields_user_image_chzn ul.chzn-results {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+.profile-edit #jform_com_fields_user_calendar {
+  float: left;
+}
+.profile-edit .chzn-container-single,
+.profile-edit .chzn-container {
+  float: left;
+  margin-right: 10px;
+}
+@media screen and (max-width: 360px) {
+  .profile-edit .chzn-container-single,
+  .profile-edit .chzn-container {
+    width: 100% !important;
+  }
+}
+.profile-edit .chzn-container-single .chzn-drop,
+.profile-edit .chzn-container .chzn-drop {
+  box-sizing: border-box !important;
+}
+.profile #users-profile-core {
+  width: 100%;
+}
+.profile .dl-horizontal dd {
+  margin-bottom: 10px;
+  border-bottom: 1px dashed #ddd;
+  padding-bottom: 10px;
+}
+.profile .dl-horizontal dd img {
+  max-width: 100%;
 }
 .edit .nav-tabs {
   margin-bottom: 20px;
@@ -118,6 +236,25 @@
   clear: both;
   padding-top: 5px;
 }
+.window.view-modules .well .control-label {
+  display: inline-block;
+}
+.window.view-modules .well .controls {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+.window.view-modules .control-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.window.view-modules #filter-bar {
+  margin-bottom: 10px;
+}
+.window.view-modules #filter-bar .btn-group button {
+  margin-top: 0;
+}
 .window #imageForm {
   margin: 0;
   width: auto;
@@ -133,6 +270,11 @@
 }
 .window #imageForm .pull-right {
   margin-right: 40px;
+}
+.window #imageForm .well:after {
+  display: table;
+  content: "";
+  clear: both;
 }
 .window #uploadForm {
   width: auto;
@@ -157,16 +299,32 @@
   margin-right: 10px;
   margin-left: 10px;
 }
+.window.view-articles .filter {
+  overflow: visible;
+}
+.window.view-articles .filter .btn-toolbar .icon-remove,
+.window.view-articles .filter .btn-toolbar .icon-search {
+  margin-right: 5px;
+}
+.window.view-articles .filters {
+  float: none !important;
+}
+.window.view-articles .filters .chzn-container {
+  display: inline-block;
+}
+.window.view-articles .filters .chzn-drop input {
+  float: none;
+}
 .t3onoff {
-  width: 90px;
-  height: 30px;
-  white-space: nowrap;
-  overflow: hidden;
-  display: block;
-  padding: 0;
-  position: relative;
   border: 1px solid #aaa;
   border-radius: 0;
+  display: block;
+  height: 30px;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  white-space: nowrap;
+  width: 90px;
   
   
   
@@ -196,8 +354,8 @@
   position: absolute;
   top: 0;
   border-radius: 0;
-  border: 1px solid #aaa;
   -webkit-transition: all 250ms;
+  -o-transition: all 250ms;
   transition: all 250ms;
 }
 .t3onoff label:before {
@@ -277,6 +435,60 @@ fieldset.radio.btn-group label.active {
   border-color: #5c8b00;
   color: #fff;
 }
+.window.view-modules .js-stools,
+.window.view-articles .js-stools,
+.window.view-contacts .js-stools {
+  margin-bottom: 20px;
+}
+.window.view-modules .js-stools .btn,
+.window.view-articles .js-stools .btn,
+.window.view-contacts .js-stools .btn {
+  border: 1px solid #ccc;
+  margin-top: 0;
+}
+.window.view-modules .js-stools .input-append .btn,
+.window.view-articles .js-stools .input-append .btn,
+.window.view-contacts .js-stools .input-append .btn {
+  border-left: 0;
+}
+.window.view-modules .js-stools input,
+.window.view-articles .js-stools input,
+.window.view-contacts .js-stools input {
+  display: inline-block;
+}
+.window.view-modules .js-stools-container-filters .chzn-container-single,
+.window.view-articles .js-stools-container-filters .chzn-container-single,
+.window.view-contacts .js-stools-container-filters .chzn-container-single {
+  width: 220px !important;
+}
+.window.view-modules .js-stools-container-filters .chzn-drop,
+.window.view-articles .js-stools-container-filters .chzn-drop,
+.window.view-contacts .js-stools-container-filters .chzn-drop {
+  box-sizing: border-box !important;
+}
+.window.view-modules table#moduleList td .label,
+.window.view-articles table#moduleList td .label,
+.window.view-contacts table#moduleList td .label {
+  background-color: #999;
+  box-sizing: border-box;
+  border-radius: 3px;
+  display: inline-block;
+  font-weight: normal;
+  font-size: 100%;
+  padding: 10px;
+  width: 100%;
+}
+.window.view-modules table#moduleList td:nth-child(1),
+.window.view-articles table#moduleList td:nth-child(1),
+.window.view-contacts table#moduleList td:nth-child(1) {
+  vertical-align: middle;
+}
+.window.view-modules .icon-publish:before,
+.window.view-articles .icon-publish:before,
+.window.view-contacts .icon-publish:before {
+  content: "\f00c";
+  font-size: 16px;
+}
 .icon-eye-open:before,
 .icon-eye:before {
   content: "\f06e";
@@ -289,6 +501,18 @@ fieldset.radio.btn-group label.active {
 .icon-cancel:before {
   content: "\f00d";
   font-family: "FontAwesome";
+}
+.icon-publish:before {
+  content: "\f00c";
+}
+.icon-unpublish:before {
+  content: "\f00d";
+}
+.icon-featured:before {
+  content: "\f005";
+}
+.icon-unfeatured:before {
+  content: "\f005";
 }
 .button2-left,
 .button2-left div {
@@ -352,4 +576,25 @@ fieldset.radio.btn-group label.active {
 .controls img.calendar {
   cursor: pointer;
   margin-left: 5px;
+}
+.layout-pagebreak .form-horizontal .control-group .controls {
+  margin-left: 0;
+}
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: FontAwesome3 !important;
+}
+.view-history .btn-group {
+  margin-bottom: 10px;
+}
+.btn [class^="icon-"],
+.btn [class*=" icon-"] {
+  margin-right: 5px;
+}
+.btn span.icon-delete:before {
+  content: "\f057";
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  color: #333;
 }

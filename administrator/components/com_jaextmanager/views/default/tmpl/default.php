@@ -1,7 +1,7 @@
 <?php
 /**
  * ------------------------------------------------------------------------
- * JA Extenstion Manager Component for J25 & J32
+ * JA Extenstion Manager Component for J3.x
  * ------------------------------------------------------------------------
  * Copyright (C) 2004-2011 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
  * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
@@ -71,8 +71,11 @@ Joomla.submitbutton = function(pressbutton) {
 		/*]]>*/
 		</script>
         </td>
-        <td align="right" valign="top" width="300"><?php echo JText::_("FILTER");?>:
-          <input type="text" class="text_area" value="<?php echo $this->lists['search']; ?>" id="search" name="search"/>
+        <td align="right" valign="top" width="260">
+	        <?php echo JText::_("FILTER");?>:
+			<input type="text" class="text_area" value="<?php echo $this->lists['search']; ?>" id="search" name="search"/>
+        </td>
+        <td align="right" valign="top" width="260">
           <?php echo $this->boxType;?>
           <input type="button" onclick="this.form.submit();" value="<?php echo JText::_('GO'); ?>" />
         </td>

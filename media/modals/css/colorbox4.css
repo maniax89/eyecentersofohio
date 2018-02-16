@@ -1,7 +1,7 @@
 /*
-* ColorBox Core Style:
-* The following CSS is consistent between example themes and should not be altered.
-*/
+ * ColorBox Core Style:
+ * The following CSS is consistent between example themes and should not be altered.
+ */
 #colorbox,
 #cboxOverlay,
 #cboxWrapper {
@@ -73,6 +73,9 @@
 #cboxTitle .modals_description {
   font-size: .7em;
   font-weight: normal;
+}
+.modal_link_hidden {
+  display: none !important;
 }
 /*
     User Style:
@@ -150,7 +153,7 @@
   color: #999;
 }
 #cboxLoadingOverlay {
-  background: #ffffff url(../images/colorbox4/loading.gif) no-repeat 5px 5px;
+  background: #fff url(../images/colorbox4/loading.gif) no-repeat 5px 5px;
 }
 /* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles */
 #cboxPrevious,

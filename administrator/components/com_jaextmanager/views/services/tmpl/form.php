@@ -1,7 +1,7 @@
 <?php
 /**
  * ------------------------------------------------------------------------
- * JA Extenstion Manager Component for J25 & J32
+ * JA Extenstion Manager Component for J3.x
  * ------------------------------------------------------------------------
  * Copyright (C) 2004-2011 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
  * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
@@ -15,7 +15,7 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
 
 $item=$this->item;
 ?>
-<form name="adminForm" id="adminForm" action="index.php" method="post">
+<form name="adminForm" id="service_info" action="index.php" method="post">
   <input type="hidden" name="option" value="com_jaextmanager" />
   <input type="hidden" name="view" value="services" />
   <input type="hidden" name="task" value="saveIFrame" />
@@ -70,7 +70,7 @@ $item=$this->item;
   <?php endif; ?>
 </form>
 
-
+<!--
 <script type="text/javascript">
 /*<![CDATA[*/
 jQuery(document).ready(function(){
@@ -110,4 +110,4 @@ jQuery(document).ready(function(){
 	});
 });
 /*]]>*/
-</script>
+</script>-->

@@ -87,6 +87,9 @@
   margin: 0;
   width: 100%;
 }
+.magazine-item .article-info dd {
+  white-space: inherit;
+}
 .magazine-item-ct p:last-child {
   margin-bottom: 0;
 }

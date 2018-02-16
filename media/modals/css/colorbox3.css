@@ -1,7 +1,7 @@
 /*
-* ColorBox Core Style:
-* The following CSS is consistent between example themes and should not be altered.
-*/
+ * ColorBox Core Style:
+ * The following CSS is consistent between example themes and should not be altered.
+ */
 #colorbox,
 #cboxOverlay,
 #cboxWrapper {
@@ -74,6 +74,9 @@
   font-size: .7em;
   font-weight: normal;
 }
+.modal_link_hidden {
+  display: none !important;
+}
 /*
     User Style:
     Change the following styles to modify the appearance of Colorbox.  They are
@@ -98,7 +101,12 @@
 }
 #cboxLoadedContent {
   border: 5px solid #000;
+  padding: 6px 12px;
   background: #fff;
+}
+#colorbox.is_image #cboxLoadedContent,
+#colorbox.is_video #cboxLoadedContent {
+  padding: 0;
 }
 #cboxTitle {
   position: absolute;
@@ -178,4 +186,7 @@
 }
 #cboxClose:hover {
   background-position: bottom center;
+}
+#colorbox.has_scrollbar #cboxClose {
+  right: 16px;
 }

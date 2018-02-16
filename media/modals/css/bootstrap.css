@@ -1,22 +1,20 @@
 /**
-* NoNumber Page stylesheet
-*
-* @package         Modals
-* @version         5.1.0
-*
-* @author          Peter van Westen <peter@nonumber.nl>
-* @link            http://www.nonumber.nl
-* @copyright       Copyright © 2014 NoNumber All Rights Reserved
-* @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
-*/
+ * @package         Modals
+ * @version         9.8.2
+ * 
+ * @author          Peter van Westen <info@regularlabs.com>
+ * @link            http://www.regularlabs.com
+ * @copyright       Copyright © 2018 Regular Labs All Rights Reserved
+ * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ */
 /*
-* You can override this stylesheet by creating your own in:
-* /templates/[YOUR TEMPLATE]/css/modals/bootstrap.css
-*/
+ * You can override this stylesheet by creating your own in:
+ * /templates/[YOUR TEMPLATE]/css/modals/bootstrap.css
+ */
 /*
-* ColorBox Core Style:
-* The following CSS is consistent between example themes and should not be altered.
-*/
+ * ColorBox Core Style:
+ * The following CSS is consistent between example themes and should not be altered.
+ */
 #colorbox,
 #cboxOverlay,
 #cboxWrapper {
@@ -89,13 +87,16 @@
   font-size: .7em;
   font-weight: normal;
 }
+.modal_link_hidden {
+  display: none !important;
+}
 /*
-* User Style:
-* Change the following styles to modify the appearance of ColorBox.  They are
-* ordered & tabbed in a way that represents the nesting of the generated HTML.
-*/
+ * User Style:
+ * Change the following styles to modify the appearance of ColorBox.  They are
+ * ordered & tabbed in a way that represents the nesting of the generated HTML.
+ */
 #cboxOverlay {
-  background-color: #000000;
+  background-color: #000;
   opacity: 0.8;
   filter: alpha(opacity=80);
 }
@@ -103,10 +104,10 @@
   outline: 0;
   top: 50%;
   left: 50%;
-  background-color: #ffffff;
-  border: 1px solid #999;
+  background-color: #fff;
+  border: 1px solid #999999;
   border: 1px solid rgba(0, 0, 0, 0.3);
-  *border: 1px solid #999;
+  *border: 1px solid #999999;
   /* IE6-7 */
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -124,14 +125,13 @@
 }
 #cboxLoadedContent {
   overflow-y: auto;
-  max-height: 400px;
   padding: 15px;
   margin-top: 44px;
   margin-bottom: 0px;
   max-height: none;
 }
 #cboxTitle {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #eeeeee;
   position: absolute;
   top: 0;
   left: 0;
@@ -189,8 +189,8 @@
 #cboxNext,
 #cboxSlideshow {
   position: absolute;
-  background-color: #ffffff;
-  border: 15px solid #ffffff;
+  background-color: #fff;
+  border: 15px solid #fff;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
@@ -269,15 +269,19 @@
   height: 100%;
 }
 .no_title #cboxTitle {
-  height: 24px !important;
+  height: 0 !important;
+  min-height: 0;
   padding: 0;
 }
 .no_title #cboxLoadedContent {
-  margin-top: 26px !important;
+  margin-top: 0 !important;
 }
 .no_title #cboxClose {
-  right: 5px;
-  top: 5px;
+  right: 3px;
+  top: 3px;
+}
+.no_title.has_scrollbar #cboxClose {
+  right: 18px;
 }
 #cboxTitle .countdown {
   width: 100%;

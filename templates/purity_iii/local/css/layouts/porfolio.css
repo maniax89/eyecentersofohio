@@ -32,6 +32,7 @@
   padding: 3px;
   position: relative;
   -webkit-transition: border-color 0.2s ease-in;
+  -o-transition: border-color 0.2s ease-in;
   transition: border-color 0.2s ease-in;
 }
 .porfolio-items .item-image img {
@@ -75,5 +76,6 @@
   background-position: center bottom;
 }
 .porfolio .item-demo-url {
-  margin-top: 10px;
+  display: inline-block;
+  margin-top: 20px;
 }
