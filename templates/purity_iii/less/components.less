@@ -2,7 +2,7 @@
  *------------------------------------------------------------------------------
  * @package       T3 Framework for Joomla!
  *------------------------------------------------------------------------------
- * @copyright     Copyright (C) 2004-2013 JoomlArt.com. All Rights Reserved.
+ * @copyright     Copyright (C) 2004-2017 JoomlArt.com. All Rights Reserved.
  * @license       GNU General Public License version 2 or later; see LICENSE.txt
  * @authors       JoomlArt, JoomlaBamboo, (contribute to this project at github 
  *                & Google group to become co-author)
@@ -71,11 +71,20 @@
 .article-title,
 .article-header h1, {
   margin: 0 0 @line-height-computed 0;
+
+  // Control screen mobile
+  @media screen and (max-width: @screen-xs-max) {
+    font-size: @font-size-h3;
+  }
 }
 
 // Smaller "Article Title" in Blog and List layout
 h2.article-title,
 .article-header h2 {
+  // Control screen mobile
+  @media screen and (max-width: @screen-xs-max) {
+    font-size: @font-size-h3;
+  }
 }
 
 
@@ -189,9 +198,14 @@ h2.article-title,
     padding-left: 0;
     padding-right: 0;
     // Smaller Padding on Mobile
-    @media screen and (max-width: @screen-md) {
+    @media screen and (max-width: @screen-sm-max) {
       padding-top: @t3-global-padding * 2;
       padding-bottom: @t3-global-padding * 2;
+    }
+
+    // Control screen mobile
+    @media screen and (max-width: @screen-xs-max) {
+      padding-left: @t3-global-padding;
       .container {
         padding: 0;
       }

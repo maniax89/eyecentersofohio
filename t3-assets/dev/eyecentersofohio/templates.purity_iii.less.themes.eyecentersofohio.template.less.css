@@ -78,7 +78,7 @@ article,
   }
   .leading-0 {
     min-height: 850px;
-    background-image: url(/eyecentersofohio/images/eyecare-tool.jpg);
+    background-image: url(../../../templates/purity_iii/images/eyecare-tool.jpg);
   }
   .leading-0:before {
     content: '';
@@ -92,7 +92,7 @@ article,
   }
   .leading-2 {
     min-height: 900px;
-    background-image: url(/eyecentersofohio/images/reading-glasses.jpg);
+    background-image: url(../../../templates/purity_iii/images/reading-glasses.jpg);
   }
   .leading-0 article,
   .leading-2 article {
@@ -539,6 +539,7 @@ button.finder {
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 #locations_container .location img:hover {
+  -o-transform: scale(1.2, 1.2);
   -ms-transform: scale(1.2, 1.2);
   -webkit-transform: scale(1.2, 1.2);
   transform: scale(1.2, 1.2);

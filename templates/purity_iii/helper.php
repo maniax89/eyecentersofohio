@@ -9,7 +9,7 @@ class JATemplateHelper
 		$aparams->set('show_front', $front);
 		$aparams->set('catid', (array)$catid);
 		$aparams->set('show_child_category_articles', 1);
-		$aparams->set('levels', 2);
+		$aparams->set('levels', 10);
 		$aparams->set('created_by_alias', -1);
 		$alist = ModArticlesCategoryHelper::getList($aparams);
 		return $alist;

@@ -13,10 +13,18 @@
 
 !function($){
 
-	// detect & add ie version to html tag
-	if (match = navigator.userAgent.match (/MSIE ([0-9]{1,}[\.0-9]{0,})/) || navigator.userAgent.match (/Trident.*rv:([0-9]{1,}[\.0-9]{0,})/)) {
-			$('html').addClass('ie'+parseInt (match[1]));
-	}
+  // legacy for $.browser to detect IE
+  if ($.browser == undefined || $.browser.msie == undefined) {
+    $.browser={msie:false,version:0};
+    if (match = navigator.userAgent.match (/MSIE ([0-9]{1,}[\.0-9]{0,})/) || navigator.userAgent.match (/Trident.*rv:([0-9]{1,}[\.0-9]{0,})/)) {
+      $.browser.msie=true;
+      $.browser.version=match[1];
+    }
+  }
+	// add ie version to html tag
+  if ($.browser.msie) {
+    $('html').addClass('ie'+ Math.floor($.browser.version));
+  }
 
 	// Detect grid-float-breakpoint value and put to $(body) data
 	$(document).ready(function(){
@@ -41,9 +49,12 @@
 					$inspector = $('<div>').css('display', 'none').addClass(fromClass).appendTo($('body'));
 
 			try {
-					var attrs = window.getComputedStyle(
+				
+				var computedStyle = window.getComputedStyle(
 							$inspector[0], ':before'
-					).getPropertyValue(prop);
+					);
+				if (computedStyle) {
+					var attrs = computedStyle.getPropertyValue(prop);
 					if(attrs){
 							var matches = attrs.match(/([\da-z\-]+)/gi),
 									data = {};
@@ -54,6 +65,7 @@
 							}
 							$('body').data (data);
 					}
+				}
 			} finally {
 					$inspector.remove(); // and remove from DOM
 			}

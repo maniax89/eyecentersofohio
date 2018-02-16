@@ -47,6 +47,18 @@
 .article-header h1 {
   margin: 0 0 20px 0;
 }
+@media screen and (max-width: 767px) {
+  .article-title,
+  .article-header h1 {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 767px) {
+  h2.article-title,
+  .article-header h2 {
+    font-size: 24px;
+  }
+}
 .item-title {
   font-weight: bold;
 }
@@ -130,10 +142,15 @@
   padding-left: 0;
   padding-right: 0;
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 991px) {
   .page-masthead .jumbotron {
     padding-top: 40px;
     padding-bottom: 40px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .page-masthead .jumbotron {
+    padding-left: 20px;
   }
   .page-masthead .jumbotron .container {
     padding: 0;

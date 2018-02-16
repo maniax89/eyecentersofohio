@@ -3,14 +3,14 @@
  * @package     Joomla.Site
  * @subpackage  mod_login
  *
- * @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 // no direct access
 defined('_JEXEC') or die;
 
-require_once JPATH_SITE.'/components/com_users/helpers/route.php';
+JLoader::register('UsersHelperRoute', JPATH_SITE . '/components/com_users/helpers/route.php');
 
 JHtml::_('behavior.keepalive');
 if (version_compare(JVERSION, '3.0', 'ge')) {
@@ -99,12 +99,14 @@ if (version_compare(JVERSION, '3.0', 'ge')) {
 			<?php endif; ?>
 		
 			<?php if (JPluginHelper::isEnabled('system', 'remember')) : ?>
-				<div id="form-login-remember" class="control-group">
-					<label for="modlgn-remember" class="checkbox">
+				<div id="form-login-remember" class="form-group">
+					<div class="checkbox">
+					<label for="modlgn-remember">
 						<input id="modlgn-remember" type="checkbox"
 							name="remember" class="input"
 							value="yes"/> <?php echo JText::_('MOD_LOGIN_REMEMBER_ME') ?>
 					</label>
+					</div>
 				</div>
 			<?php endif; ?>
 			<div class="control-group">

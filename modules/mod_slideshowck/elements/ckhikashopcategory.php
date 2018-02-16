@@ -83,7 +83,11 @@ class JFormFieldCkhikashopcategory extends JFormFieldCklist {
 				if (isset($item->haschild)) {
 					$rows[$item->parent]->enfants.=$item->id . '|' . $item->enfants;
 				} else {
+					if (isset($rows[$item->parent]->enfants)) {
 					$rows[$item->parent]->enfants.=$item->id . '|';
+					} else {
+						$rows[$item->parent]->enfants =$item->id . '|';
+					}
 				}
 			}
 			// create childs after respective parent

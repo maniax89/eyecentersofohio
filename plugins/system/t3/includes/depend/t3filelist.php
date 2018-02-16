@@ -56,20 +56,19 @@ class JFormFieldT3FileList extends JFormFieldFileList
 	{
 		// update path to this template 
 		$path = (string) $this->element['directory'];
+		$path = JPath::clean($path);
 		$options = array();
- 		if (!is_dir($path)) {
-			// get files in template path
- 			$this->directory = $this->element['directory'] = T3_TEMPLATE_PATH . DIRECTORY_SEPARATOR . $path;
+		// get files in template path
+		$this->directory = $this->element['directory'] = T3_TEMPLATE_PATH . DIRECTORY_SEPARATOR . $path;
+		$options = parent::getOptions();
+		// get files in template local path
 
-			$options = parent::getOptions();
-			// get files in template local path
-			if (!defined('T3_LOCAL_DISABLED') && is_dir (T3_LOCAL_PATH . DIRECTORY_SEPARATOR . $path)) {
-				$this->directory = $this->element['directory'] = T3_LOCAL_PATH . DIRECTORY_SEPARATOR . $path;
-				$options2 = parent::getOptions();
-				foreach ($options2 as $option) {
-					$option->text .= ' (local)';
-					$options[] = $option;
-				}
+		if (!defined('T3_LOCAL_DISABLED') && is_dir (T3_LOCAL_PATH . DIRECTORY_SEPARATOR . $path)) {
+			$this->directory = $this->element['directory'] = T3_LOCAL_PATH . DIRECTORY_SEPARATOR . $path;
+			$options2 = parent::getOptions();
+			foreach ($options2 as $option) {
+				$option->text .= ' (local)';
+				$options[] = $option;
 			}
 		}
 		return $options;

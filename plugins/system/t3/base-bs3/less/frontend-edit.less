@@ -29,9 +29,6 @@
 // TEMPLATES OPTIONS FORM
 // ------------------------------
 .com_config #templates-form {
-  legend {
-  }
-
   .tip {
     background: @well-bg;
     padding: (@padding-base-vertical * 2) @padding-base-horizontal;
@@ -80,6 +77,77 @@
 
 
 //
+// MODULES OPTIONS FORM
+// ---------------------------------------------------------
+.com_config #modules-form {
+  .input-append,
+  .input-prepend {
+    .add-on {
+      width: 35px;
+    }
+
+    input {
+      display: inline-block;
+    }
+
+    .btn {
+      border: 1px solid @btn-default-border;
+    }
+  }
+
+  // Accordion group
+  // ---------------
+  .accordion-group {
+    margin-bottom: 20px;
+
+    .accordion-heading {
+      .accordion-toggle {
+        border: 1px solid #ddd;
+        border-radius: 5px 5px 0 0;
+        color: #428bca;
+        display: block;
+        padding: 10px;
+        outline: none;
+
+        &.collapsed {
+          border-radius: 5px;
+          color: #666;
+        }
+      }
+    }
+
+    .accordion-body {
+      border: 1px solid #ddd;
+      border-top: 0;
+      border-radius: 0 0 5px 5px;
+      padding-top: 20px;
+
+      .nav-tabs {
+        border-bottom: 0;
+      }
+    }
+
+  }
+
+  // Fix for K2 module
+  // -----------------
+  .radio input[type="radio"] {
+    margin-left: 0;
+    position: relative;
+  }
+
+  .radio label {
+    padding-left: 5px;
+    padding-right: 20px;
+  }
+}
+
+.controls select {
+  vertical-align: middle;
+  width: 220px;
+}
+
+//
 // EDIT & SUBMIT ARTICLE FORM
 // ---------------------------------------------------------
 .edit {
@@ -122,6 +190,106 @@
     }
   }
 
+}
+
+// Extrafield
+// -----------------------
+.edit.item-page,
+.profile-edit {
+  #jform_com_fields_checkboxs {
+    label.checkbox {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    input[type="checkbox"] {
+      margin-left: 0;
+      margin-top: -2px;
+      position: relative;
+      vertical-align: middle;
+      width: auto;
+    }
+  }
+
+  .minicolors-input {
+    height: 28px;
+    width: auto;
+  }
+}
+
+// Edit profile
+// -----------------------
+.profile-edit {
+  #jform_com_fields_user_checkbox {
+    label.checkbox {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    input {
+      position: relative;
+      margin-left: 0;
+      margin-right: 5px;
+      width: auto;
+    }
+  }
+
+  .minicolors-input {
+    height: 28px;
+    width: auto;
+  }
+
+  #jform_com_fields_user_image_chzn {
+    .chzn-search {
+      box-sizing: border-box;
+    }
+
+    ul.chzn-results {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  #jform_com_fields_user_calendar {
+    float: left;
+  }
+
+  .chzn-container-single,
+  .chzn-container {
+    float: left;
+    margin-right: 10px;
+
+    @media screen and (max-width: 360px) {
+      width: 100% !important;
+    }
+
+    .chzn-drop {
+      box-sizing: border-box !important;
+    }
+  }
+}
+
+
+// User profile
+// ----------------------
+.profile {
+  #users-profile-core {
+    width: 100%;
+  }
+
+  .dl-horizontal {
+    dd {
+      margin-bottom: 10px;
+      border-bottom: 1px dashed #ddd;
+      padding-bottom: 10px;
+
+      img {
+        max-width: 100%;
+      }
+    }
+  }
 }
 
 
@@ -225,6 +393,35 @@
     padding-top: 5px;
   }
 
+  &.view-modules {
+
+    .well {
+      .control-label {
+        display: inline-block;
+      }
+
+      .controls {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 10px;
+      }
+    }
+
+    .control-group:after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    #filter-bar {
+      margin-bottom: 10px;
+
+      .btn-group button {
+        margin-top: 0;
+      }
+    }
+  }
+
 }
 
 
@@ -250,6 +447,14 @@
 
     .pull-right {
       margin-right: @grid-gutter-width;
+    }
+
+    .well {
+      &:after {
+        display: table;
+        content: "";
+        clear: both;
+      }
     }
 
   }
@@ -283,20 +488,47 @@
 }
 
 
+// Insert Article
+// --------------
+.window.view-articles {
+  .filter {
+    overflow: visible;
+
+    .btn-toolbar {
+      .icon-remove,
+      .icon-search {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .filters {
+    float: none !important;
+
+    .chzn-container {
+      display: inline-block;
+    }
+
+    .chzn-drop input {
+      float: none;
+    }
+  }
+}
+
+
 //
 // Special Radio Styles for T3
 // ------------------------------
 .t3onoff {
-
-  width: 90px;
-  height: 30px;
-  white-space: nowrap;
-  overflow: hidden;
-  display: block;
-  padding: 0;
-  position: relative;
   border: 1px solid #aaa;
   border-radius: 0;
+  display: block;
+  height: 30px;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  white-space: nowrap;
+  width: 90px;
 
   input[type=radio] {
     display: none;
@@ -324,7 +556,6 @@
     position: absolute;
     top: 0;
     border-radius: 0;
-    border: 1px solid #aaa;
 
     .transition(all 250ms);
   }
@@ -429,6 +660,63 @@ fieldset.radio.btn-group {
   }
 }
 
+// Frontend Edit Insert module
+// ---------------------------------------
+.window.view-modules,
+.window.view-articles,
+.window.view-contacts {
+  .js-stools {
+    margin-bottom: 20px;
+
+    .btn {
+      border: 1px solid #ccc;
+      margin-top: 0;
+    }
+
+    .input-append .btn {
+      border-left: 0;
+    }
+
+    input {
+      display: inline-block;
+    }
+  }
+
+  .js-stools-container-filters {
+    .chzn-container-single {
+      width: 220px !important;
+    }
+
+    .chzn-drop {
+      box-sizing: border-box !important;
+    }
+  }
+
+  table#moduleList {
+    td .label {
+      background-color: #999;
+      box-sizing: border-box;
+      border-radius: 3px;
+      display: inline-block;
+      font-weight: normal;
+      font-size: 100%;
+      padding: 10px;
+      width: 100%;
+    }
+  }
+
+  table#moduleList td:nth-child(1) {
+    vertical-align: middle;
+  }
+
+  .icon-publish {
+    &:before {
+      content: "\f00c";
+      font-size: 16px;
+    }
+  }
+}
+
 
 //
 // LEGACY
@@ -452,6 +740,30 @@ fieldset.radio.btn-group {
 .icon-cancel:before {
   content:"\f00d";
   font-family: "FontAwesome";
+}
+
+.icon-publish {
+  &:before {
+    content: "\f00c";
+  }
+}
+
+.icon-unpublish {
+  &:before {
+    content: "\f00d";
+  }
+}
+
+.icon-featured {
+  &:before {
+    content: "\f005";
+  }
+}
+
+.icon-unfeatured {
+  &:before {
+    content: "\f005";
+  }
 }
 
 
@@ -530,4 +842,37 @@ fieldset.radio.btn-group {
 .controls img.calendar {
   cursor: pointer;
   margin-left: 5px;
+}
+
+// Break page layout
+// -----------------
+.layout-pagebreak {
+  .form-horizontal .control-group .controls {
+    margin-left: 0;
+  }
+}
+
+// View history
+// ------------
+[class^="icon-"], [class*=" icon-"] {
+  font-family: FontAwesome3 !important;
+}
+
+.view-history .btn-group {
+  margin-bottom: 10px;
+}
+
+.btn [class^="icon-"],
+.btn [class*=" icon-"] {
+  margin-right: 5px;
+}
+
+.btn span.icon-delete {
+  &:before {
+    content: "\f057";
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    color: #333;
+  }
 }

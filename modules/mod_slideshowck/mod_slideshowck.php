@@ -24,7 +24,7 @@ if ($params->get('slideshowckhikashop_enable', '0') == '1') {
 		require_once JPATH_ROOT . '/plugins/system/slideshowckjoomgallery/helper/helper_slideshowckjoomgallery.php';
 		$items = modSlideshowckjoomgalleryHelper::getItems($params);
 	} else {
-		echo '<p style="color:red;font-weight:bold;">File /plugins/system/slideshowckjoomgallery/helper/helper_slideshowckjoomgallery.php not found ! Please download the patch for Slideshow CK - Hikashop on <a href="http://www.joomlack.fr">http://www.joomlack.fr</a></p>';
+		echo '<p style="color:red;font-weight:bold;">File /plugins/system/slideshowckjoomgallery/helper/helper_slideshowckjoomgallery.php not found ! Please download the patch for Slideshow CK - Joomgallery on <a href="http://www.joomlack.fr">http://www.joomlack.fr</a></p>';
 		return false;
 	}
 } else if ($params->get('slideshowckvirtuemart_enable', '0') == '1') {
@@ -32,7 +32,15 @@ if ($params->get('slideshowckhikashop_enable', '0') == '1') {
 		require_once JPATH_ROOT . '/plugins/system/slideshowckvirtuemart/helper/helper_slideshowckvirtuemart.php';
 		$items = modSlideshowckvirtuemartHelper::getItems($params);
 	} else {
-		echo '<p style="color:red;font-weight:bold;">File /plugins/system/slideshowckvirtuemart/helper/helper_slideshowckvirtuemart.php not found ! Please download the patch for Slideshow CK - Hikashop on <a href="http://www.joomlack.fr">http://www.joomlack.fr</a></p>';
+		echo '<p style="color:red;font-weight:bold;">File /plugins/system/slideshowckvirtuemart/helper/helper_slideshowckvirtuemart.php not found ! Please download the patch for Slideshow CK - Virtuemart on <a href="http://www.joomlack.fr">http://www.joomlack.fr</a></p>';
+		return false;
+	}
+} else if ($params->get('slideshowckk2_enable', '0') == '1') {
+	if (JFile::exists(JPATH_ROOT . '/plugins/system/slideshowckk2/helper/helper_slideshowckk2.php')) {
+		require_once JPATH_ROOT . '/plugins/system/slideshowckk2/helper/helper_slideshowckk2.php';
+		$items = modSlideshowckk2Helper::getItems($params);
+	} else {
+		echo '<p style="color:red;font-weight:bold;">File /plugins/system/slideshowckk2/helper/helper_slideshowckk2.php not found ! Please download the patch for Slideshow CK - K2 on <a href="http://www.joomlack.fr">http://www.joomlack.fr</a></p>';
 		return false;
 	}
 } else {
@@ -48,6 +56,9 @@ if ($params->get('slideshowckhikashop_enable', '0') == '1') {
 		case 'autoloadarticlecategory':
 			$items = modSlideshowckHelper::getItemsAutoloadarticlecategory($params);
 			break;
+		case 'flickr':
+			$items = modSlideshowckHelper::getItemsAutoloadflickr($params);
+			break;
 		default:
 			$items = modSlideshowckHelper::getItems($params);
 			break;
@@ -57,16 +68,20 @@ if ($params->get('slideshowckhikashop_enable', '0') == '1') {
 		shuffle($items);
 }
 
+$linkposition = $params->get('linkposition', 'fullslide');
+
 $document = JFactory::getDocument();
 JHTML::_("jquery.framework", true);
 if ($params->get('loadjqueryeasing', '1')) {
 	$document->addScript(JURI::base(true) . '/modules/mod_slideshowck/assets/jquery.easing.1.3.js');
 }
-if ($params->get('loadjquerymobile', '1')) {
-	$document->addScript(JURI::base(true) . '/modules/mod_slideshowck/assets/jquery.mobile.customized.min.js');
-}
 
-$document->addScript(JURI::base(true) . '/modules/mod_slideshowck/assets/camera.min.js');
+$debug = false;
+if ($debug) {
+	$document->addScript(JURI::base(true) . '/modules/mod_slideshowck/assets/camera.js');
+} else {
+	$document->addScript(JURI::base(true) . '/modules/mod_slideshowck/assets/camera.min.js');
+}
 
 $theme = $params->get('theme', 'default');
 $langdirection = $document->getDirection();
@@ -91,64 +106,74 @@ if (JFile::exists('modules/mod_slideshowck/themes/' . $theme . '/css/camera_ie8.
 }
 
 // set the navigation variables
-switch ($params->get('navigation', '2')) {
-	case 0:
-		// aucune
-		$navigation = "navigationHover: false,
-				mobileNavHover: false,
-				navigation: false,
-				playPause: false,";
-		break;
-	case 1:
-		// toujours
-		$navigation = "navigationHover: false,
-				mobileNavHover: false,
-				navigation: true,
-				playPause: true,";
-		break;
-	case 2:
-	default:
-		// on mouseover
-		$navigation = "navigationHover: true,
-				mobileNavHover: true,
-				navigation: true,
-				playPause: true,";
-		break;
+if (count($items) == 1) { // for only one slide, no navigation, no button
+	$navigation = "navigationHover: false,
+			mobileNavHover: false,
+			navigation: false,
+			playPause: false,";
+} else {
+	switch ($params->get('navigation', '2')) {
+		case 0:
+			// aucune
+			$navigation = "navigationHover: false,
+					mobileNavHover: false,
+					navigation: false,
+					playPause: false,";
+			break;
+		case 1:
+			// toujours
+			$navigation = "navigationHover: false,
+					mobileNavHover: false,
+					navigation: true,
+					playPause: true,";
+			break;
+		case 2:
+		default:
+			// on mouseover
+			$navigation = "navigationHover: true,
+					mobileNavHover: true,
+					navigation: true,
+					playPause: true,";
+			break;
+	}
 }
 
 
 // load the slideshow script
-$js = "<script type=\"text/javascript\"> <!--
-       jQuery(function(){
-        jQuery('#camera_wrap_" . $module->id . "').camera({
-                height: '" . $params->get('height', '400') . "',
-                minHeight: '',
-                pauseOnClick: false,
-                hover: " . $params->get('hover', '1') . ",
-                fx: '" . implode(",", $params->get('effect', array('linear'))) . "',
-                loader: '" . $params->get('loader', 'pie') . "',
-                pagination: " . $params->get('pagination', '1') . ",
-                thumbnails: " . $params->get('thumbnails', '1') . ",
-                thumbheight: " . $params->get('thumbnailheight', '100') . ",
-                thumbwidth: " . $params->get('thumbnailwidth', '75') . ",
-                time: " . $params->get('time', '7000') . ",
-                transPeriod: " . $params->get('transperiod', '1500') . ",
-                alignment: '" . $params->get('alignment', 'center') . "',
-                autoAdvance: " . $params->get('autoAdvance', '1') . ",
-                mobileAutoAdvance: " . $params->get('autoAdvance', '1') . ",
-                portrait: " . $params->get('portrait', '0') . ",
-                barDirection: '" . $params->get('barDirection', 'leftToRight') . "',
-                imagePath: '" . JURI::base(true) . "/modules/mod_slideshowck/images/',
-                lightbox: '" . $params->get('lightboxtype', 'mediaboxck') . "',
-                fullpage: " . $params->get('fullpage', '0') . ",
-				mobileimageresolution: '" . ($params->get('usemobileimage', '0') ? $params->get('mobileimageresolution', '640') : '0') . "',
-                " . $navigation . "
-                barPosition: '" . $params->get('barPosition', 'bottom') . "',
-				container: '" . $params->get('container', '') . "'
-        });
-}); //--> </script>";
+$js = "
+		jQuery(document).ready(function(){
+			new Slideshowck('#camera_wrap_" . $module->id . "', {
+				 height: '" . $params->get('height', '400') . "',
+				 minHeight: '" . $params->get('minheight', '150') . "',
+				 pauseOnClick: false,
+				 hover: " . $params->get('hover', '1') . ",
+				 fx: '" . implode(",", $params->get('effect', array('linear'))) . "',
+				 loader: '" . $params->get('loader', 'pie') . "',
+				 pagination: " . $params->get('pagination', '1') . ",
+				 thumbnails: " . $params->get('thumbnails', '1') . ",
+				 thumbheight: " . $params->get('thumbnailheight', '100') . ",
+				 thumbwidth: " . $params->get('thumbnailwidth', '75') . ",
+				 time: " . $params->get('time', '7000') . ",
+				 transPeriod: " . $params->get('transperiod', '1500') . ",
+				 alignment: '" . $params->get('alignment', 'center') . "',
+				 autoAdvance: " . $params->get('autoAdvance', '1') . ",
+				 mobileAutoAdvance: " . $params->get('autoAdvance', '1') . ",
+				 portrait: " . $params->get('portrait', '0') . ",
+				 barDirection: '" . $params->get('barDirection', 'leftToRight') . "',
+				 imagePath: '" . JURI::base(true) . "/modules/mod_slideshowck/images/',
+				 lightbox: '" . $params->get('lightboxtype', 'mediaboxck') . "',
+				 fullpage: " . $params->get('fullpage', '0') . ",
+				 mobileimageresolution: '" . ($params->get('usemobileimage', '0') ? $params->get('mobileimageresolution', '640') : '0') . "',
+				 " . $navigation . "
+				 barPosition: '" . $params->get('barPosition', 'bottom') . "',
+				 responsiveCaption: " . ($params->get('usecaptionresponsive') == '2' ? '1' : '0') . ",
+				 container: '" . $params->get('container', '') . "'
+		});
+}); 
+";
 
-echo $js;
+// echo $js;
+$document->addScriptDeclaration($js);
 
 $css = '';
 // load some css
@@ -168,22 +193,28 @@ $css .= "
 	position: absolute;
 }
 #camera_wrap_" . $module->id . " .camera_caption > div {
-	" . $captioncss['padding'] . $captioncss['margin'] . $captioncss['background'] . $captioncss['gradient'] . $captioncss['borderradius'] . $captioncss['shadow'] . $captioncss['border'] . $captioncss['fontcolor'] . $captioncss['fontsize'] . $fontfamily . "
+	" . $captioncss['padding'] . $captioncss['margin'] . $captioncss['background'] . $captioncss['gradient'] . $captioncss['borderradius'] . $captioncss['shadow'] . $captioncss['border'] . $fontfamily . "
 }
-#camera_wrap_" . $module->id . " .camera_caption > div div.slideshowck_description {
+#camera_wrap_" . $module->id . " .camera_caption > div div.camera_caption_title {
+	" . $captioncss['fontcolor'] . $captioncss['fontsize'] . "
+}
+#camera_wrap_" . $module->id . " .camera_caption > div div.camera_caption_desc {
 	" . $captioncss['descfontcolor'] . $captioncss['descfontsize'] . "
 }
 ";
 
-if ($params->get('usecaptionresponsive') == '1') {
+if ($params->get('usecaptionresponsive') == '1' || $params->get('usecaptionresponsive') == '2') {
 	$css .= "
 @media screen and (max-width: " . str_replace("px", "", $params->get('captionresponsiveresolution', '480')) . "px) {
-		.camera_caption {
-			" . ( $params->get('captionresponsivehidecaption', '0') == '1' ? "display: none" : "font-size: " . $params->get('captionresponsivefontsize', '0.6em') ) . " !important;
+		#camera_wrap_" . $module->id . " .camera_caption {
+			" . ( $params->get('captionresponsivehidecaption', '0') == '1' ? "display: none !important;" : ($params->get('usecaptionresponsive') == '1' ? "font-size: " . $params->get('captionresponsivefontsize', '0.6em') ." !important;" : "") ) . "
 		}
 }";
 }
 $document->addStyleDeclaration($css);
+
+// load the php Class for the html fixer
+if ($params->get('htmlfixer', '1') == '0') include_once dirname(__FILE__) . '/class.htmlfixer.php';
 
 // display the module
 require JModuleHelper::getLayoutPath('mod_slideshowck', $params->get('layout', 'default'));

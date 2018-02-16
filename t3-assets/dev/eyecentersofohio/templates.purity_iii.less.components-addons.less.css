@@ -163,6 +163,7 @@
   border: 1px solid #eeeeee;
   padding: 3px;
   -webkit-transition: border-color 0.2s ease-in;
+  -o-transition: border-color 0.2s ease-in;
   transition: border-color 0.2s ease-in;
 }
 .row-feature .gallery .thumbnail a img {
@@ -220,7 +221,7 @@
   bottom: 0;
 }
 .support-policy .policy-item .col-level .level-info .face {
-  background-image: url(/eyecentersofohio/templates/purity_iii/images/emoticons.png);
+  background-image: url(../../../templates/purity_iii/images/emoticons.png);
   background-repeat: no-repeat;
   background-color: rgba(0, 0, 0, 0.35);
   display: table-cell;
@@ -361,7 +362,7 @@
   border-bottom: 0;
 }
 .support-policy .row-body .col-status .face {
-  background-image: url(/eyecentersofohio/templates/purity_iii/images/emoticons.png);
+  background-image: url(../../../templates/purity_iii/images/emoticons.png);
   background-repeat: no-repeat;
   display: block;
   height: 80px;
@@ -550,6 +551,12 @@
   background: #7abac0;
   border-color: #7abac0;
   color: #ffffff;
+}
+.control-group .controls script + .row-fluid {
+  margin-left: 0;
+}
+.control-group .controls script + .row-fluid + .row-fluid {
+  margin-left: 0;
 }
 .video-wrapper {
   position: relative;

@@ -7,6 +7,10 @@
 
 defined('_JEXEC') or die;
 
+if (is_array($this->getParam('skip_component_content')) && 
+  in_array(JFactory::getApplication()->input->getInt('Itemid'), $this->getParam('skip_component_content'))) 
+return;
+
 /**
  * Mainbody 1 columns, content only
  */
@@ -16,9 +20,9 @@ defined('_JEXEC') or die;
 
 		<!-- MAIN CONTENT -->
 		<div id="t3-content" class="t3-content">
-			<?php if($this->hasMessage()) : ?>
+			<?php //if($this->hasMessage()) : ?>
 			<jdoc:include type="message" />
-			<?php endif ?>
+			<?php //endif ?>
 			<jdoc:include type="component" />
 		</div>
 		<!-- //MAIN CONTENT -->

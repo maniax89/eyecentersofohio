@@ -62,16 +62,17 @@ textarea.form-control {
 }
 .btn-inverse:hover,
 .btn-inverse:focus,
+.btn-inverse.focus,
 .btn-inverse:active,
 .btn-inverse.active,
-.open .dropdown-toggle.btn-inverse {
+.open > .dropdown-toggle.btn-inverse {
   color: #ffffff;
-  background-color: #303030;
+  background-color: #2b2b2b;
   border-color: #191919;
 }
 .btn-inverse:active,
 .btn-inverse.active,
-.open .dropdown-toggle.btn-inverse {
+.open > .dropdown-toggle.btn-inverse {
   background-image: none;
 }
 .btn-inverse.disabled,
@@ -83,6 +84,9 @@ fieldset[disabled] .btn-inverse:hover,
 .btn-inverse.disabled:focus,
 .btn-inverse[disabled]:focus,
 fieldset[disabled] .btn-inverse:focus,
+.btn-inverse.disabled.focus,
+.btn-inverse[disabled].focus,
+fieldset[disabled] .btn-inverse.focus,
 .btn-inverse.disabled:active,
 .btn-inverse[disabled]:active,
 fieldset[disabled] .btn-inverse:active,

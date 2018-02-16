@@ -31,7 +31,7 @@ class canvasCrop{
     * @param bool $debug
     * @desc Class initializer
     */
-    function canvasCrop($debug = false)
+    function __construct($debug = false)
     {
         $this->_showDebug = ($debug ? true : false);
         $this->_gdVersion = $this->gd_version();
@@ -597,9 +597,9 @@ class imgRedim extends canvasCrop{
     var $temp_directory;
     var $improve_thumbs;
 
-    function imgRedim($debug = false, $filters = false, $temp_path)
+    function __construct($debug = false, $filters = false, $temp_path)
     {
-        $this->canvasCrop($debug);
+        parent::__construct($debug);
         if (empty($temp_path)){
             $this->_debug($function, 'You must specify a temp directory.');
         }

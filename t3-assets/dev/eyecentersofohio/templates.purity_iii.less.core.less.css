@@ -14,6 +14,7 @@ a {
   text-decoration: none;
   outline: none;
   -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
   transition: all 0.2s;
 }
 a:hover,

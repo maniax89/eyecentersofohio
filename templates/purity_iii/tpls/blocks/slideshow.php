@@ -10,7 +10,7 @@ defined('_JEXEC') or die;
 
 <?php if ($this->countModules('slideshow')) : ?>
 <!-- SLIDESHOW -->
-<div class="slideshow <?php $this->_c('slideshow') ?>">
+<div class="slideshow hidden-xs <?php $this->_c('slideshow') ?>">
 	<jdoc:include type="modules" name="<?php $this->_p('slideshow') ?>" style="raw" />
 </div>
 <!-- //SLIDESHOW -->

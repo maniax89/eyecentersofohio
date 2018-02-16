@@ -1,8 +1,8 @@
 <?php
 /**
- * @version   $Id: rokbox.php 28566 2015-06-18 17:27:40Z djamil $
+ * @version   $Id: rokbox.php 29730 2015-12-22 18:46:43Z djamil $
  * @author    RocketTheme http://www.rockettheme.com
- * @copyright Copyright (C) 2007 - 2015 RocketTheme, LLC
+ * @copyright Copyright (C) 2007 - 2016 RocketTheme, LLC
  * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
  */
 
@@ -16,7 +16,7 @@ class plgSystemRokBox extends JPlugin
 	/**
 	 * @var string
 	 */
-	protected $_version = '2.0.11';
+	protected $_version = '2.0.13';
 	/**
 	 * @var string
 	 */
@@ -30,7 +30,7 @@ class plgSystemRokBox extends JPlugin
 	 * @param $subject
 	 * @param $config
 	 */
-	public function plgSystemRokBox(&$subject, $config)
+	public function __construct(&$subject, $config)
 	{
 		parent::__construct($subject, $config);
 	}

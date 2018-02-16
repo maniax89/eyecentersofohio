@@ -35,8 +35,20 @@
 			if(!$navcollapse.length){
 				$navcollapse = $($btn.data('target') + ':first');
 			}
-			$navcollapse.clone().appendTo($nav);
-			
+			var $ocnav = $navcollapse.clone().appendTo($nav);
+			// enable menu hover
+			$ocnav.find('li.dropdown > a, li.dropdown-submenu > a').on('click tab', function(e) {
+				var $a = $(this), $p = $a.parent();
+				if (!$p.hasClass('open')) {
+					e.stopPropagation();
+					e.preventDefault();
+					$ocnav.find('li.dropdown, li.dropdown-submenu').each(function(){
+						if ($(this).has($a).length==0) $(this).removeClass('open');
+					});
+					$p.addClass('open');
+				}
+			});
+
 			$btn.click (function(e){
 				if ($(this).data('off-canvas') == 'show') {
 					hideNav();
@@ -49,7 +61,7 @@
 
 			var posNav = function () {
 				var t = $(window).scrollTop();
-				if (t < $nav.position().top) $nav.css('top', t);
+				if (t > 0 && t < $nav.position().top) $nav.css('top', t);
 			},
 
 			bdHideNav = function (e) {

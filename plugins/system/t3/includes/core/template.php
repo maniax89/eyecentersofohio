@@ -93,7 +93,7 @@ class T3Template extends ObjectExtendable
 			$fconfig = T3Path::getPath('etc/layout/' . $layout . '.ini');
 			if (is_file($fconfig)) {
 				jimport('joomla.filesystem.file');
-				$this->_layoutsettings->loadString(JFile::read($fconfig), 'INI', array('processSections' => true));
+				$this->_layoutsettings->loadString(file_get_contents($fconfig), 'INI', array('processSections' => true));
 			}
 		}
 
@@ -135,7 +135,26 @@ class T3Template extends ObjectExtendable
 	public function getLayout()
 	{
 		$input = JFactory::getApplication()->input;
-		return $input->getCmd('tmpl') ? $input->getCmd('tmpl') : $this->getParam('mainlayout', 'default');
+		// get override layout by tmpl
+		$layout = $input->getCmd('tmpl');
+		if ($layout && T3Path::getPath('tpls/' . $layout . '.php')) return $layout;
+		// detect if this is menu page or sub-page if set
+		$menu_page = true;
+		$input = JFactory::getApplication()->input;
+		$active = JFactory::getApplication()->getMenu()->getActive();
+		if ($active && isset($active->query)) {
+			foreach ($active->query as $name => $value) {
+				if ($input->get($name, null, 'raw') != $value) {
+					$menu_page = false;
+					break;
+				}
+			}
+		}
+
+		$mainlayout = $this->getParam('mainlayout', 'default');
+		$sublayout = $this->getParam('sublayout', '');
+
+		return !$menu_page && $sublayout ? $sublayout : $mainlayout;
 	}
 
 
@@ -178,6 +197,8 @@ class T3Template extends ObjectExtendable
 		} else {
 			echo "<div class=\"error\">Block [$block] not found!</div>";
 		}
+		// make sure other the block is ended with a new line
+		echo "\n";
 	}
 
 
@@ -553,44 +574,39 @@ class T3Template extends ObjectExtendable
 	 */
 	function snippet()
 	{
-
 		$places   = array();
 		$contents = array();
 
 		if (($openhead = $this->getParam('snippet_open_head', ''))) {
-			$places[] = '<head>';	//not sure that any attritube can be place in head open tag, profile is not support in html5
+			$places[] = '@^\s*<head>\s*$@msU';	//not sure that any attritube can be place in head open tag, profile is not support in html5
 			$contents[] = "<head>\n" . $openhead;
 		}
 		if (($closehead = $this->getParam('snippet_close_head', ''))) {
-			$places[] = '</head>';
+			$places[] = '@^\s*</head>\s*$@msU';
 			$contents[] = $closehead . "\n</head>";
 		}
 		if (($openbody = $this->getParam('snippet_open_body', ''))) {
-			$body = JResponse::getBody();
-
-			if(strpos($body, '<body>') !== false){
-				$places[] = '<body>';
-				$contents[] = "<body>\n" . $openbody;
-			} else {	//in case the body has other attribute	
-				$body = preg_replace('@<body[^>]*?>@msU', "$0\n" . $openbody, $body);
-				JResponse::setBody($body);
-			}
+			$places[] = '@^\s*<body[^>]*>\s*$@msU';
+			$contents[] = "<body>\n" . $openbody;
 		}
 
 		// append modules in debug position
-		if ($this->getParam('snippet_debug', 0) && $this->countModules('debug')) {
-			$places[] = '</body>';
-			$contents[] = '<div class="t3-debug">' . $this->getBuffer('modules', 'debug') . "</div>\n</body>";
+		if ($this->getParam('snippet_debug', 0) && $this->countModules('debug') || ($closebody = $this->getParam('snippet_close_body', ''))) {
+			$places[] = '@^\s*</body>\s*$@msU';
+			$replacefooter = '';
+			if ($this->getParam('snippet_debug', 0) && $this->countModules('debug')) {
+				$replacefooter .= '<div class="t3-debug">' . $this->getBuffer('modules', 'debug') . "</div>\n";
+			}
+			if (($closebody = $this->getParam('snippet_close_body', ''))) {
+				$replacefooter .= $closebody . "\n";
+			}
+			$replacefooter .= "</body>";
+			$contents[] = $replacefooter;
 		}
 
-		if (($closebody = $this->getParam('snippet_close_body', ''))) {
-			$places[] = '</body>';
-			$contents[] = $closebody . "\n</body>";
-		}
-
-		if (count($places)) {
+		if (count($places)) {			
 			$body = JResponse::getBody();
-			$body = str_replace($places, $contents, $body);
+			$body = preg_replace($places, $contents, $body);
 
 			JResponse::setBody($body);
 		}
@@ -604,8 +620,29 @@ class T3Template extends ObjectExtendable
 	 */
 	function countModules($positions)
 	{
+		if (!$this->_tpl || !method_exists($this->_tpl, 'countModules')) return 0;
+
+		// get real post name
 		$pos = $this->getPosname($positions);
-		return $this->_tpl && method_exists($this->_tpl, 'countModules') ? $this->_tpl->countModules($pos) : 0;
+
+		// support only and, or - back compatibility
+		if (preg_match ('/ or /i', $pos)) {
+			$arr = preg_split('/ or /i', $pos);
+			$result = 0;
+			foreach ($arr as $p) {
+				$result = $result || $this->_tpl->countModules($p);
+			}		
+			return $result;
+		} else if (preg_match ('/ and /i', $pos)) {
+			$arr = preg_split('/ and /i', $pos);
+			$result = 1;
+			foreach ($arr as $p) {
+				$result = $result && $this->_tpl->countModules($p);
+			}		
+			return $result;
+		} 
+
+		return $this->_tpl->countModules($pos);
 	}
 
 
@@ -618,6 +655,8 @@ class T3Template extends ObjectExtendable
 	 */
 	function checkSpotlight($name, $positions)
 	{
+		if (!$this->_tpl || !method_exists($this->_tpl, 'countModules')) return 0;
+
 		$poss = array();
 
 		for ($i = 1; $i <= $this->maxgrid; $i++) {
@@ -634,7 +673,14 @@ class T3Template extends ObjectExtendable
 			$poss = preg_split('/\s*,\s*/', $positions);
 		}
 
-		return $this->_tpl && method_exists($this->_tpl, 'countModules') ? $this->_tpl->countModules(implode(' or ', $poss)) : 0;
+		// fix deprecated error: using expression in HtmlDocument::countModules()
+		foreach ($poss as $pos) {
+			if ($this->_tpl->countModules($pos)) return 1;
+		}
+
+		return 0;
+
+		//return $this->_tpl && method_exists($this->_tpl, 'countModules') ? $this->_tpl->countModules(implode(' or ', $poss)) : 0;
 	}
 
 
@@ -813,8 +859,15 @@ class T3Template extends ObjectExtendable
 			$this->addCss('frontend-edit');
 		}
 
+		// Clear current css to put bootstrap css on top
+		$_stylesheets = $this->_styleSheets;
+		$this->_styleSheets = array();
+
 		// BOOTSTRAP CSS
 		$this->addCss('bootstrap', false);
+
+		// Append current css to bootstrap
+		$this->_styleSheets = array_merge($this->_styleSheets, $_stylesheets);
 
 		// TEMPLATE CSS
 		$this->addCss('template', false);
@@ -875,7 +928,7 @@ class T3Template extends ObjectExtendable
 			}
 
 			if (!$jqueryIncluded) {
-				$this->addScript(T3_URL . '/js/jquery-1.8.3' . ($this->getParam('devmode', 0) ? '' : '.min') . '.js');
+				$this->addScript(T3_URL . '/js/jquery-1.11.2' . ($this->getParam('devmode', 0) ? '' : '.min') . '.js');
 				$this->addScript(T3_URL . '/js/jquery.noconflict.js');
 			}
 		}
@@ -901,9 +954,9 @@ class T3Template extends ObjectExtendable
 			$this->addPageClass('mm-hover');
 		}
 
-		if($navtrigger == 'hover' || $this->responcls){
+		//if($navtrigger == 'hover' || $this->responcls){
 			$this->addScript(T3_URL . '/js/menu.js');
-		}
+		//}
 
 		//reponsive script
 		if ($responsive && !$this->responcls) {
@@ -933,11 +986,14 @@ class T3Template extends ObjectExtendable
 		$theme      = $this->getParam('theme', '');
 		$minify     = $this->getParam('minify', 0);
 		$minifyjs   = $this->getParam('minify_js', 0);
+		// detect RTL
+		$doc = JFactory::getDocument();
+		$dir    = $doc->direction;
+		$is_rtl = ($dir == 'rtl');
 
 		// As Joomla 3.0 bootstrap is buggy, we will not use it
 		// We also prevent both Joomla bootstrap and T3 bootsrap are loaded
 		// And upgrade jquery as our Framework require jquery 1.7+ if we are loading jquery from google
-		$doc = JFactory::getDocument();
 		$scripts = array();
 
 		if (version_compare(JVERSION, '3.0', 'ge')) {
@@ -983,7 +1039,7 @@ class T3Template extends ObjectExtendable
 					$jqver = explode('.', $jqver[$idx][0]);
 
 					if (isset($jqver[0]) && (int)$jqver[0] <= 1 && isset($jqver[1]) && (int)$jqver[1] < 7) {
-						$scripts[T3_URL . '/js/jquery-1.8.3' . ($devmode ? '' : '.min') . '.js'] = $script;
+						$scripts[T3_URL . '/js/jquery-1.11.2' . ($devmode ? '' : '.min') . '.js'] = $script;
 						$replace = true;
 					}
 				}
@@ -997,48 +1053,64 @@ class T3Template extends ObjectExtendable
 		$doc->_scripts = $scripts;
 		// end update javascript
 
-		// detect RTL
-		$dir    = $doc->direction;
-		$is_rtl = ($dir == 'rtl');
-
 		//Update css/less based on devmode and themermode
 		$root        = JURI::root(true);
 		$current     = JURI::current();
-		$regex       = '@' . preg_quote(T3_TEMPLATE_REL) . '/css/(rtl/)?(.*)\.css((\?|\#).*)?$@i';
+		// $regex       = '@' . preg_quote(T3_TEMPLATE_REL) . '/css/(rtl/)?(.*)\.css((\?|\#).*)?$@i';
+		$regex       = '@' . preg_quote(T3_TEMPLATE_REL) . '/(.*)\.css((\?|\#).*)?$@i';
 		$stylesheets = array();
 		foreach ($doc->_styleSheets as $url => $css) {
 			// detect if this css in template css
 			if (preg_match($regex, $url, $match)) {
-				$fname = $match[2];
+				$fname = $match[1];
 
-				if (($devmode || $themermode) && is_file(T3_TEMPLATE_PATH . '/less/' . $fname . '.less')) {
-					if ($themermode) {
-						$newurl = T3_TEMPLATE_URL . '/less/' . $fname . '.less';
-						$css['mime'] = 'text/less';
-					} else {
-						T3::import('core/less');
-						$newurl = T3Less::buildCss(T3Path::cleanPath('templates/'.T3_TEMPLATE.'/less/'.$fname.'.less'), true);
-					}
-					$stylesheets[$newurl] = $css;
-				} else {
-					$uri = null;
-					// detect css available base on direction & theme
-					if ($is_rtl && $theme) {
-						$uri = T3Path::getUrl ('css/rtl/themes' . $theme . '/' . $fname . '.css');
-					}
-					if (!$uri && $is_rtl) {
-						$uri = T3Path::getUrl ('css/rtl/' . $fname . '.css');
-					}
-					if (!$uri && $theme) {
-						$uri = T3Path::getUrl ('css/themes/' . $theme . '/' . $fname . '.css');
-					}
-					if (!$uri) {
-						$uri = T3Path::getUrl ('css/' . $fname . '.css');
-					}
+				// remove rtl
+				$fname = preg_replace ('@(^|/)rtl/@mi', '\1', $fname);
+				// remove local
+				$fname = preg_replace ('@^local/@mi', '', $fname);
 
-					if ($uri) {
-						$stylesheets[$uri] = $css;
+				// if (($devmode || $themermode) && is_file(T3_TEMPLATE_PATH . '/less/' . $fname . '.less')) {
+				if (($devmode || $themermode)) {
+					// less file
+					$lfname = preg_replace ('@(^|/)css/@mi', '\1less/', $fname);
+
+					if (is_file(T3_TEMPLATE_PATH . '/' . $lfname . '.less')) {
+						if ($themermode) {
+							$newurl = T3_TEMPLATE_URL . '/' . $lfname . '.less';
+							$css['mime'] = 'text/less';
+						} else {
+							T3::import('core/less');
+							$newurl = T3Less::buildCss(T3Path::cleanPath(T3_TEMPLATE_REL . '/' . $lfname . '.less'), true);
+						}
+						$stylesheets[$newurl] = $css;
+						continue;
 					}
+				}
+
+				$uri = null;
+				// detect css available base on direction & theme
+				if ($is_rtl && $theme) {
+					// rtl css file
+					$altfname = preg_replace ('@(^|/)css/@mi', '\1css/rtl/' . $theme . '/', $fname);
+					$uri = T3Path::getUrl ($altfname . '.css');
+				}
+
+				if (!$uri && $is_rtl) {
+					$altfname = preg_replace ('@(^|/)css/@mi', '\1css/rtl/', $fname);
+					$uri = T3Path::getUrl ($altfname . '.css');
+				}
+
+				if (!$uri && $theme) {
+					$altfname = preg_replace ('@(^|/)css/@mi', '\1css/themes/' . $theme . '/', $fname);
+					$uri = T3Path::getUrl ($altfname . '.css');
+				}
+
+				if (!$uri) {
+					$uri = T3Path::getUrl ($fname . '.css');
+				}
+
+				if ($uri) {
+					$stylesheets[$uri] = $css;
 				}
 				continue;
 			}
@@ -1075,7 +1147,7 @@ class T3Template extends ObjectExtendable
 		foreach ($afiles as $afile) {
 			if (is_file($afile)) {
 				//load xml
-				$axml = JFactory::getXML($afile);
+				$axml = simplexml_load_file($afile);
 
 				//process if exist
 				if ($axml) {
@@ -1110,14 +1182,22 @@ class T3Template extends ObjectExtendable
 
 								if ($url) {
 									if ($node == 'stylesheets') {
-										$type = $file['type'] ? (string) $file['type'] : 'text/css';
-										$media = $file['media'] ? (string) $file['media'] : null;
-										$this->addStylesheet($url, $type, $media);
+										if(version_compare(JVERSION, '3.7', 'lt')) {
+											$type = $file['type'] ? (string) $file['type'] : 'text/css';
+											$media = $file['media'] ? (string) $file['media'] : null;
+											$this->addStylesheet($url, $type, $media);
+										} else {
+											$this->addStylesheet($url, array(), current($file->attributes()));
+										}
 									} else {
-										$type = $file['type'] ? (string) $file['type'] : 'text/javascript';
-										$defer = $file['defer'] ? (bool) $file['defer'] : false;
-										$async = $file['async'] ? (bool) $file['async'] : false;
-										$this->addScript($url, $type, $defer, $async);
+										if(version_compare(JVERSION, '3.7', 'lt')) {
+											$type = $file['type'] ? (string) $file['type'] : 'text/javascript';
+											$defer = $file['defer'] ? (bool) $file['defer'] : false;
+											$async = $file['async'] ? (bool) $file['async'] : false;
+											$this->addScript($url, $type, $defer, $async);
+										} else {
+											$this->addScript($url, array(), current($file->attributes()));
+										}
 									}
 								}
 							}

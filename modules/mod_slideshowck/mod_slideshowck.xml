@@ -11,7 +11,7 @@
 	<license>GNU/GPL 3 http://www.gnu.org/licenses/gpl.html</license>
 	<authorEmail>ced1870@gmail.com</authorEmail>
 	<authorUrl>http://www.joomlack.fr</authorUrl>
-	<version>1.4.20</version>
+	<version>1.4.50</version>
 	<description>MOD_SLIDESHOWCK_XML_DESCRIPTION</description>
 	<files>
 		<filename module="mod_slideshowck">mod_slideshowck.php</filename>
@@ -37,6 +37,37 @@
 	</updateservers>
 	<config>
 		<fields name="params">
+			<fieldset name="basic">
+				<field 
+					name="linkdocumentation" 
+					type="cklink"
+					label="MOD_SLIDESHOWCK_DOWNLOAD_DOCUMENTATTION"
+					url="http://www.joomlack.fr/en/slideshowck/slideshow-documentation"
+					icon="page_white_acrobat.png"
+					/>
+				<field 
+					name="linkthemes" 
+					type="cklink"
+					label="MOD_SLIDESHOWCK_DOWNLOAD_THEMES"
+					url="http://www.joomlack.fr/en/slideshowck/slideshow-themes"
+					icon="palette.png"
+					/>
+				<field 
+					name="ckvotejed" 
+					type="ckvotejed"
+					label="MOD_SLIDESHOWCK_VOTE_JED"
+					url="http://extensions.joomla.org/extensions/extension/photos-a-images/slideshow/slideshow-ck"
+					/>
+				<field 
+					name="ckcheckversion" 
+					type="ckcheckversion"
+					/>
+				<field 
+					name="ckcheckpluginversion" 
+					type="ckcheckpluginversion"
+					version="1.2.4"
+					/>
+			</fieldset>
 			<fieldset name="slidessource" label="MOD_SLIDESHOWCK_OPTIONS_SLIDESSOURCE">
 				<field
 					name="slidesssource"
@@ -84,6 +115,15 @@
 			<fieldset name="slidesfromarticlecategory" label="MOD_SLIDESHOWCK_OPTIONS_FROMARTICLECATEGORY">
 				<field
 					name="slideshowparamsinfoarticle"
+					label="MOD_SLIDESHOWCK_CHECKPARAMSPLUGIN"
+					type="cktestslideshowparamsplugin"
+					style="link"
+					icon="information.png"
+				/>
+			</fieldset>
+			<fieldset name="slidesfromflickr" label="MOD_SLIDESHOWCK_OPTIONS_FROMFLICKR">
+				<field
+					name="slideshowparamsinfoflickr"
 					label="MOD_SLIDESHOWCK_CHECKPARAMSPLUGIN"
 					type="cktestslideshowparamsplugin"
 					style="link"
@@ -194,6 +234,14 @@
 					suffix=""
 				/>
 				<field
+					name="minheight"
+					type="cktext"
+					default="150"
+					label="MOD_SLIDESHOWCK_MINHEIGHT_LABEL"
+					description="MOD_SLIDESHOWCK_MINHEIGHT_DESC"
+					suffix="px"
+				/>
+				<field
 					name="navigation"
 					type="ckradio"
 					default="2"
@@ -261,8 +309,10 @@
 					label="MOD_SLIDESHOWCK_EFFECT_LABEL"
 					description="MOD_SLIDESHOWCK_EFFECT_DESC"
 					icon="application_view_gallery.png"
+					styles="width:200px;"
 				>
 					<option value="random">random</option>
+					<option value="kenburns">kenburns</option>
 					<option value="simpleFade">simpleFade</option>
 					<option value="curtainTopLeft">curtainTopLeft</option>
 					<option value="curtainTopRight">curtainTopRight</option>
@@ -412,6 +462,17 @@
 					<option value="lightbox">MOD_SLIDESHOWCK_LIGHTBOX</option>
 				</field>
 				<field
+					name="linkposition"
+					type="cklist"
+					label="MOD_SLIDESHOWCK_LINK_POSITION_LABEL"
+					description="MOD_SLIDESHOWCK_LINK_POSITION_DESC"
+					icon="link.png"
+					default="fullslide"
+					>
+					<option value="fullslide">MOD_SLIDESHOWCK_LINK_FULLSLIDE</option>
+					<option value="title">MOD_SLIDESHOWCK_LINK_TITLE</option>
+				</field>
+				<field
 					name="container"
 					type="cktext"
 					default=""
@@ -485,19 +546,6 @@
 					<option value="1">JYES</option>
 					<option value="0">JNO</option>
 				</field>
-
-				<field
-					name="loadjquerymobile"
-					type="ckradio"
-					default="1"
-					label="MOD_SLIDESHOWCK_LOADJQUERYMOBILE_LABEL"
-					description="MOD_SLIDESHOWCK_LOADJQUERYMOBILE_DESC"
-					icon="page_white_wrench.png"
-					class="btn-group"
-				>
-					<option value="1">JYES</option>
-					<option value="0">JNO</option>
-				</field>
 				
 				<field
 					name="autocreatethumbs"
@@ -512,6 +560,18 @@
 					<option value="0">JNO</option>
 				</field>
 
+				<field
+					name="fixhtml"
+					type="ckradio"
+					default="0"
+					label="MOD_SLIDESHOWCK_FIXHTML_LABEL"
+					description="MOD_SLIDESHOWCK_FIXHTML_DESC"
+					icon="bug_delete.png"
+					class="btn-group"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
 				<field
 					name="layout"
 					type="ckmodulelayout"
@@ -602,6 +662,29 @@
 			</fieldset>
 			<fieldset name="captionstyles" label="MOD_SLIDESHOWCK_CAPTIONSTYLES">
 				<field
+					name="usecaption"
+					type="ckradio"
+					label="MOD_SLIDESHOWCK_USECAPTION_LABEL"
+					description="MOD_SLIDESHOWCK_USECAPTION_DESC"
+					class="btn-group"
+					default="1"
+					>
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				<field
+					name="usecaptiondesc"
+					type="ckradio"
+					label="MOD_SLIDESHOWCK_USECAPTIONDESC_LABEL"
+					description="MOD_SLIDESHOWCK_USECAPTIONDESC_DESC"
+					class="btn-group"
+					default="1"
+					showon="usecaption:1"
+					>
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				<field
 					name="captionresponsiveckspacer"
 					type="ckspacer"
 					label="MOD_SLIDESHOWCK_SPACER_RESPONSIVE"
@@ -609,14 +692,15 @@
 				/>
 				<field
 					name="usecaptionresponsive"
-					type="ckradio"
+					type="cklist"
 					label="MOD_SLIDESHOWCK_USERESPONSIVECAPTION_LABEL"
 					description="MOD_SLIDESHOWCK_USERESPONSIVECAPTION_DESC"
 					icon="ipod.png"
 					class="btn-group"
 					default="1"
 					>
-						<option value="1">JYES</option>
+						<option value="2">MOD_SLIDESHOWCK_RESOLUTION_ADAPTATIVE</option>
+						<option value="1">MOD_SLIDESHOWCK_RESOLUTION_STEP</option>
 						<option value="0">JNO</option>
 				</field>
 				<field
@@ -634,6 +718,7 @@
 					description="MOD_SLIDESHOWCK_RESPONSIVEFONTSIZE_DESC"
 					icon="style.png"
 					default="0.6em"
+					showon="usecaptionresponsive:1"
 				/>
 				<field
 					name="captionresponsivehidecaption"
@@ -1054,7 +1139,7 @@
 				<field
 					name="captionstylesfontsize"
 					type="cktext"
-					default="12px"
+					default="1.1em"
 					label="MOD_SLIDESHOWCK_FONTSIZE_LABEL"
 					description="MOD_SLIDESHOWCK_FONTSIZE_DESC"
 					icon="style.png"
@@ -1084,7 +1169,7 @@
 				<field
 					name="captionstylesdescfontsize"
 					type="cktext"
-					default="10px"
+					default="0.8em"
 					label="MOD_SLIDESHOWCK_DESCFONTSIZE_LABEL"
 					description="MOD_SLIDESHOWCK_DESCFONTSIZE_DESC"
 					icon="style.png"
@@ -1122,7 +1207,7 @@
 					label="MOD_SLIDESHOWCK_MARGINTOP_LABEL"
 					description="MOD_SLIDESHOWCK_MARGINTOP_DESC"
 					icon="margin_top.png"
-					suffix="px"
+					suffix="px/%"
 					class="captionstyles"
 				/>
 				<field
@@ -1132,7 +1217,7 @@
 					label="MOD_SLIDESHOWCK_MARGINRIGHT_LABEL"
 					description="MOD_SLIDESHOWCK_MARGINRIGHT_DESC"
 					icon="margin_right.png"
-					suffix="px"
+					suffix="px/%"
 					class="captionstyles"
 				/>
 				<field
@@ -1142,7 +1227,7 @@
 					label="MOD_SLIDESHOWCK_MARGINBOTTOM_LABEL"
 					description="MOD_SLIDESHOWCK_MARGINBOTTOM_DESC"
 					icon="margin_bottom.png"
-					suffix="px"
+					suffix="px/%"
 					class="captionstyles"
 				/>
 				<field
@@ -1152,7 +1237,7 @@
 					label="MOD_SLIDESHOWCK_MARGINLEFT_LABEL"
 					description="MOD_SLIDESHOWCK_MARGINLEFT_DESC"
 					icon="margin_left.png"
-					suffix="px"
+					suffix="px/%"
 					class="captionstyles"
 				/>
 				<field
@@ -1162,7 +1247,7 @@
 					label="MOD_SLIDESHOWCK_PADDINGTOP_LABEL"
 					description="MOD_SLIDESHOWCK_PADDINGTOP_DESC"
 					icon="padding_top.png"
-					suffix="px"
+					suffix="px/%"
 					class="captionstyles"
 				/>
 				<field
@@ -1172,7 +1257,7 @@
 					label="MOD_SLIDESHOWCK_PADDINGRIGHT_LABEL"
 					description="MOD_SLIDESHOWCK_PADDINGRIGHT_DESC"
 					icon="padding_right.png"
-					suffix="px"
+					suffix="px/%"
 					class="captionstyles"
 				/>
 				<field
@@ -1182,7 +1267,7 @@
 					label="MOD_SLIDESHOWCK_PADDINGBOTTOM_LABEL"
 					description="MOD_SLIDESHOWCK_PADDINGBOTTOM_DESC"
 					icon="padding_bottom.png"
-					suffix="px"
+					suffix="px/%"
 					class="captionstyles"
 				/>
 				<field
@@ -1192,7 +1277,7 @@
 					label="MOD_SLIDESHOWCK_PADDINGLEFT_LABEL"
 					description="MOD_SLIDESHOWCK_PADDINGLEFT_DESC"
 					icon="padding_left.png"
-					suffix="px"
+					suffix="px/%"
 					class="captionstyles"
 				/>
 				<field

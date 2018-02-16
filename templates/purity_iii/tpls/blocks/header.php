@@ -33,7 +33,25 @@ if (!$sitename) {
 
 		<!-- NAVBAR HEADER -->
 		<div class="navbar-header">
-		
+
+			<!-- LOGO -->
+			<div class="logo logo-<?php echo $logotype ?>">
+				<div class="logo-<?php echo $logotype, ($logoimgsm ? ' logo-control' : '') ?>">
+					<a href="<?php echo JURI::base(true) ?>" title="<?php echo strip_tags($sitename) ?>">
+						<?php if($logotype == 'image'): ?>
+							<img class="logo-img" src="<?php echo JURI::base(true) . '/' . $logoimage ?>" alt="<?php echo strip_tags($sitename) ?>" />
+						<?php endif ?>
+
+						<?php if($logoimgsm) : ?>
+							<img class="logo-img-sm" src="<?php echo JURI::base(true) . '/' . $logoimgsm ?>" alt="<?php echo strip_tags($sitename) ?>" />
+						<?php endif ?>
+						
+						<span><?php echo $sitename ?></span>
+					</a>
+				</div>
+			</div>
+			<!-- //LOGO -->
+
 			<?php if ($this->getParam('navigation_collapse_enable', 1) && $this->getParam('responsive', 1)) : ?>
 				<?php $this->addScript(T3_URL.'/js/nav-collapse.js'); ?>
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".t3-navbar-collapse">

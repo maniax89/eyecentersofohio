@@ -71,13 +71,17 @@ class T3MenuMegamenu {
 			if($item->level >= 2 && !isset($this->_items[$item->parent_id])){
 				continue;
 			}
+			
+			//intergration with new params joomla 3.6.x (menu_show)
+			$menu_show = $item->params->get('menu_show');
+			if (empty($menu_show) && $menu_show!==null)
+				continue;
 
 			$parent                           = isset($this->children[$item->parent_id]) ? $this->children[$item->parent_id] : array();
 			$parent[]                         = $item;
 			$this->children[$item->parent_id] = $parent;
 			$this->_items[$item->id]          = $item;
 		}
-		
 		foreach ($items as &$item) {
 			// bind setting for this item
 			$key     = 'item-' . $item->id;
@@ -169,6 +173,7 @@ class T3MenuMegamenu {
 			$item->title        = htmlspecialchars($item->title, ENT_COMPAT, 'UTF-8', false);
 			$item->anchor_css   = htmlspecialchars($item->params->get('menu-anchor_css', ''), ENT_COMPAT, 'UTF-8', false);
 			$item->anchor_title = htmlspecialchars($item->params->get('menu-anchor_title', ''), ENT_COMPAT, 'UTF-8', false);
+			$item->anchor_rel = htmlspecialchars($item->params->get('menu-anchor_rel', ''), ENT_COMPAT, 'UTF-8', false);
 			$item->menu_image   = $item->params->get('menu_image', '') ? htmlspecialchars($item->params->get('menu_image', ''), ENT_COMPAT, 'UTF-8', false) : '';
 		}
 	}
@@ -332,7 +337,20 @@ class T3MenuMegamenu {
 			$content = JModuleHelper::renderModule($module, array(
 				'style' => $style
 			));
-			
+
+			$app = JFactory::getApplication();
+			$frontediting = $app->get('frontediting', 1);
+			$user = JFactory::getUser();
+
+			$canEdit = $user->id && $frontediting && !($app->isAdmin() && $frontediting < 2) && $user->authorise('core.edit', 'com_modules');
+			$menusEditing = ($frontediting == 2) && $user->authorise('core.edit', 'com_menus');
+
+			if ($app->isSite() && $canEdit && trim($content) != '' && $user->authorise('core.edit', 'com_modules.module.' . $module->id))
+			{
+				$displayData = array('moduleHtml' => &$content, 'module' => $module, 'position' => $module->position, 'menusediting' => $menusEditing);
+				JLayoutHelper::render('joomla.edit.frontediting_modules', $displayData);
+			}
+
 			$this->menu .= $content . "\n";
 		}
 	}

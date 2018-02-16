@@ -37,18 +37,32 @@ $needJModal = false;
 
 		if ($params->get('articlelink', 'readmore') == 'image' && $item->article->link) {
 			$item->imglink = $item->article->link;
+		} else if ($params->get('lightboxautolinkimages', '0') == '1') {
+			$item->imglink = $item->imgname;
 		}
+		$link = $item->imglink;
+		$linkClass = ( $linkposition == 'button' ? $params->get('linkbuttonclass', 'btn') . ' camera-button' : ' camera-link' );
+		$linkTarget = ( $params->get('linktarget', 'same') == 'new' ? ' target="_blank"' : '' );
+		$startLink = '<a class="' . $linkClass .'" href="' . $link . '"' . $linkTarget . '>';
 		?>
-		<div <?php echo $datarel . $datatitle; ?>data-thumb="<?php echo $item->imgthumb; ?>" data-src="<?php echo $item->imgname; ?>" <?php if ($item->imglink) echo 'data-link="' . $item->imglink . '" data-target="' . $imgtarget . '"'; echo $dataalignment . $datatime; ?>>
+		<div <?php echo $datarel . $datatitle; ?>data-thumb="<?php echo $item->imgthumb; ?>" data-src="<?php echo $item->imgname; ?>" <?php if ($item->imglink && $linkposition == 'fullslide') echo 'data-link="' . $item->imglink . '" data-target="' . $imgtarget . '"'; echo $dataalignment . $datatime; ?>>
+			<?php if ($params->get('imageforseo', '0')) { ?>
+				<img src="<?php echo $item->imgname; ?>" style="display:none" alt="<?php echo $item->imgtitle ?>" />
+			<?php } ?>
 			<?php if ($item->imgvideo) { ?>
 				<iframe src="<?php echo $item->imgvideo; ?>" width="100%" height="100%" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 			<?php
 			}
 			if (($item->imgtitle || $item->imgcaption || $item->article) && (($params->get('lightboxcaption', 'caption') != 'title' || $imgtarget != 'lightbox') || !$item->imglink)) {
 			?>
+				<?php if ($params->get('usecaption', '1')) { ?>
 				<div class="camera_caption <?php echo $params->get('captioneffect', 'moveFromBottom')?>">
 					<div class="camera_caption_title">
-						<?php echo str_replace("|dq|", "\"", $item->imgtitle); ?>
+						<?php if ($link && $linkposition == 'title') {
+							echo $startLink . str_replace("|dq|", "\"", $item->imgtitle) . '</a>';
+						} else {
+							echo $item->imgtitle;
+						} ?>
 						<?php
 						if ($item->article && $params->get('showarticletitle', '1') == '1') {
 							if ($params->get('articlelink', 'readmore') == 'title')
@@ -59,17 +73,27 @@ $needJModal = false;
 						}
 						?>
 					</div>
+					<?php if ($params->get('usecaptiondesc', '1')) { ?>
 					<div class="camera_caption_desc">
 						<?php echo str_replace("|dq|", "\"", $item->imgcaption); ?>
 						<?php
 						if ($item->article) {
-							echo $item->article->text;
+							if ($params->get('htmlfixer', '0') == '1' && trim($item->article->text)) {
+								// Parse the html code of the text into a fixer to avoid bad rendering issues
+								$htmlfixer = new SlideshowCKHtmlFixer();
+								$captionFixed = $htmlfixer->getFixedHtml(trim($item->article->text));
+								echo $captionFixed;
+							} else {
+								echo $item->article->text;
+							}
 							if ($params->get('articlelink', 'readmore') == 'readmore')
 								echo '<a href="' . $item->article->link . '">' . JText::_('COM_CONTENT_READ_MORE_TITLE') . '</a>';
 						}
 						?>
 					</div>
+					<?php } ?>
 				</div>
+				<?php } ?>
 			<?php
 			}
 			?>

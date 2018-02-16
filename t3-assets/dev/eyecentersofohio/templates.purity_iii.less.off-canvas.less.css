@@ -20,6 +20,11 @@
   background: #69b1b8;
   color: #ffffff;
 }
+@media screen and (max-width: 1024px) {
+  .no-responsive #t3-mainnav .container {
+    padding-left: 53px;
+  }
+}
 .t3-off-canvas {
   background: #ffffff;
   color: #444444;

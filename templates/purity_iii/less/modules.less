@@ -2,7 +2,7 @@
  *------------------------------------------------------------------------------
  * @package       T3 Framework for Joomla!
  *------------------------------------------------------------------------------
- * @copyright     Copyright (C) 2004-2013 JoomlArt.com. All Rights Reserved.
+ * @copyright     Copyright (C) 2004-2017 JoomlArt.com. All Rights Reserved.
  * @license       GNU General Public License version 2 or later; see LICENSE.txt
  * @authors       JoomlArt, JoomlaBamboo, (contribute to this project at github 
  *                & Google group to become co-author)
@@ -94,7 +94,7 @@
 
 // Menu
 // ----
-.module_menu {
+.t3-sidebar {
   .nav {
   }
   
@@ -112,8 +112,25 @@
     display: block;
   }
 
+  .nav > li.active.open > a {
+    background-color: darken(@brand-primary, 5%);
+    color: @white;
+  }
+
   // Hover state
-  .nav > li > a:hover {
+  .nav > li > a:hover,
+  .nav > li.open > a {
+    background-color: @gray-lighter;
+    color: @gray-dark;
+
+    .caret {
+      border-bottom-color: @gray-dark;
+      border-top-color: @gray-dark;
+    }
+  }
+
+  .dropdown-menu {
+    margin-top: 0;
   }
   
   // Active state
@@ -121,6 +138,16 @@
     .caret {
       border-top-color: @white;
       border-bottom-color: @white;
+    }
+  }
+  &.t3-sidebar-2,
+  &.t3-sidebar-right {
+    // Medium desktop view
+    @media (max-width: 1450px) {
+      .dropdown-submenu.parent.open > .dropdown-menu {
+        left: auto;
+        right: 100%;
+      }
     }
   }
 }
@@ -139,8 +166,11 @@
   }
   
   ul.unstyled {
-    margin-top: @line-height-computed;
-    padding-left: 20px;
+    margin: 0;
+    padding: 0;
+    li {
+      list-style-type: none;
+    }
   }
 
   #form-login-username {

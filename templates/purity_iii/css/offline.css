@@ -95,3 +95,39 @@ body {
   color: #fff;
   cursor: pointer;
 }
+
+/* Warning Message */
+
+#system-message {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.alert-warning {
+    background-color: #de614f;
+    border: 1px solid #dc4248;
+    border-radius: 3px;
+    font-size: 14px;
+    margin-top: 50px;
+    padding: 10px 15px;
+}
+
+.alert-warning h4, .alert-warning p {
+    color: #fff;
+    margin: 0;
+}
+
+.alert-warning a.close {
+    background-color: #fff;
+    padding: 8px 4px;
+    border: 1px solid #dc4248;
+    border-radius: 50%;
+    float: right;
+    display: block;
+    line-height: 0;
+    color: #dc4248;
+}
+
+.alert-warning a:hover {
+    cursor: pointer;
+}

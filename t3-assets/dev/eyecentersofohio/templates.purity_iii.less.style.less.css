@@ -98,18 +98,23 @@
   position: absolute;
   left: 20px;
   top: 19px;
+  z-index: 1;
+}
+.head-search .search .fa-search:hover {
+  z-index: 0;
 }
 .head-search .form-control {
   border: 0;
   background: transparent;
   color: #ffffff;
   height: 54px;
-  line-height: 55px;
+  line-height: 35px;
   position: relative;
   margin: 0;
-  padding: 0 15px 0 40px;
+  padding: 10px 15px 10px 40px;
   width: 0;
   -webkit-transition: width 0.2s;
+  -o-transition: width 0.2s;
   transition: width 0.2s;
 }
 @media screen and (min-width: 991px) {
@@ -127,14 +132,38 @@
 .head-search .form-control:focus {
   width: 180px;
 }
+.head-search .form-control:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #0067a2 inset;
+  -webkit-text-fill-color: #ffffff;
+}
+.head-search .form-control::-moz-placeholder {
+  color: #ffffff;
+}
 .navbar-toggle + .head-search {
   right: 55px;
+  max-width: 57px;
+}
+@media screen and (max-width: 990px) {
+  .navbar-toggle + .head-search {
+    max-width: inherit;
+  }
+  .navbar-toggle + .head-search:hover,
+  .navbar-toggle + .head-search:focus,
+  .navbar-toggle + .head-search:active {
+    max-width: none;
+  }
+  .navbar-toggle + .head-search:hover .form-control,
+  .navbar-toggle + .head-search:focus .form-control,
+  .navbar-toggle + .head-search:active .form-control {
+    width: 180px;
+  }
 }
 @media screen and (min-width: 991px) {
   .head-search,
   .navbar-toggle + .head-search {
     right: 20px;
     top: 0;
+    max-width: none;
   }
 }
 .nav .open > a,
@@ -181,9 +210,26 @@
 .com_weblinks .weblink-categories .page-header.item-title .btn.collapsed .fa-plus {
   display: block;
 }
+.t3-spotlight {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+@media screen and (max-width: 767px) {
+  .t3-spotlight > div {
+    margin-bottom: 20px;
+  }
+}
 .t3-sl {
   padding-bottom: 40px;
   padding-top: 40px;
+}
+@media screen and (max-width: 767px) {
+  .t3-sl {
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
 }
 .t3-sl .t3-module {
   margin-bottom: 0;
@@ -273,6 +319,7 @@
   color: #666666;
 }
 #back-to-top {
+  z-index: 999;
   position: fixed;
   right: 20px;
   top: auto;

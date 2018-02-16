@@ -1,8 +1,8 @@
 <?php
 /**
- * @version   $Id: rokbox.php 14087 2013-10-03 01:30:39Z djamil $
+ * @version   $Id: rokbox.php 29730 2015-12-22 18:46:43Z djamil $
  * @author    RocketTheme http://www.rockettheme.com
- * @copyright Copyright (C) 2007 - 2015 RocketTheme, LLC
+ * @copyright Copyright (C) 2007 - 2016 RocketTheme, LLC
  * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
  */
 
@@ -10,10 +10,10 @@ defined('_JEXEC') or die;
 
 class plgContentRokbox extends JPlugin
 {
-    protected $_version = '2.0.11';
+    protected $_version = '2.0.13';
     protected $_basepath = '/plugins/content/rokbox/';
 
-    function plgContentRokbox(&$subject, $params)
+    function __construct(&$subject, $params)
     {
         parent::__construct($subject, $params);
     }

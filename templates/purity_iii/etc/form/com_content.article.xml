@@ -2,16 +2,7 @@
 <form>
 <fields name="attribs">
     <fieldset name="extra-fields" label="TPL_GROUP_EXTRA_FIELDS_LABEL" description="TPL_GROUP_EXTRA_FIELDS_DESC" group="extrafields">
-        <field name="extra-class" type="list" default="" label="Background Color"
-	           description="Predefined background Color for the article">
-	        <option value="">None</option>
-	        <option value="lightest_blue">Lightest Blue</option>
-	        <option value="lighter_blue">Lighter Blue</option>
-	        <option value="light_blue">Light Blue</option>
-	        <option value="lightest_purple">Lightest Purple</option>
-	        <option value="lighter_purple">Lighter Purple</option>
-	        <option value="light_purple">Light Purple</option>
-	    </field>
+        <field name="extra-class" type="text" default="" label="TPL_ARTICLE_EXTRA_CLASS_LABEL" description="TPL_ARTICLE_EXTRA_CLASS_DESC" />
     </fieldset>
 </fields>
 </form>

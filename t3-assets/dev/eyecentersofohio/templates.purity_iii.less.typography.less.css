@@ -269,3 +269,7 @@ pre,
 samp {
   font-family: Consolas, Monaco, "Courier New", monospace;
 }
+.our-team {
+  clear: both;
+  overflow: hidden;
+}

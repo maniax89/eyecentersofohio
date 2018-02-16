@@ -199,6 +199,29 @@ class T3Minify
 	}
 
 	/**
+	 * Check if need re-minify the group
+	 */
+	public static function checkRebuild ($group, $type, $path) {
+		$grouptime = $group['grouptime'];
+		$name = substr(md5($group['groupname']), 0, 5);
+		$groupname = $type . '-' . $name . '-' . substr($grouptime, -5) . '.' . $type;
+		$groupfile = $path . '/' . $groupname;
+
+		// check need rebuild
+		$result['filename'] = $groupname;
+		$result['rebuild'] = false;
+		if (!is_file($groupfile)) {
+			$result['rebuild'] = true;
+			// clean old files
+			$files = JFolder::files($path, $type . '-' . $name . '-*.' . $type);
+			foreach ($files as $file) {
+				JFile::delete($file);
+			}
+		}
+		return $result;
+	}
+
+	/**
 	 * @param   $tpl  template object
 	 * @return  bool  optimize success or not
 	 */
@@ -234,7 +257,7 @@ class T3Minify
 		$mediagroup['all'] = array();
 		$mediagroup['screen'] = array();
 		foreach ($doc->_styleSheets as $url => $stylesheet) {
-			$media = $stylesheet['media'] ? $stylesheet['media'] : 'all';
+			$media = !empty($stylesheet['media']) ? $stylesheet['media'] : 'all';
 			if (empty($mediagroup[$media])) {
 				$mediagroup[$media] = array();
 			}
@@ -246,7 +269,7 @@ class T3Minify
 			foreach ($group as $url => $stylesheet) {
 				$url = self::fixUrl($url);
 
-				if ($stylesheet['mime'] == 'text/css' && ($csspath = self::cssPath($url))) {
+				if (((!empty($stylesheet['mime']) && $stylesheet['mime'] == 'text/css') || (!empty($stylesheet['type']) && $stylesheet['type'] == 'text/css')) && ($csspath = self::cssPath($url))) {
 					$stylesheet['path'] = $csspath;
 					$stylesheet['data'] = file_get_contents($csspath);
 
@@ -260,12 +283,16 @@ class T3Minify
 						if(count($stylesheets)){
 							$cssgroup = array();
 							$groupname = array();
+							$grouptime = 0;
 							foreach ( $stylesheets as $gurl => $gsheet ) {
 								$cssgroup[$gurl] = $gsheet;
 								$groupname[] = $gurl;
+								$ftime = @filemtime($gsheet['path']);
+								if ($ftime > $grouptime) $grouptime = $ftime;
 							}
 
 							$cssgroup['groupname'] = implode('', $groupname);
+							$cssgroup['grouptime'] = $grouptime;
 							$cssgroup['media'] = $media;
 							$cssgroups[] = $cssgroup;
 						}
@@ -284,12 +311,16 @@ class T3Minify
 					if(count($stylesheets)){
 						$cssgroup = array();
 						$groupname = array();
+						$grouptime = 0;
 						foreach ( $stylesheets as $gurl => $gsheet ) {
 							$cssgroup[$gurl] = $gsheet;
 							$groupname[] = $gurl;
+							$ftime = @filemtime($gsheet['path']);
+							if ($ftime > $grouptime) $grouptime = $ftime;
 						}
 
 						$cssgroup['groupname'] = implode('', $groupname);
+						$cssgroup['grouptime'] = $grouptime;
             			$cssgroup['media'] = $media;
 						$cssgroups[] = $cssgroup;
 					}
@@ -305,12 +336,16 @@ class T3Minify
 			if(count($stylesheets)){
 				$cssgroup = array();
 				$groupname = array();
+				$grouptime = 0;
 				foreach ( $stylesheets as $gurl => $gsheet ) {
 					$cssgroup[$gurl] = $gsheet;
 					$groupname[] = $gurl;
+					$ftime = @filemtime($gsheet['path']);
+					if ($ftime > $grouptime) $grouptime = $ftime;
 				}
 
 				$cssgroup['groupname'] = implode('', $groupname);
+				$cssgroup['grouptime'] = $grouptime;
 				$cssgroup['media'] = $media;
 				$cssgroups[] = $cssgroup;
 			}
@@ -328,21 +363,16 @@ class T3Minify
 					$output[$furl] = $fsheet;
 				}
 			} else {
+				$rebuildCheck = self::checkRebuild($cssgroup, 'css', $outputpath);
+
 				$media = $cssgroup['media'];
-				$groupname = 'css-' . substr(md5($cssgroup['groupname']), 0, 5) . '.css';
-				$groupfile = $outputpath . '/' . $groupname;
-				$grouptime = JFile::exists($groupfile) ? @filemtime($groupfile) : -1;
-				$rebuild = $grouptime < 0; //filemtime == -1 => rebuild
-
 				unset($cssgroup['groupname']);
+				unset($cssgroup['grouptime']);
 				unset($cssgroup['media']);
-				foreach ($cssgroup as $furl => $fsheet) {
-					if(!$rebuild && @filemtime($fsheet['path']) > $grouptime){
-						$rebuild = true;
-					}
-				}
 
-				if($rebuild){
+				$groupname = $rebuildCheck['filename'];
+				if($rebuildCheck['rebuild']){
+					$groupfile = $outputpath . '/' . $groupname;
 					$cssdata = array();
 					foreach ($cssgroup as $furl => $fsheet) {
 						$cssdata[] = "\n\n/*===============================";
@@ -364,9 +394,9 @@ class T3Minify
 					@chmod($groupfile, 0644);
 				}
 
-				$output[$outputurl . '/' . $groupname.'?t='.($grouptime % 1000)] = array(
+				$output[$outputurl . '/' . $groupname] = array(
 					'mime' => 'text/css',
-					'media' => $media == 'all' ? NULL : $media,
+					'media' => $media,
 					'attribs' => array()
 					);
 			}
@@ -407,7 +437,7 @@ class T3Minify
 
 			$url = self::fixUrl($url);
 
-			if ($script['mime'] == 'text/javascript' && ($jspath = self::jsPath($url))) {
+			if (((!empty($script['mime']) && $script['mime'] == 'text/javascript') || (!empty($script['type']) && $script['type'] == 'text/javascript')) && !preg_match('/tinymce/', $url) && ($jspath = self::jsPath($url))) {
 				
 				$script['path'] = $jspath;
 				$script['data'] = file_get_contents($jspath);
@@ -420,12 +450,16 @@ class T3Minify
 				if(count($scripts)){
 					$jsgroup = array();
 					$groupname = array();
+					$grouptime = 0;
 					foreach ( $scripts as $gurl => $gsheet ) {
 						$jsgroup[$gurl] = $gsheet;
 						$groupname[] = $gurl;
+						$ftime = @filemtime($gsheet['path']);
+						if ($ftime > $grouptime) $grouptime = $ftime;
 					}
 
 					$jsgroup['groupname'] = implode('', $groupname);
+					$jsgroup['grouptime'] = $grouptime;
 					$jsgroups[] = $jsgroup;
 				}
 
@@ -440,12 +474,16 @@ class T3Minify
 		if(count($scripts)){
 			$jsgroup = array();
 			$groupname = array();
+			$grouptime = 0;
 			foreach ( $scripts as $gurl => $gsheet ) {
 				$jsgroup[$gurl] = $gsheet;
 				$groupname[] = $gurl;
+				$ftime = @filemtime($gsheet['path']);
+				if ($ftime > $grouptime) $grouptime = $ftime;
 			}
 
 			$jsgroup['groupname'] = implode('', $groupname);
+			$jsgroup['grouptime'] = $grouptime;
 			$jsgroups[] = $jsgroup;
 		}
 
@@ -461,21 +499,14 @@ class T3Minify
 				}
 
 			} else {
-
-				$groupname = 'js-' . substr(md5($jsgroup['groupname']), 0, 5) . '.js';
-				$groupfile = $outputpath . '/' . $groupname;
-				$grouptime = JFile::exists($groupfile) ? @filemtime($groupfile) : -1;
-				$rebuild = $grouptime < 0; //filemtime == -1 => rebuild
+				$rebuildCheck = self::checkRebuild($jsgroup, 'js', $outputpath);
 
 				unset($jsgroup['groupname']);
-				foreach ($jsgroup as $furl => $fsheet) {
-					if(!$rebuild && @filemtime($fsheet['path']) > $grouptime){
-						$rebuild = true;
-					}
-				}
-
-				if($rebuild){
-
+				unset($jsgroup['grouptime']);
+				
+				$groupname = $rebuildCheck['filename'];
+				if($rebuildCheck['rebuild']){
+					$groupfile = $outputpath . '/' . $groupname;
 					$jsdata = array();
 					foreach ($jsgroup as $furl => $fsheet) {
 						$jsdata[] = "\n\n/*===============================";
@@ -486,7 +517,12 @@ class T3Minify
 
 						//already minify?
 						if(!preg_match('@.*\.min\.js.*@', $furl)){
-							$jsmin = self::minifyJs($fsheet['data']);
+							try {
+								$jsmin = self::minifyJs($fsheet['data']);
+							} catch (Exception $e) {
+								// error - ignore minify
+								$jsmin = $fsheet['data'];
+							}
 							//$jsmin = T3Path::updateUrl($jsmin, T3Path::relativePath($outputurl, dirname($furl)));
 						}
 
@@ -502,7 +538,7 @@ class T3Minify
 					@chmod($groupfile, 0644);
 				}
 
-				$output[$outputurl . '/' . $groupname.'?t='.($grouptime % 1000)] = array(
+				$output[$outputurl . '/' . $groupname] = array(
 					'mime' => 'text/javascript',
 					'defer' => false,
 					'async' => false
