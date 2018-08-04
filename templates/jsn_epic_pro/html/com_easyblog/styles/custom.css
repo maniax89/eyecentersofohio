@@ -1,0 +1,90 @@
+#eb .eb-posts .eb-post .eb-post-avatar .eb-post-author-avatar {
+	position: relative;	
+	line-height: 0;
+	margin-bottom: 10px;
+}
+#eb .eb-posts .eb-post .eb-post-avatar .eb-post-author-avatar:before {
+	position: absolute;
+	content: "";
+	background: #e5e5e5;
+    width: 1px;
+    height: 10px;
+    margin: 0 0 0 -.5px;
+    left: 50%;
+    top: 100%;
+}
+#eb .eb-posts .eb-post .eb-post-avatar .eb-post-author-avatar .eb-avatar {
+	border-radius: 100%;
+	overflow: hidden;	
+}
+
+#eb .eb-posts .eb-post .eb-post-content {
+	overflow: hidden; 
+	border-bottom: 4px double #ddd;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+#eb .eb-image-viewport {
+	padding: 5px;
+}
+#eb .eb-help-resize a {
+	line-height: 1em;
+}
+
+#eb .eb-posts .eb-post-body .ebd-block,
+#eb .eb-entry .eb-entry-body .eb-entry-article .ebd-block {
+	width: 100%;
+	text-align: center;
+}
+#eb .form-horizontal .eb-box .eb-box-body .form-horizontal .media .avatar-image  {
+	border-radius: 100%;
+	overflow: hidden;
+}
+#eb .form-horizontal .form-actions  {
+	display: inline-block;
+    width: 100%;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+#eb .eb-entry .eb-entry-related .eb-related-title {
+	line-height: 24px;
+}
+#jsn-pos-left .jsn-modulecontainer .jsn-modulecontainer_inner .jsn-moduletitle,
+#jsn-pos-right .jsn-modulecontainer .jsn-modulecontainer_inner .jsn-moduletitle {
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+#jsn-pos-left .jsn-modulecontainer .jsn-modulecontainer_inner .jsn-modulecontent #eb #form-login .mod-checkbox,
+#jsn-pos-right .jsn-modulecontainer .jsn-modulecontainer_inner .jsn-modulecontent #eb #form-login .mod-checkbox {
+	margin-bottom: 5px;
+}
+#jsn-pos-left .jsn-modulecontainer .jsn-modulecontainer_inner .jsn-modulecontent #eb.mod_easybloglatestblogs .eb-mod .mod-item >div,
+#jsn-pos-right .jsn-modulecontainer .jsn-modulecontainer_inner .jsn-modulecontent #eb.mod_easybloglatestblogs .eb-mod .mod-item >div {
+	padding-top: 0;
+}
+#jsn-pos-left .jsn-modulecontainer .jsn-modulecontainer_inner .jsn-modulecontent #eb.mod_easybloglatestblogs .eb-mod .mod-item .eb-mod-title,
+#jsn-pos-right .jsn-modulecontainer .jsn-modulecontainer_inner .jsn-modulecontent #eb.mod_easybloglatestblogs .eb-mod .mod-item .eb-mod-title {
+	margin-bottom: 3px;
+}
+#jsn-pos-left .jsn-modulecontainer .jsn-modulecontainer_inner .jsn-modulecontent #eb.mod_easybloglatestblogs .eb-mod .mod-item .eb-mod-title a,
+#jsn-pos-right .jsn-modulecontainer .jsn-modulecontainer_inner .jsn-modulecontent #eb.mod_easybloglatestblogs .eb-mod .mod-item .eb-mod-title a {
+	color: #111;
+	font-size: 14px;
+	font-weight: normal;
+}
+#jsn-pos-left .jsn-modulecontainer .jsn-modulecontainer_inner .jsn-modulecontent #eb.mod-easyblogtagcloud a,
+#jsn-pos-right .jsn-modulecontainer .jsn-modulecontainer_inner .jsn-modulecontent #eb.mod-easyblogtagcloud a {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 13px !important;
+    border-radius: 4px;
+    padding: 3px 5px;
+    border: 1px solid;
+    margin: 2px;	
+}
+#jsn-pos-left .jsn-modulecontainer .jsn-modulecontainer_inner .jsn-modulecontent #eb.mod_easybloglatestcomment .mod-avatar,
+#jsn-pos-right .jsn-modulecontainer .jsn-modulecontainer_inner .jsn-modulecontent #eb.mod_easybloglatestcomment .mod-avatar {
+	border: 1px solid #999;
+}
+

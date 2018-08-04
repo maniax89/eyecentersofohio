@@ -1,0 +1,260 @@
+/* ============================== MENU ============================== */
+/* =============== MENU - GENERAL =============== */
+/* ----- RICH MENU STYLE ----- */
+div.jsn-modulecontainer.jsn-megamenu, h3 {
+    font-family: Nobile, Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+.jsn-menutitle,
+.jsn-menudescription {
+    display: block;
+}
+.jsn-menudescription {
+    color: #ccc;
+    font-size: 0.8em;
+    font-weight: normal;
+}
+div.jsn-modulecontainer.jsn-megamenu ul.menu-mainmenu > li > a {
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 15px 20px;
+}
+div.jsn-modulecontainer.jsn-megamenu ul.menu-mainmenu.jsn-hasIcon > li > a {
+    padding: 0 20px 15px;
+}
+.jsn-megamenu ul.menu-mainmenu li.megamenu {
+    position: inherit;
+}
+
+.jsn-megamenu ul.menu-mainmenu li.megamenu:hover a{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.jsn-megamenu ul.menu-mainmenu li.megamenu .grid {
+    width: 100%;
+    padding: 20px;
+}
+div.jsn-modulecontainer.jsn-megamenu ul.menu-mainmenu ul {
+    transform: none;
+    -webkit-transform: none;
+    -ms-transform: none;
+}
+.jsn-megamenu ul.menu-mainmenu li.megamenu .grid ul {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 100%;
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    border: none;
+}
+
+.jsn-megamenu ul.menu-mainmenu li.megamenu .grid ul .sub-menu {
+    padding: 15px;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+
+.jsn-megamenu ul.menu-mainmenu li.megamenu .grid ul ul {
+    position: absolute;
+    left: 100%;
+    display: none;
+    width: 95%;
+    min-width: 190px;
+}
+
+.jsn-direction-rtl .jsn-megamenu ul.menu-mainmenu li.megamenu .grid ul ul {
+    left: -95%;
+}
+
+.jsn-megamenu ul.menu-mainmenu li.megamenu .grid ul li:hover > ul {
+    display: block;
+    z-index: 999;
+    border: 3px solid #eee;
+    margin-top: 1px;
+}
+
+.jsn-megamenu ul.menu-mainmenu li.megamenu .grid ul li {
+    display: block;
+    width: 100%;
+    padding: 0 8px;
+}
+.jsn-megamenu ul.menu-mainmenu li.megamenu ul li.jsn-menu-mobile-control {
+    display: none;
+}
+.jsn-megamenu ul.menu-mainmenu li.megamenu .grid .module-title {
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #000;
+    margin: 0;
+    padding: 12px 20px 8px 0;
+    display: block;
+    border-bottom: 1px solid #000;
+    font-weight: bold;
+}
+
+.jsn-megamenu ul.menu-mainmenu li.megamenu > ul {
+    display: none;
+}
+
+.jsn-megamenu ul.menu-mainmenu li.megamenu:hover > ul{
+    display: block;
+}
+
+div.jsn-modulecontainer ul.menu-mainmenu li.megamenu ul li a {
+    margin-left: 0;
+    margin-right: 0;
+    border-left: none;
+    border-right: none;    
+    font-size: 13px;
+    padding: 8px 20px 8px 0px;
+}
+
+/*  DESCRIPTION */
+
+div.jsn-modulecontainer ul.menu-mainmenu.jsn-hasDescription li a span.jsn-menudescription {
+    display: block;
+}
+
+/* ICON MEGAMENU*/
+div.jsn-megamenu ul.menu-mainmenu.jsn-hasIcon li > a > span{
+    display: block;
+}
+div.jsn-megamenu ul.menu-mainmenu.jsn-hasIcon li a i[class*="fa-"] {
+    display: inline-block;
+    height: 32px;
+    line-height: 1;
+    font-size: 32px;
+    width: 32px;
+    text-align: center;
+    color: #000;
+    margin-bottom: 6px;
+/*    border: 2px solid #666;
+    border-radius: 50%;*/
+
+}
+/*div.jsn-megamenu ul.menu-mainmenu.jsn-hasIcon li.active a i[class*="fa-"],div.jsn-megamenu ul.menu-mainmenu.jsn-hasIcon li:hover a i[class*="fa-"]  {
+    color: #fff;
+    border-color: #fff;
+}*/
+body.jsn-direction-rtl div.jsn-megamenu ul.menu-mainmenu.jsn-hasIcon li a i[class*="fa-"] {
+    margin-left: 8px;
+    margin-right: inherit;
+}
+div.jsn-megamenu ul.menu-mainmenu.jsn-hasIcon li a i[class*="jsn-icon-"] {
+    display: inline-block;
+    background-image: url(../../images/icons/icons-uni.png);
+    vertical-align: top;
+    margin-bottom: 6px;
+    visibility: visible;
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+}
+
+/* ====== RTL LANGUAGE ===== */
+body.jsn-direction-rtl div.jsn-tpl-megamenu-container ul.menu-mainmenu > li {
+    float: right;
+}
+body.jsn-direction-rtl div.jsn-tpl-megamenu-container ul.menu-mainmenu li a i[class*="fa-"],
+body.jsn-direction-rtl div.jsn-tpl-megamenu-container ul.menu-mainmenu > li > a > i[class*="fa-"] + span {
+    float: right;
+    margin-left: 8px;
+    margin-right: auto;
+}
+body.jsn-direction-rtl .jsn-tpl-mm-column-element[class*="col-md"] {
+    float: right;
+}
+body.jsn-direction-rtl div.jsn-modulecontainer ul.menu-mainmenu li.megamenu:hover .module-content > ul > li.parent > a {
+    background: url(../../images/icons/icon-arrow-black-rtl.png) 4% center no-repeat;
+}
+body.jsn-direction-rtl div.jsn-tpl-megamenu-container ul.menu-mainmenu > li.megamenu.align-right > ul.fixed-width{
+    left: 0;
+    margin-left: 20px;
+    right: auto;
+}
+body.jsn-direction-rtl div.jsn-tpl-megamenu-container ul.menu-mainmenu > li.megamenu.align-right > ul.fixed-width:after {
+    border-left: 10px solid #eee;
+    border-right: 10px solid transparent;
+    left: -3px;
+    right: auto;
+}
+body.jsn-direction-rtl div.jsn-modulecontainer ul.menu-mainmenu ul.jsn-tpl-mm-megamenu-inner.jsn-tpl-mm-megamenu-sub-menu{
+    left: auto;
+}
+body.jsn-direction-rtl div.jsn-modulecontainer ul.menu-mainmenu li a{
+    text-align: right;
+}
+/* ICON MEGAMENU*/
+ul.menu-mainmenu.jsn-hasIcon > li {
+    text-align: center;
+}
+ul.menu-mainmenu.jsn-hasIcon > li > ul > li{
+    text-align: left;
+}
+ul.menu-mainmenu.jsn-hasIcon > li > a > i.jsn-icon-calendar {
+    background-position: center -96px;
+}
+ul.menu-mainmenu.jsn-hasIcon > li > a > i.jsn-icon-cart {
+    background-position: center -191px;
+}
+ul.menu-mainmenu.jsn-hasIcon > li > a > i.jsn-icon-comment {
+    background-position: center -287px;
+}
+
+ul.menu-mainmenu.jsn-hasIcon > li > a > i.jsn-icon-display {
+    background-position: center -383px;
+}
+ul.menu-mainmenu.jsn-hasIcon > li > a > i.jsn-icon-download {
+    background-position: center -479px;
+}
+ul.menu-mainmenu.jsn-hasIcon > li > a > i.jsn-icon-folder {
+    background-position: center -671px;
+}
+ul.menu-mainmenu.jsn-hasIcon > li > a > i.jsn-icon-help {
+    background-position: center -767px;
+}
+ul.menu-mainmenu.jsn-hasIcon > li > a > i.jsn-icon-home {
+    background-position: center -863px;
+}
+ul.menu-mainmenu.jsn-hasIcon > li > a > i.jsn-icon-image {
+    background-position: center -959px;
+}
+ul.menu-mainmenu.jsn-hasIcon > li > a > i.jsn-icon-info {
+    background-position: center -1055px;
+}
+ul.menu-mainmenu.jsn-hasIcon > li > a > i.jsn-icon-mail {
+    background-position: center -1151px;
+}
+ul.menu-mainmenu.jsn-hasIcon > li > a > i.jsn-icon-online {
+    background-position: center -575px;
+}
+
+ul.menu-mainmenu.jsn-hasIcon > li > a > i.jsn-icon-rss {
+    background-position: center -1247px;
+}
+
+ul.menu-mainmenu.jsn-hasIcon > li > a > i.jsn-icon-search {
+    background-position: center -1343px;
+}
+ul.menu-mainmenu.jsn-hasIcon > li > a > i.jsn-icon-selection {
+    background-position: center -1439px;
+}
+ul.menu-mainmenu.jsn-hasIcon > li > a > i.jsn-icon-settings {
+    background-position: center -1535px;
+}
+ul.menu-mainmenu.jsn-hasIcon > li > a > i.jsn-icon-star {
+    background-position: center -1631px;
+}
+ul.menu-mainmenu.jsn-hasIcon > li > a > i.jsn-icon-statistics {
+    background-position: center -1727px;
+}
+ul.menu-mainmenu.jsn-hasIcon > li > a > i.jsn-icon-user {
+    background-position: center -1823px;
+}
+
+/* CUSTOM FIX*/
+.jsn-tpl-bootstrap3 small, .jsn-tpl-bootstrap3 .small,.small{
+    font-size: inherit;
+}
