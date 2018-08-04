@@ -1,0 +1,81 @@
+.jsn-color-cyan #eb .eb-navbar__body{ background: #58c5c0; }
+.jsn-color-red #eb .eb-navbar__body{ background: #c45252;}
+.jsn-color-green #eb .eb-navbar__body{ background: #78bfa4;}
+.jsn-color-violet #eb .eb-navbar__body{ background: #673a61;}
+.jsn-color-orange #eb .eb-navbar__body{ background: #ffc08b}
+.jsn-color-grey #eb .eb-navbar__body{ background: #aaa;}
+#eb .eb-navbar__body{
+    padding: 5px 16px;
+    border: none;
+}
+#eb .is-active>.eb-navbar__footer-link{
+    color: #000;
+}
+#eb .is-active .eb-navbar__footer-link:before{
+    background: #000;
+}
+#eb .eb-navbar__search:before {
+    color: #999;
+}
+#eb .eb-navbar__search-form {
+    padding-left: 0;
+}
+#eb .eb-navbar__search-input {
+    padding: 2px 25px;
+    border-radius: 0;
+    background-color: #fff;         
+}
+#eb .eb-navbar-rss-icon {
+    color: inherit;
+}
+#eb .eb-navbar__footer .eb-navbar__footer-submenu li{
+    margin: 0 8px;
+}
+#eb .eb-navbar__footer .eb-navbar__footer-submenu li:first-child{
+    margin-left: 0;
+}
+#eb .eb-showcases {
+    margin: 0 0 30px;	
+}
+#eb .eb-showcase-meta>div {
+    margin: 0 6px 0 0;
+}
+
+#eb #eb-showcases .eb-showcase-content .eb-avatar.pull-right{
+	float: left !important;
+	margin-right: 6px;
+}
+#eb .mod-btn.mod-btn-primary{
+	color: #428bca !important;
+    background-image: linear-gradient(to bottom,#edf4fa 20%,#d9e8f4 100%) !important;
+    border-color: #a6c8e6 !important;	
+    border-radius: 0;
+}
+#eb .eb-post-side>div+div:before{
+    display: none;
+}
+div#eb .eb-post-side > .eb-post-comments{
+    margin-top: 10px;
+    border-top: 1px solid #ddd;
+}
+div#eb .eb-image-viewport {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    display: inline-block;
+    font-size: 0;
+    max-width: 100%;
+    padding: 5px;
+    position: relative;
+    text-align: center;
+}
+div#eb .eb-post .eb-post-side + .eb-post-content{
+    padding-bottom: 40px;
+    border-bottom: 4px double #d9d9d9;
+}
+@media (min-width: 480px) and (max-width: 768px) {
+	#eb .eb-post-thumb.is-left{
+		float: none;
+		margin-bottom: 10px;
+	}
+}
